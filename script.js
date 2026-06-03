@@ -21,8 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.rv').forEach(el => ro.observe(el));
 
   // stat counters
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const run = b => {
     const t = +b.dataset.target, suf = b.dataset.suffix || '', step = Math.max(1, Math.ceil(t / 50));
+    if (reduceMotion) { b.textContent = t + suf; return; }
     let n = 0; const iv = setInterval(() => { n = Math.min(n + step, t); b.textContent = n + suf; if (n >= t) clearInterval(iv); }, 34);
   };
   const co = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('[data-target]').forEach(run); co.unobserve(e.target); } }), { threshold: .4 });

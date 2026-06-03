@@ -80,7 +80,7 @@ h1,h2,h3,h4{font-family:var(--ff-h);font-weight:800;line-height:1.04;letter-spac
 @media(max-width:900px){.nav-links{display:none}.hbg{display:flex}}
 
 .hero{padding:120px 0 80px;overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(207,92,54,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(207,92,54,.04) 1px,transparent 1px);background-size:72px 72px}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(207,92,54,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(207,92,54,.04) 1px,transparent 1px);background-size:72px 72px;pointer-events:none}
 .hero-inner{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
 .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(207,92,54,.1);border:1px solid rgba(207,92,54,.26);border-radius:var(--r-pill);padding:7px 16px;font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--flame);margin-bottom:26px}
 .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--flame);animation:blink 2s ease-in-out infinite}
