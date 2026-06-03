@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const steps = [...document.querySelectorAll('.j-step')], lines = [...document.querySelectorAll('.j-line')], jText = document.getElementById('j-text');
   const setStep = i => {
-    steps.forEach((s, n) => { s.classList.toggle('on', n === i); s.setAttribute('aria-selected', n === i); });
+    steps.forEach((s, n) => { s.classList.toggle('on', n === i); s.setAttribute('aria-pressed', n === i); });
     lines.forEach((l, n) => l.classList.toggle('on', n < i));
     if (jText) jText.textContent = jTexts[i];
   };
