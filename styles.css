@@ -54,8 +54,8 @@ h1,h2,h3,h4{font-family:var(--ff-h);font-weight:800;line-height:1.04;letter-spac
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 
 @media (prefers-reduced-motion: reduce){
-  *{animation:none !important;scroll-behavior:auto !important}
-  .rv{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
 }
 
 #nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;transition:background .35s var(--ease),box-shadow .35s}
@@ -212,3 +212,11 @@ select.f-in option{background:var(--base2);color:#fff}
 .foot-links a:hover{color:var(--flame)}
 .foot-btm{display:flex;justify-content:space-between;padding-bottom:28px;font-size:11px;color:var(--t-on-dark-3);position:relative;z-index:1}
 @media(max-width:860px){.contact-wrap{grid-template-columns:1fr}.foot{grid-template-columns:1fr}.foot-btm{flex-direction:column;gap:8px}}
+
+/* ── focus + final polish ── */
+:focus-visible{outline:2px solid var(--flame);outline-offset:3px;border-radius:3px}
+.j-step:focus-visible{outline-offset:6px}
+.tcard:focus-within{outline:2px solid var(--viridian);outline-offset:3px}
+.marquee-track{will-change:transform}
+/* team: single column on small phones */
+@media(max-width:460px){.team-grid{grid-template-columns:1fr}}
