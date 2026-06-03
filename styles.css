@@ -25,7 +25,7 @@ h1,h2,h3,h4{font-family:var(--ff-h);font-weight:800;line-height:1.04;letter-spac
 :target{scroll-margin-top:84px}
 
 /* bands */
-.band-dark{background:var(--base);color:var(--t-on-dark)}
+.band-dark{background:var(--base);color:var(--t-on-dark);position:relative}
 .band-dark::before{content:'';position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);background-size:6px 6px;pointer-events:none}
 .band-dark > .wrap{position:relative;z-index:1}
 .band-silver{background:var(--silver);color:var(--ink)}
