@@ -47,10 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // contact form (no backend yet — validate + show success; swap to Formspree later)
   const form = document.querySelector('.cform');
-  if (form) form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-    form.querySelector('.f-msg').hidden = false;
-    form.querySelectorAll('.f-in').forEach(i => i.value = '');
-  });
+  if (form) {
+    const msg = form.querySelector('.f-msg');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      msg.hidden = false;
+      form.querySelectorAll('.f-in').forEach(i => i.value = '');
+    });
+    form.querySelectorAll('.f-in').forEach(i => i.addEventListener('input', () => { msg.hidden = true; }));
+  }
 });
