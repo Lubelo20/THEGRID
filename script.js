@@ -29,4 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   const co = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('[data-target]').forEach(run); co.unobserve(e.target); } }), { threshold: .4 });
   document.querySelectorAll('.stats').forEach(el => co.observe(el));
+
+  // journey map
+  const jTexts = [
+    'Home — top-of-mind recall on the morning commute via the Witkoppen Road digital billboard before your audience even leaves the neighbourhood.',
+    'Airport — security-tray branding at OR Tambo, King Shaka & Cape Town. 21M passengers a year, peak dwell time, zero distractions.',
+    'Mall — DOOH at Dainfern Square & Planet Fitness captures high-LSM shoppers in-venue, during high-intent purchase moments.',
+    'Closed Loop Complete — repeated, sequenced touchpoints have built recall, reinforced messaging and driven measurable conversion.'
+  ];
+  const steps = [...document.querySelectorAll('.j-step')], lines = [...document.querySelectorAll('.j-line')], jText = document.getElementById('j-text');
+  const setStep = i => {
+    steps.forEach((s, n) => { s.classList.toggle('on', n === i); s.setAttribute('aria-selected', n === i); });
+    lines.forEach((l, n) => l.classList.toggle('on', n < i));
+    if (jText) jText.textContent = jTexts[i];
+  };
+  steps.forEach((s, i) => s.addEventListener('click', () => setStep(i)));
 });
