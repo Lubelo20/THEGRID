@@ -222,3 +222,15 @@ select.f-in option{background:var(--base2);color:#fff}
 @media(max-width:460px){.team-grid{grid-template-columns:1fr}}
 
 @media (prefers-reduced-motion: reduce){.marquee-track > [aria-hidden]{display:none}}
+
+/* ── multipage: inner-page top spacing, home teasers, CTA band ── */
+.section.page-top{padding-top:132px}
+.explore{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.explore .pillar{text-decoration:none}
+@media(max-width:768px){.explore{grid-template-columns:1fr}}
+.cta-band{text-align:center}
+.cta-sub{font-size:16px;line-height:1.7;max-width:480px;margin:0 auto 26px}
+.band-silver .cta-sub{color:var(--t-on-silver-2)}
+.band-dark .cta-sub{color:var(--t-on-dark-2)}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+#mob a.active{color:var(--flame)}

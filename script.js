@@ -10,13 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !mob.hidden) { toggle(false); hbg.focus(); } });
 
-  // active section highlight
-  const links = [...document.querySelectorAll('.nav-links a')];
-  const spy = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
-  }), { rootMargin: '-45% 0px -50% 0px' });
-  document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
-
   // scroll reveal
   const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }), { threshold: .12 });
   document.querySelectorAll('.rv').forEach(el => ro.observe(el));
