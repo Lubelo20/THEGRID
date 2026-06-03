@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Grid Technologies Team — Meet the strategists, creatives, and data experts behind every campaign.">
+<title>Our Team — The Grid Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+.team-full{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+@media(max-width:768px){.team-full{grid-template-columns:1fr}}
+.team-full-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:grid;grid-template-columns:200px 1fr;transition:border-color .25s}
+.team-full-card:hover{border-color:rgba(207,92,54,.3)}
+@media(max-width:900px){.team-full-card{grid-template-columns:1fr}}
+.team-full-av{min-height:200px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-size:48px;font-weight:800;position:relative}
+.team-full-av span{position:relative;z-index:1;opacity:.15;color:#fff}
+.team-full-body{padding:28px}
+.team-full-name{font-family:var(--ff-h);font-size:20px;font-weight:800;color:#fff;margin-bottom:4px}
+.team-full-role{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--flame);margin-bottom:16px}
+.team-full-bio{font-size:13px;color:var(--text2);line-height:1.75;margin-bottom:20px}
+.team-full-skills{display:flex;flex-wrap:wrap;gap:7px}
+.team-full-skill{font-size:11px;padding:4px 10px;border-radius:50px;border:1px solid var(--border);color:var(--text2);background:rgba(255,255,255,.03)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-brand" href="index.html"><div class="nav-mark">GT</div><span class="nav-word">THE GRID</span></a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html#about">About</a>
+    <a class="nav-link" href="services.html">Services</a>
+    <a class="nav-link" href="pops.html">POPs</a>
+    <a class="nav-link active" href="team.html">Team</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Plug In</a>
+  <div class="hbg" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+<div id="mob">
+  <a class="nav-link" href="index.html#about" onclick="toggleMob()">About</a>
+  <a class="nav-link" href="services.html" onclick="toggleMob()">Services</a>
+  <a class="nav-link" href="pops.html" onclick="toggleMob()">POPs</a>
+  <a class="nav-link active" href="team.html" onclick="toggleMob()">Team</a>
+  <a class="nav-link" href="contact.html" onclick="toggleMob()">Contact</a>
+  <a href="contact.html" class="nav-cta" onclick="toggleMob()">Plug In</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-glow"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="ph-badge rv"><div class="ph-badge-dot"></div><span>The People</span></div>
+    <h1 class="ph-title rv d1">Strategy behind<br>every screen.</h1>
+    <p class="ph-sub rv d2">Our team combines deep expertise in media strategy, data intelligence, and creative execution — delivering campaigns that perform in the real world.</p>
+  </div>
+</div>
+
+<!-- TEAM FULL CARDS -->
+<section class="section" style="background:var(--bg1)">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Core Team</span>
+      <h2 class="s-title">The people driving<br>the ecosystem.</h2>
+    </div>
+    <div class="team-full rv">
+      <!-- N. Mthembu -->
+      <div class="team-full-card">
+        <div class="team-full-av" style="background:linear-gradient(135deg,#3a1208,rgba(207,92,54,.25))"><span>NM</span></div>
+        <div class="team-full-body">
+          <div class="team-full-name">N. Mthembu</div>
+          <div class="team-full-role">CEO &amp; Founder</div>
+          <div class="team-full-bio">The driving force behind The Grid's closed-loop ecosystem philosophy. Brings deep expertise in B-BBEE compliance, executive client strategy, and campaign architecture. Founded The Grid with a vision to transform how South African brands engage with their audiences — not through single placements, but through orchestrated, data-driven brand journeys.</div>
+          <div class="team-full-skills"><span class="team-full-skill">Strategy</span><span class="team-full-skill">B-BBEE</span><span class="team-full-skill">Client Relations</span><span class="team-full-skill">Campaign Architecture</span><span class="team-full-skill">Ecosystem Vision</span></div>
+        </div>
+      </div>
+      <!-- S. Khumalo -->
+      <div class="team-full-card">
+        <div class="team-full-av" style="background:linear-gradient(135deg,#0e1438,rgba(113,137,255,.25))"><span>SK</span></div>
+        <div class="team-full-body">
+          <div class="team-full-name">S. Khumalo</div>
+          <div class="team-full-role">Head of Sales</div>
+          <div class="team-full-bio">Connects ambitious brands to The Grid ecosystem through strategic media buying, rate card negotiation, and long-term advertiser partnerships. Brings extensive experience in OOH media sales and a deep understanding of what drives ROI for South African brands across diverse sectors and budget levels.</div>
+          <div class="team-full-skills"><span class="team-full-skill">Media Buying</span><span class="team-full-skill">Rate Cards</span><span class="team-full-skill">Negotiations</span><span class="team-full-skill">Advertiser Relations</span><span class="team-full-skill">Sales Strategy</span></div>
+        </div>
+      </div>
+      <!-- T. Nkosi -->
+      <div class="team-full-card">
+        <div class="team-full-av" style="background:linear-gradient(135deg,#1c1c10,rgba(189,194,191,.2))"><span>TN</span></div>
+        <div class="team-full-body">
+          <div class="team-full-name">T. Nkosi</div>
+          <div class="team-full-role">Creative Director</div>
+          <div class="team-full-bio">Ensures every placement makes the strongest possible visual impact. Oversees campaign creative direction, brand identity, and visual storytelling across all formats — from 10m × 70m static billboards to airport security trays. Brings a rare understanding of how design performs differently across OOH environments.</div>
+          <div class="team-full-skills"><span class="team-full-skill">Campaign Creative</span><span class="team-full-skill">Brand Identity</span><span class="team-full-skill">Visual Storytelling</span><span class="team-full-skill">UI/UX</span><span class="team-full-skill">OOH Design</span></div>
+        </div>
+      </div>
+      <!-- L. Mokoena -->
+      <div class="team-full-card">
+        <div class="team-full-av" style="background:linear-gradient(135deg,#0c2015,rgba(65,123,90,.25))"><span>LM</span></div>
+        <div class="team-full-body">
+          <div class="team-full-name">L. Mokoena</div>
+          <div class="team-full-role">Data &amp; Analytics</div>
+          <div class="team-full-bio">Turns real-world advertising into measurable business results. Combines location data, footfall insights, and impression modelling to build attribution reports that go beyond impressions — delivering audience profiles, campaign attribution, and clear ROI evidence that clients can present to their boards.</div>
+          <div class="team-full-skills"><span class="team-full-skill">Audience Data</span><span class="team-full-skill">Footfall Insights</span><span class="team-full-skill">Attribution</span><span class="team-full-skill">ROI Reporting</span><span class="team-full-skill">Demographic Profiling</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK CARDS (hover version) -->
+<section class="section" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="eyebrow">At a Glance</span>
+      <h2 class="s-title">Hover to reveal<br>core capabilities.</h2>
+    </div>
+    <div class="team-grid rv">
+      <div class="team-c"><div class="t-av" style="background:linear-gradient(135deg,#3a1208,rgba(207,92,54,.25))"><span>NM</span></div><div class="t-inf"><div class="t-name">N. Mthembu</div><div class="t-role">CEO &amp; Founder</div></div><div class="t-skills"><span class="t-skill">Strategy</span><span class="t-skill">B-BBEE</span><span class="t-skill">Client Relations</span></div><div class="t-rev"><p>Campaign architecture, B-BBEE compliance, ecosystem vision, and the driving force behind The Grid's closed-loop advertising philosophy.</p></div></div>
+      <div class="team-c"><div class="t-av" style="background:linear-gradient(135deg,#0e1438,rgba(113,137,255,.25))"><span>SK</span></div><div class="t-inf"><div class="t-name">S. Khumalo</div><div class="t-role">Head of Sales</div></div><div class="t-skills"><span class="t-skill">Media Buying</span><span class="t-skill">Rate Cards</span><span class="t-skill">Negotiations</span></div><div class="t-rev"><p>Media buying, advertiser relations, rate card negotiation, and strategic partnerships — connecting brands to The Grid ecosystem.</p></div></div>
+      <div class="team-c"><div class="t-av" style="background:linear-gradient(135deg,#1c1c10,rgba(189,194,191,.2))"><span>TN</span></div><div class="t-inf"><div class="t-name">T. Nkosi</div><div class="t-role">Creative Director</div></div><div class="t-skills"><span class="t-skill">Campaign Creative</span><span class="t-skill">Brand Identity</span><span class="t-skill">UI/UX</span></div><div class="t-rev"><p>Creative direction, brand identity, visual storytelling — ensuring every placement makes the strongest possible impact across all formats.</p></div></div>
+      <div class="team-c"><div class="t-av" style="background:linear-gradient(135deg,#0c2015,rgba(65,123,90,.25))"><span>LM</span></div><div class="t-inf"><div class="t-name">L. Mokoena</div><div class="t-role">Data &amp; Analytics</div></div><div class="t-skills"><span class="t-skill">Audience Data</span><span class="t-skill">Footfall</span><span class="t-skill">Attribution</span></div><div class="t-rev"><p>Audience data analysis, footfall insights, attribution, and ROI reporting — turning real-world advertising into measurable business results.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:var(--bg1)">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="eyebrow">Client Voices</span>
+      <h2 class="s-title">What brands say<br>about The Grid.</h2>
+    </div>
+    <div class="testi-grid rv">
+      <div class="testi-c"><div class="testi-q">"</div><p class="testi-t">The closed-loop approach transformed how we think about OOH. We could see exactly how the airport placement was driving footfall to our retail locations. The attribution data was a revelation.</p><div class="testi-auth"><div class="testi-av">JV</div><div><div class="testi-n">Brand Marketing Director</div><div class="testi-co">FMCG — Johannesburg</div></div></div></div>
+      <div class="testi-c"><div class="testi-q">"</div><p class="testi-t">We needed premium, not just presence. The Grid delivered both. The Dainfern Square placement alone exceeded our impression targets by 40%. The strategic thinking made all the difference.</p><div class="testi-auth"><div class="testi-av">SM</div><div><div class="testi-n">Head of Brand</div><div class="testi-co">Financial Services — Sandton</div></div></div></div>
+      <div class="testi-c"><div class="testi-q">"</div><p class="testi-t">The airport tray execution at OR Tambo was brilliant. Our audience was holding our brand for minutes at a time. The conversion impact was unlike any OOH we had ever run before.</p><div class="testi-auth"><div class="testi-av">KD</div><div><div class="testi-n">Chief Marketing Officer</div><div class="testi-co">Travel &amp; Hospitality — Cape Town</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center;display:flex">Work With Us</span>
+    <div class="cta-title rv">Meet us. Brief us. Build it.</div>
+    <p class="cta-sub rv">Direct lines, no gatekeepers. Talk to the people who will actually run your campaign.</p>
+    <div class="cta-btns rv"><a href="contact.html" class="btn-p">Get in Touch</a><a href="services.html" class="btn-s">View Services →</a></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="nav-brand" href="index.html" style="margin-bottom:14px;display:inline-flex"><div class="nav-mark">GT</div><span class="nav-word" style="margin-left:11px">THE GRID</span></a>
+        <p class="foot-desc">Strategic, closed-loop ecosystem advertising. End-to-end points of presence that deliver real-world brand journeys and measurable ROI.</p>
+        <div class="foot-soc"><div class="foot-soc-btn"><i class="ti ti-brand-instagram"></i></div><div class="foot-soc-btn"><i class="ti ti-brand-linkedin"></i></div><div class="foot-soc-btn"><i class="ti ti-brand-facebook"></i></div><div class="foot-soc-btn"><i class="ti ti-brand-whatsapp"></i></div></div>
+      </div>
+      <div><div class="foot-col-t">Services</div><ul class="foot-links"><li><a href="services.html">LED Billboards</a></li><li><a href="services.html">Airport Trays</a></li><li><a href="services.html">Print Billboards</a></li><li><a href="services.html">Data &amp; Analytics</a></li><li><a href="services.html#journey">Journey Strategy</a></li></ul></div>
+      <div><div class="foot-col-t">Company</div><ul class="foot-links"><li><a href="index.html#about">About The Grid</a></li><li><a href="team.html">Our Team</a></li><li><a href="pops.html">Points of Presence</a></li><li><a href="services.html#showcase">Case Studies</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div><div class="foot-col-t">Contact</div><ul class="foot-links"><li><a href="tel:+27793650188">+27 79 365 0188</a></li><li><a href="mailto:sales@thegridtech.co.za">sales@thegridtech.co.za</a></li><li><a href="#">Johannesburg, SA</a></li><li><a href="#">Download Media Kit</a></li></ul></div>
+    </div>
+    <div class="foot-btm"><span class="foot-copy">© 2026 The Grid Technologies (Pty) Ltd. All rights reserved.</span><div class="foot-legal"><a href="#">POPIA Policy</a><a href="#">Privacy Policy</a><a href="#">Media Kit</a></div></div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 20), {passive:true});
+function toggleMob(){ document.getElementById('mob').classList.toggle('open'); }
+const ro = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('on'); }), {threshold:.1});
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+setTimeout(() => document.querySelectorAll('.page-hero .rv').forEach(el => el.classList.add('on')), 80);
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact The Grid Technologies — Book a campaign, request a media kit, or chat directly with our team. +27 79 365 0188 · sales@thegridtech.co.za">
+<title>Contact — The Grid Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Response time bar */
+.response-bar{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap}
+.resp-item{flex:1;min-width:120px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:16px;text-align:center}
+.resp-ic{font-size:22px;color:var(--flame);margin-bottom:8px}
+.resp-t{font-family:var(--ff-h);font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.resp-s{font-size:11px;color:var(--text3)}
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+@media(max-width:768px){.faq-grid{grid-template-columns:1fr}}
+.faq-item{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:22px;cursor:pointer;transition:border-color .25s}
+.faq-item:hover{border-color:var(--border-a)}
+.faq-q{font-family:var(--ff-h);font-size:13px;font-weight:700;color:#fff;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-icon{font-size:16px;color:var(--flame);flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{font-size:12px;color:var(--text2);line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-brand" href="index.html"><div class="nav-mark">GT</div><span class="nav-word">THE GRID</span></a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html#about">About</a>
+    <a class="nav-link" href="services.html">Services</a>
+    <a class="nav-link" href="pops.html">POPs</a>
+    <a class="nav-link" href="team.html">Team</a>
+    <a class="nav-link active" href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Plug In</a>
+  <div class="hbg" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+<div id="mob">
+  <a class="nav-link" href="index.html#about" onclick="toggleMob()">About</a>
+  <a class="nav-link" href="services.html" onclick="toggleMob()">Services</a>
+  <a class="nav-link" href="pops.html" onclick="toggleMob()">POPs</a>
+  <a class="nav-link" href="team.html" onclick="toggleMob()">Team</a>
+  <a class="nav-link active" href="contact.html" onclick="toggleMob()">Contact</a>
+  <a href="contact.html" class="nav-cta" onclick="toggleMob()">Plug In</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-glow"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="ph-badge rv"><div class="ph-badge-dot"></div><span>Get in Touch</span></div>
+    <h1 class="ph-title rv d1">Ready to plug in?</h1>
+    <p class="ph-sub rv d2">Direct lines, no gatekeepers. You'll speak to the people who actually build and run your campaign — not a call centre.</p>
+    <div class="response-bar rv d3">
+      <div class="resp-item"><div class="resp-ic"><i class="ti ti-clock"></i></div><div class="resp-t">&lt; 24 Hours</div><div class="resp-s">Response time</div></div>
+      <div class="resp-item"><div class="resp-ic"><i class="ti ti-users"></i></div><div class="resp-t">Direct Access</div><div class="resp-s">To the team</div></div>
+      <div class="resp-item"><div class="resp-ic"><i class="ti ti-file-description"></i></div><div class="resp-t">Custom Proposal</div><div class="resp-s">For every brief</div></div>
+      <div class="resp-item"><div class="resp-ic"><i class="ti ti-brand-whatsapp"></i></div><div class="resp-t">WhatsApp</div><div class="resp-s">Available now</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT MAIN -->
+<section class="section" style="background:var(--bg1)">
+  <div class="wrap">
+    <div class="contact-wrap">
+      <div class="rv">
+        <span class="eyebrow">Direct Lines</span>
+        <h2 class="s-title" style="font-size:clamp(22px,3vw,36px)">Talk to the<br>people who build<br>your campaign.</h2>
+        <p class="c-pre">Whether you're planning a campaign, want to understand our network, or need a tailored media strategy — our team is ready. No automated responses, no holding queues.</p>
+        <div class="c-items">
+          <div class="c-item"><div class="c-ic"><i class="ti ti-phone"></i></div><div><div class="c-lbl">Call Us</div><div class="c-val">+27 79 365 0188</div></div></div>
+          <div class="c-item"><div class="c-ic"><i class="ti ti-mail"></i></div><div><div class="c-lbl">Email Us</div><div class="c-val">sales@thegridtech.co.za</div></div></div>
+          <div class="c-item"><div class="c-ic"><i class="ti ti-map-pin"></i></div><div><div class="c-lbl">Location</div><div class="c-val">Johannesburg, South Africa</div></div></div>
+        </div>
+        <button class="wa-btn" onclick="window.open('https://wa.me/27793650188','_blank')">
+          <i class="ti ti-brand-whatsapp" style="font-size:19px"></i>Chat on WhatsApp
+        </button>
+        <div class="soc-row">
+          <div class="soc-btn"><i class="ti ti-brand-instagram"></i><span>Instagram</span></div>
+          <div class="soc-btn"><i class="ti ti-brand-linkedin"></i><span>LinkedIn</span></div>
+          <div class="soc-btn"><i class="ti ti-brand-facebook"></i><span>Facebook</span></div>
+        </div>
+      </div>
+      <div class="rv d2">
+        <div class="cform">
+          <div class="cf-title">Start a Campaign Brief</div>
+          <div class="cf-sub">Tell us your goals — we'll craft a strategic proposal within 24 hours.</div>
+          <div class="f-row">
+            <div><label class="f-lbl">Your Name</label><input class="f-in" type="text" placeholder="Jane Smith"></div>
+            <div><label class="f-lbl">Company</label><input class="f-in" type="text" placeholder="Acme Corp"></div>
+          </div>
+          <div class="f-grp"><label class="f-lbl">Email Address</label><input class="f-in" type="email" placeholder="jane@company.co.za"></div>
+          <div class="f-grp"><label class="f-lbl">Phone Number</label><input class="f-in" type="tel" placeholder="+27 00 000 0000"></div>
+          <div class="f-grp">
+            <label class="f-lbl">Campaign Type</label>
+            <select class="f-sel f-in">
+              <option value="">Select a service...</option>
+              <option>LED Billboards (DOOH)</option>
+              <option>Airport Security Trays</option>
+              <option>Print Billboards</option>
+              <option>Data &amp; Analytics</option>
+              <option>Full Ecosystem Campaign</option>
+            </select>
+          </div>
+          <div class="f-grp"><label class="f-lbl">Budget Range</label>
+            <select class="f-sel f-in">
+              <option value="">Select a range...</option>
+              <option>Under R50,000</option>
+              <option>R50,000 – R150,000</option>
+              <option>R150,000 – R500,000</option>
+              <option>R500,000+</option>
+            </select>
+          </div>
+          <div class="f-grp"><label class="f-lbl">Campaign Goals</label><textarea class="f-ta" placeholder="Tell us about your brand, target audience, campaign objectives, and timeline..."></textarea></div>
+          <button class="f-submit">Send Brief &nbsp;&rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="eyebrow">Common Questions</span>
+      <h2 class="s-title">Everything you need<br>to know before booking.</h2>
+    </div>
+    <div class="faq-grid rv">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What is the minimum campaign duration? <i class="ti ti-plus faq-icon"></i></div>
+        <div class="faq-a">We typically recommend a minimum of 4 weeks per placement to allow for meaningful audience reach and frequency. However, we can accommodate shorter bursts for specific activations, particularly at airport locations where events or peaks may require shorter windows.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How does the closed-loop strategy work? <i class="ti ti-plus faq-icon"></i></div>
+        <div class="faq-a">We map your target audience's daily consumer journey — from home to commute, airport, mall, and back — then place your brand at strategic waypoints along that route. The result is a campaign that intercepts the same audience multiple times per day, across different mindsets and environments.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What data do you provide post-campaign? <i class="ti ti-plus faq-icon"></i></div>
+        <div class="faq-a">We provide comprehensive post-campaign reports including impression counts, audience demographics, footfall data (where applicable), screen uptime logs, and attribution analysis. For airport placements, we can provide passenger volume data correlated with your campaign period.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do you handle the creative production? <i class="ti ti-plus faq-icon"></i></div>
+        <div class="faq-a">Our Creative Director can assist with artwork briefing, format specification, and creative guidance. For full production, we work with trusted creative partners or can brief your existing agency with our format requirements to ensure your creative performs optimally across all placements.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Which industries do you work with most? <i class="ti ti-plus faq-icon"></i></div>
+        <div class="faq-a">Our network is particularly well-suited to financial services, FMCG, automotive, travel &amp; hospitality, retail, and luxury brands — all sectors where reaching high-LSM audiences at multiple touchpoints drives meaningful ROI. That said, our strategy works for any brand targeting premium South African consumers.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How quickly can a campaign go live? <i class="ti ti-plus faq-icon"></i></div>
+        <div class="faq-a">Once artwork is approved and bookings are confirmed, DOOH campaigns can typically go live within 5–7 business days. Airport tray campaigns require slightly longer lead times (2–3 weeks) to coordinate with airport authority requirements. We'll give you a precise timeline in your campaign proposal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="nav-brand" href="index.html" style="margin-bottom:14px;display:inline-flex"><div class="nav-mark">GT</div><span class="nav-word" style="margin-left:11px">THE GRID</span></a>
+        <p class="foot-desc">Strategic, closed-loop ecosystem advertising. End-to-end points of presence that deliver real-world brand journeys and measurable ROI.</p>
+        <div class="foot-soc"><div class="foot-soc-btn"><i class="ti ti-brand-instagram"></i></div><div class="foot-soc-btn"><i class="ti ti-brand-linkedin"></i></div><div class="foot-soc-btn"><i class="ti ti-brand-facebook"></i></div><div class="foot-soc-btn"><i class="ti ti-brand-whatsapp"></i></div></div>
+      </div>
+      <div><div class="foot-col-t">Services</div><ul class="foot-links"><li><a href="services.html">LED Billboards</a></li><li><a href="services.html">Airport Trays</a></li><li><a href="services.html">Print Billboards</a></li><li><a href="services.html">Data &amp; Analytics</a></li><li><a href="services.html#journey">Journey Strategy</a></li></ul></div>
+      <div><div class="foot-col-t">Company</div><ul class="foot-links"><li><a href="index.html#about">About The Grid</a></li><li><a href="team.html">Our Team</a></li><li><a href="pops.html">Points of Presence</a></li><li><a href="services.html#showcase">Case Studies</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div><div class="foot-col-t">Contact</div><ul class="foot-links"><li><a href="tel:+27793650188">+27 79 365 0188</a></li><li><a href="mailto:sales@thegridtech.co.za">sales@thegridtech.co.za</a></li><li><a href="#">Johannesburg, SA</a></li><li><a href="#">Download Media Kit</a></li></ul></div>
+    </div>
+    <div class="foot-btm"><span class="foot-copy">© 2026 The Grid Technologies (Pty) Ltd. All rights reserved.</span><div class="foot-legal"><a href="#">POPIA Policy</a><a href="#">Privacy Policy</a><a href="#">Media Kit</a></div></div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 20), {passive:true});
+function toggleMob(){ document.getElementById('mob').classList.toggle('open'); }
+const ro = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('on'); }), {threshold:.1});
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+setTimeout(() => document.querySelectorAll('.page-hero .rv').forEach(el => el.classList.add('on')), 80);
+function toggleFaq(el){ el.classList.toggle('open'); }
+</script>
+</body>
+</html>

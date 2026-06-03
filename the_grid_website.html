@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Grid Technologies — Strategic, closed-loop ecosystem advertising. End-to-end points of presence that deliver real-world brand journeys and measurable ROI.">
+<title>The Grid Technologies — Ecosystem Advertising</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css">
+<style>
+/* ─── RESET ─── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:#07090d;color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:'Inter',sans-serif}
+img{max-width:100%;display:block}
+
+/* ─── TOKENS ─── */
+:root{
+  --flame:#CF5C36;
+  --flame-h:#e06a42;
+  --flame-d:#b34d2d;
+  --gunmetal:#30343F;
+  --silver:#BDC2BF;
+  --viridian:#417B5A;
+  --cornflower:#7189FF;
+  --bg0:#07090d;
+  --bg1:#0d1117;
+  --bg2:#111827;
+  --bg3:#161d2b;
+  --bg4:#1c2538;
+  --text1:#ffffff;
+  --text2:rgba(255,255,255,0.62);
+  --text3:rgba(255,255,255,0.35);
+  --border:rgba(255,255,255,0.07);
+  --border-a:rgba(207,92,54,0.28);
+  --ff-h:'Montserrat',sans-serif;
+  --ff-b:'Inter',sans-serif;
+  --r-sm:6px;
+  --r-md:12px;
+  --r-lg:20px;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+
+/* ─── TYPOGRAPHY ─── */
+h1,h2,h3,h4{font-family:var(--ff-h);font-weight:700;line-height:1.12}
+.eyebrow{font-family:var(--ff-h);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--flame);display:block;margin-bottom:10px}
+.s-title{font-size:clamp(26px,3.5vw,46px);color:var(--text1);margin-bottom:14px}
+.s-sub{font-size:15px;color:var(--text2);line-height:1.75;max-width:540px}
+
+/* ─── LAYOUT ─── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.section.light{background:#fff;color:#0d1117}
+.section.light .eyebrow{color:var(--flame)}
+.section.light .s-title{color:#0d1117}
+.section.light .s-sub{color:#4a5568}
+.section.mid{background:#f4f6f9;color:#0d1117}
+.section.mid .eyebrow{color:var(--flame)}
+.section.mid .s-title{color:#0d1117}
+.section.mid .s-sub{color:#4a5568}
+:target{scroll-margin-top:76px}
+
+/* ─── REVEAL ─── */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+/* ════════════════════════════════
+   NAV
+════════════════════════════════ */
+#nav{position:fixed;top:0;inset-inline:0;z-index:1000;height:68px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;transition:background .35s var(--ease),box-shadow .35s var(--ease)}
+#nav.solid{background:rgba(7,9,13,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 var(--border)}
+.nav-brand{display:flex;align-items:center;gap:11px}
+.nav-mark{width:36px;height:36px;background:var(--flame);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-size:13px;font-weight:800;color:#fff;letter-spacing:-.5px;flex-shrink:0}
+.nav-word{font-family:var(--ff-h);font-size:12px;font-weight:700;color:#fff;letter-spacing:.22em}
+.nav-links{display:flex;gap:28px}
+.nav-link{font-size:13px;font-weight:500;color:var(--text2);transition:color .25s}
+.nav-link:hover{color:#fff}
+.nav-cta{background:var(--flame);color:#fff;font-family:var(--ff-h);font-size:12px;font-weight:600;padding:9px 20px;border-radius:var(--r-sm);border:none;letter-spacing:.05em;transition:background .25s,transform .2s}
+.nav-cta:hover{background:var(--flame-h);transform:translateY(-1px)}
+.hbg{display:none;flex-direction:column;gap:5px;padding:4px;cursor:pointer}
+.hbg span{width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+@media(max-width:768px){.nav-links{display:none}.hbg{display:flex}}
+
+/* Mobile menu */
+#mob{display:none;position:fixed;inset:0;z-index:999;background:rgba(7,9,13,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:28px}
+#mob.open{display:flex}
+#mob .nav-link{font-size:22px;font-weight:600;color:#fff}
+#mob .nav-cta{font-size:15px;padding:13px 36px;border-radius:8px}
+
+/* ════════════════════════════════
+   HERO
+════════════════════════════════ */
+#hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;background:var(--bg0)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(207,92,54,.038) 1px,transparent 1px),linear-gradient(90deg,rgba(207,92,54,.038) 1px,transparent 1px);background-size:72px 72px;pointer-events:none}
+.hero-radial{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(207,92,54,.055) 0%,transparent 70%);pointer-events:none;animation:hpulse 5s ease-in-out infinite}
+@keyframes hpulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+.hero-inner{position:relative;z-index:1;width:100%;padding:0 24px;max-width:1200px;margin:0 auto;padding-top:68px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(207,92,54,.09);border:1px solid rgba(207,92,54,.22);border-radius:50px;padding:6px 16px;margin-bottom:28px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--flame);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.hero-badge-text{font-family:var(--ff-h);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--flame)}
+.hero-h1{font-family:var(--ff-h);font-size:clamp(38px,6vw,76px);font-weight:800;line-height:1.06;color:#fff;max-width:820px;margin-bottom:10px}
+.hero-h1 em{font-style:normal;color:var(--flame)}
+.hero-h2{font-family:var(--ff-h);font-size:clamp(17px,2.2vw,26px);font-weight:300;color:rgba(255,255,255,.52);line-height:1.45;max-width:640px;margin-bottom:22px}
+.hero-desc{font-size:14px;line-height:1.8;color:rgba(255,255,255,.45);max-width:520px;margin-bottom:38px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:64px}
+.btn-p{background:var(--flame);color:#fff;font-family:var(--ff-h);font-size:13px;font-weight:600;padding:13px 26px;border-radius:var(--r-sm);border:none;letter-spacing:.04em;transition:background .25s,transform .2s,box-shadow .25s}
+.btn-p:hover{background:var(--flame-h);transform:translateY(-2px);box-shadow:0 8px 24px rgba(207,92,54,.32)}
+.btn-s{background:transparent;color:rgba(255,255,255,.78);font-family:var(--ff-h);font-size:13px;font-weight:500;padding:13px 26px;border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.18);transition:border-color .25s,color .25s,transform .2s}
+.btn-s:hover{border-color:rgba(255,255,255,.45);color:#fff;transform:translateY(-2px)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;max-width:680px;background:rgba(255,255,255,.02)}
+.hero-stat{padding:18px 12px;text-align:center;border-right:1px solid var(--border)}
+.hero-stat:last-child{border-right:none}
+.hstat-n{font-family:var(--ff-h);font-size:26px;font-weight:800;color:var(--flame);display:block;line-height:1}
+.hstat-l{font-size:10px;color:var(--text3);margin-top:5px;display:block;letter-spacing:.06em}
+.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text3);font-size:10px;letter-spacing:.16em;text-transform:uppercase;animation:sb 2.2s ease-in-out infinite}
+@keyframes sb{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--flame),transparent)}
+@media(max-width:600px){.hero-stats{grid-template-columns:repeat(2,1fr)}.hero-stat:nth-child(2){border-right:none}.hero-stat:nth-child(3){border-right:1px solid var(--border)}}
+
+/* ════════════════════════════════
+   TRUST BAR
+════════════════════════════════ */
+#trust{background:var(--bg1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;overflow:hidden}
+.trust-track{display:flex;gap:56px;align-items:center;white-space:nowrap;animation:marquee 22s linear infinite}
+.trust-item{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--text3);text-transform:uppercase;flex-shrink:0}
+.trust-sep{width:4px;height:4px;border-radius:50%;background:var(--flame);flex-shrink:0;opacity:.5}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ════════════════════════════════
+   ABOUT
+════════════════════════════════ */
+#about .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about-desc{font-size:15px;color:#4a5568;line-height:1.82;margin-bottom:16px}
+.pillars{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.pillar{display:flex;gap:16px;align-items:flex-start;padding:18px;border:1px solid rgba(0,0,0,.07);border-radius:var(--r-md);transition:border-color .25s,box-shadow .25s}
+.pillar:hover{border-color:rgba(207,92,54,.2);box-shadow:0 4px 18px rgba(207,92,54,.06)}
+.pillar-ic{width:42px;height:42px;border-radius:10px;background:rgba(207,92,54,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px;color:var(--flame)}
+.pillar-t{font-family:var(--ff-h);font-size:13px;font-weight:700;color:#0d1117;margin-bottom:4px}
+.pillar-d{font-size:12px;color:#5a6a7a;line-height:1.6}
+.about-card{background:var(--bg1);border-radius:var(--r-lg);padding:30px;position:relative;overflow:hidden}
+.ac-glow{position:absolute;top:-80px;right:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(207,92,54,.16) 0%,transparent 70%);pointer-events:none}
+.ac-label{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--flame);margin-bottom:22px}
+.ac-metric{margin-bottom:20px}
+.ac-num{font-family:var(--ff-h);font-size:36px;font-weight:800;color:#fff;line-height:1}
+.ac-sub{font-size:12px;color:rgba(255,255,255,.45);margin-top:4px}
+.ac-bar{height:3px;background:rgba(255,255,255,.07);border-radius:3px;margin-top:10px;overflow:hidden}
+.ac-fill{height:100%;border-radius:3px;transition:width 1.5s var(--ease)}
+.ac-minis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.ac-mini{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:12px;text-align:center}
+.ac-mini-n{font-family:var(--ff-h);font-size:18px;font-weight:800;line-height:1}
+.ac-mini-l{font-size:10px;color:var(--text3);margin-top:3px}
+@media(max-width:900px){#about .about-wrap{grid-template-columns:1fr;gap:44px}}
+
+/* ════════════════════════════════
+   SERVICES
+════════════════════════════════ */
+#services{background:var(--bg1)}
+.svc-hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.svc-hdr-note{font-size:13px;color:var(--text2);line-height:1.6;max-width:280px;text-align:right}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+@media(max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.svc-grid{grid-template-columns:1fr}}
+
+/* Flip card */
+.flip{perspective:1100px;height:290px}
+.flip-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s var(--ease)}
+.flip:hover .flip-in{transform:rotateY(180deg)}
+.ff,.fb{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--r-md);padding:26px;display:flex;flex-direction:column}
+.ff{background:var(--bg3);border:1px solid var(--border)}
+.fb{transform:rotateY(180deg)}
+.f-ic{font-size:26px;margin-bottom:14px}
+.f-name{font-family:var(--ff-h);font-size:14px;font-weight:700;color:#fff;margin-bottom:7px}
+.f-tag{font-size:11px;color:var(--text2);line-height:1.55}
+.f-hint{margin-top:auto;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:5px;opacity:.7}
+.fb-t{font-family:var(--ff-h);font-size:13px;font-weight:700;margin-bottom:10px}
+.fb-b{font-size:11px;line-height:1.7;opacity:.85;flex:1}
+.fb-loc{margin-top:10px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+
+.led .ff{border-top:3px solid var(--flame)}.led .fb{background:linear-gradient(145deg,#3a1208,#5c2010)}.led .f-ic,.led .f-hint{color:var(--flame)}
+.apt .ff{border-top:3px solid var(--cornflower)}.apt .fb{background:linear-gradient(145deg,#0e1438,#1a2052)}.apt .f-ic,.apt .f-hint{color:var(--cornflower)}
+.prt .ff{border-top:3px solid var(--silver)}.prt .fb{background:linear-gradient(145deg,#1c2028,#252e3a)}.prt .f-ic,.prt .f-hint{color:var(--silver)}
+.dat .ff{border-top:3px solid var(--viridian)}.dat .fb{background:linear-gradient(145deg,#0b2015,#163524)}.dat .f-ic,.dat .f-hint{color:var(--viridian)}
+
+/* Journey feature banner */
+.jf{background:linear-gradient(135deg,var(--bg3) 0%,rgba(207,92,54,.07) 100%);border:1px solid var(--border-a);border-radius:var(--r-lg);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:768px){.jf{grid-template-columns:1fr}}
+.jf-eyebrow{font-family:var(--ff-h);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--flame);margin-bottom:10px}
+.jf-title{font-family:var(--ff-h);font-size:20px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:12px}
+.jf-body{font-size:13px;color:var(--text2);line-height:1.75;margin-bottom:22px}
+.jf-nodes{display:flex;align-items:flex-start;gap:0;justify-content:space-between}
+.jfn{display:flex;flex-direction:column;align-items:center;gap:7px}
+.jfn-dot{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;border:2px solid}
+.jf-line{flex:1;height:2px;background:rgba(255,255,255,.07);margin-top:20px;position:relative;border-radius:2px;overflow:hidden}
+.jf-line::after{content:'';position:absolute;inset:0;background:var(--flame);animation:fill 2.5s ease-in-out infinite alternate}
+@keyframes fill{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+.jfn-l{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.jf-caption{margin-top:20px;padding:14px;background:rgba(207,92,54,.05);border:1px solid rgba(207,92,54,.14);border-radius:9px;font-size:12px;color:var(--text2);line-height:1.65;text-align:center}
+.jf-caption strong{color:var(--flame)}
+
+/* ════════════════════════════════
+   CLOSED-LOOP JOURNEY
+════════════════════════════════ */
+#journey{background:var(--bg0);position:relative;overflow:hidden}
+.j-acc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(113,137,255,.04) 0%,transparent 68%);pointer-events:none}
+.j-map{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);padding:36px;margin-top:44px}
+.j-steps{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:28px;position:relative}
+.j-steps::before{content:'';position:absolute;top:21px;left:8%;right:8%;height:2px;background:var(--border);z-index:0}
+.j-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;position:relative;z-index:1}
+.j-dot{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--bg2);border:2px solid transparent;transition:border-color .25s,transform .25s,background .25s}
+.j-step.on .j-dot{border-color:var(--flame);transform:scale(1.18)}
+.j-lbl{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--text3);font-weight:600}
+.j-line{flex:1;height:2px;margin-top:20px;background:rgba(255,255,255,.06);position:relative;z-index:0;border-radius:2px;transition:background .35s}
+.j-line.on{background:rgba(207,92,54,.4)}
+.j-detail{min-height:80px;display:flex;align-items:center;justify-content:center;background:rgba(207,92,54,.04);border:1px solid rgba(207,92,54,.11);border-radius:var(--r-md);padding:22px}
+.j-detail p{font-size:14px;color:var(--text2);text-align:center;line-height:1.75;max-width:640px}
+
+/* ════════════════════════════════
+   POPS
+════════════════════════════════ */
+#pops{background:var(--bg2)}
+.pops-filter{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.pf-btn{font-size:12px;font-weight:600;font-family:var(--ff-h);padding:7px 18px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--text2);letter-spacing:.04em;transition:all .25s}
+.pf-btn.on,.pf-btn:hover{border-color:var(--flame);color:var(--flame);background:rgba(207,92,54,.08)}
+.pops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:768px){.pops-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.pops-grid{grid-template-columns:1fr}}
+.pop{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:22px;display:flex;gap:14px;align-items:flex-start;transition:border-color .25s,transform .25s,box-shadow .25s}
+.pop:hover{border-color:var(--border-a);transform:translateY(-3px);box-shadow:0 8px 28px rgba(207,92,54,.09)}
+.pop-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.pop-t{font-family:var(--ff-h);font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
+.pop-k{font-size:10px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px}
+.pop-d{font-size:12px;color:var(--text2);line-height:1.58}
+
+/* ════════════════════════════════
+   WHY US
+════════════════════════════════ */
+#why{background:var(--bg1)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.why-grid{grid-template-columns:1fr}}
+.why-c{padding:30px 22px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--bg3);text-align:center;transition:border-color .25s,transform .25s}
+.why-c:hover{border-color:var(--border-a);transform:translateY(-4px)}
+.why-ic{width:54px;height:54px;border-radius:14px;background:rgba(207,92,54,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:23px;color:var(--flame)}
+.why-t{font-family:var(--ff-h);font-size:14px;font-weight:700;color:#fff;margin-bottom:10px}
+.why-d{font-size:12px;color:var(--text2);line-height:1.65}
+
+/* ════════════════════════════════
+   STATS
+════════════════════════════════ */
+#stats{background:linear-gradient(140deg,var(--bg0) 0%,#1c0e06 60%,#2e1609 100%);border-top:1px solid rgba(207,92,54,.09);border-bottom:1px solid rgba(207,92,54,.09);position:relative;overflow:hidden}
+#stats::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(207,92,54,.06) 0%,transparent 68%);pointer-events:none}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(207,92,54,.11);border-radius:var(--r-lg);overflow:hidden;position:relative;z-index:1}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-it{padding:48px 28px;text-align:center;border-right:1px solid rgba(207,92,54,.11)}
+.stat-it:last-child,.stat-it:nth-child(4n){border-right:none}
+@media(max-width:768px){.stat-it:nth-child(2){border-right:none}.stat-it:nth-child(3){border-right:1px solid rgba(207,92,54,.11)}.stat-it:nth-child(4){border-right:none}}
+.stat-n{font-family:var(--ff-h);font-size:clamp(36px,5vw,62px);font-weight:800;color:var(--flame);line-height:1;display:block}
+.stat-l{font-size:12px;color:rgba(255,255,255,.38);margin-top:10px;display:block;letter-spacing:.07em}
+
+/* ════════════════════════════════
+   SHOWCASE
+════════════════════════════════ */
+#showcase{background:var(--bg0)}
+.sc-grid{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-top:44px}
+@media(max-width:768px){.sc-grid{grid-template-columns:1fr}}
+.sc-item{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);position:relative;cursor:default}
+.sc-main{height:380px}
+.sc-side{display:grid;gap:14px}
+.sc-sm{height:183px}
+.sc-vis{height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;position:relative;overflow:hidden}
+.sc-bg-ic{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:90px;opacity:.05}
+.sc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 58%)}
+.sc-tag{font-size:9px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:50px;display:inline-block;margin-bottom:8px;position:relative;z-index:1}
+.sc-title{font-family:var(--ff-h);font-size:15px;font-weight:700;color:#fff;position:relative;z-index:1;line-height:1.3}
+.sc-sub{font-size:11px;color:rgba(255,255,255,.5);position:relative;z-index:1;margin-top:5px}
+
+/* ════════════════════════════════
+   TEAM
+════════════════════════════════ */
+#team{background:var(--bg1)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+@media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.team-grid{grid-template-columns:1fr 1fr}}
+.team-c{border-radius:var(--r-md);overflow:hidden;background:var(--bg3);border:1px solid var(--border);transition:border-color .25s,transform .25s}
+.team-c:hover{border-color:rgba(207,92,54,.3);transform:translateY(-4px)}
+.t-av{height:110px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-size:24px;font-weight:800;color:rgba(255,255,255,.12);position:relative}
+.t-av::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.45))}
+.t-av span{position:relative;z-index:1;font-size:26px;font-weight:800;opacity:.2;color:#fff}
+.t-inf{padding:14px}
+.t-name{font-family:var(--ff-h);font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.t-role{font-size:10px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase}
+.t-skills{padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:5px}
+.t-skill{font-size:10px;padding:3px 8px;border-radius:50px;border:1px solid var(--border);color:var(--text2)}
+.t-rev{padding:11px 14px;background:rgba(207,92,54,.06);border-top:1px solid rgba(207,92,54,.14);display:none}
+.team-c:hover .t-rev{display:block}
+.t-rev p{font-size:11px;color:var(--text2);line-height:1.6}
+
+/* ════════════════════════════════
+   TESTIMONIALS
+════════════════════════════════ */
+#testi{background:var(--bg2)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr}}
+.testi-c{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:30px;position:relative;transition:border-color .25s}
+.testi-c:hover{border-color:var(--border-a)}
+.testi-q{font-size:48px;color:var(--flame);line-height:.5;margin-bottom:18px;font-family:Georgia,serif;opacity:.55}
+.testi-t{font-size:14px;color:var(--text2);line-height:1.78;font-style:italic;margin-bottom:22px}
+.testi-auth{display:flex;align-items:center;gap:11px}
+.testi-av{width:38px;height:38px;border-radius:50%;background:rgba(207,92,54,.15);display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-size:11px;font-weight:700;color:var(--flame);flex-shrink:0}
+.testi-n{font-family:var(--ff-h);font-size:12px;font-weight:700;color:#fff}
+.testi-co{font-size:10px;color:var(--text3)}
+
+/* ════════════════════════════════
+   CONTACT
+════════════════════════════════ */
+#contact{background:var(--bg0)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:start;margin-top:44px}
+@media(max-width:900px){.contact-wrap{grid-template-columns:1fr}}
+.c-pre{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:22px}
+.c-items{display:flex;flex-direction:column;gap:12px}
+.c-item{display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);transition:border-color .25s}
+.c-item:hover{border-color:var(--border-a)}
+.c-ic{width:42px;height:42px;border-radius:9px;background:rgba(207,92,54,.1);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--flame);flex-shrink:0}
+.c-lbl{font-size:10px;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.c-val{font-size:13px;color:#fff;font-weight:500}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;font-family:var(--ff-h);font-size:13px;font-weight:700;padding:13px;border-radius:var(--r-md);border:none;transition:opacity .25s,transform .2s;margin-top:10px;width:100%}
+.wa-btn:hover{opacity:.88;transform:translateY(-2px)}
+.soc-row{display:flex;gap:8px;margin-top:8px}
+.soc-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-sm);padding:9px;font-size:11px;color:var(--text2);cursor:pointer;transition:border-color .25s,color .25s}
+.soc-btn:hover{border-color:var(--border-a);color:var(--flame)}
+.cform{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);padding:34px}
+.cf-title{font-family:var(--ff-h);font-size:17px;font-weight:700;color:#fff;margin-bottom:4px}
+.cf-sub{font-size:12px;color:var(--text2);margin-bottom:24px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+@media(max-width:460px){.f-row{grid-template-columns:1fr}}
+.f-grp{margin-bottom:10px}
+.f-lbl{font-size:10px;font-weight:600;letter-spacing:.09em;color:var(--text3);text-transform:uppercase;display:block;margin-bottom:5px}
+.f-in,.f-sel{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 13px;font-size:13px;color:#fff;outline:none;transition:border-color .25s,background .25s;font-family:var(--ff-b)}
+.f-in::placeholder{color:rgba(255,255,255,.22)}
+.f-in:focus,.f-sel:focus{border-color:var(--flame);background:rgba(207,92,54,.04)}
+.f-sel{color:rgba(255,255,255,.55);-webkit-appearance:none}
+.f-sel option{background:#1c2538;color:#fff}
+.f-ta{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 13px;font-size:13px;color:#fff;outline:none;resize:none;height:110px;transition:border-color .25s,background .25s;font-family:var(--ff-b)}
+.f-ta::placeholder{color:rgba(255,255,255,.22)}
+.f-ta:focus{border-color:var(--flame);background:rgba(207,92,54,.04)}
+.f-submit{width:100%;background:var(--flame);color:#fff;font-family:var(--ff-h);font-size:13px;font-weight:700;padding:13px;border-radius:var(--r-sm);border:none;letter-spacing:.05em;transition:background .25s,transform .2s,box-shadow .25s;margin-top:8px}
+.f-submit:hover{background:var(--flame-h);transform:translateY(-2px);box-shadow:0 8px 22px rgba(207,92,54,.28)}
+
+/* ════════════════════════════════
+   FOOTER
+════════════════════════════════ */
+#footer{background:var(--bg0);border-top:1px solid var(--border);padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.foot-grid{grid-template-columns:1fr}}
+.foot-desc{font-size:13px;color:var(--text2);line-height:1.72;max-width:270px;margin:14px 0 18px}
+.foot-soc{display:flex;gap:8px}
+.foot-soc-btn{width:34px;height:34px;border-radius:7px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--text2);cursor:pointer;transition:border-color .25s,color .25s}
+.foot-soc-btn:hover{border-color:var(--border-a);color:var(--flame)}
+.foot-col-t{font-family:var(--ff-h);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--text1);margin-bottom:14px}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-links li a{font-size:13px;color:var(--text2);transition:color .25s}
+.foot-links li a:hover{color:var(--flame)}
+.foot-btm{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:11px;color:var(--text3)}
+.foot-legal{display:flex;gap:18px}
+.foot-legal a{font-size:11px;color:var(--text3);transition:color .25s}
+.foot-legal a:hover{color:var(--flame)}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <a class="nav-brand" href="#">
+    <div class="nav-mark">GT</div>
+    <span class="nav-word">THE GRID</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#pops">POPs</a>
+    <a class="nav-link" href="#team">Team</a>
+    <a class="nav-link" href="#contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="goto('contact')">Plug In</button>
+  <div class="hbg" id="hbg" onclick="toggleMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mob">
+  <a class="nav-link" href="#about" onclick="toggleMob()">About</a>
+  <a class="nav-link" href="#services" onclick="toggleMob()">Services</a>
+  <a class="nav-link" href="#pops" onclick="toggleMob()">POPs</a>
+  <a class="nav-link" href="#team" onclick="toggleMob()">Team</a>
+  <a class="nav-link" href="#contact" onclick="toggleMob()">Contact</a>
+  <button class="nav-cta" onclick="toggleMob();goto('contact')">Plug In</button>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-radial"></div>
+  <div class="hero-inner">
+    <div class="hero-badge rv">
+      <div class="hero-dot"></div>
+      <span class="hero-badge-text">Ecosystem Advertising · Johannesburg, SA</span>
+    </div>
+    <h1 class="hero-h1 rv d1">We don't just find<br>your brand <em>a space.</em></h1>
+    <p class="hero-h2 rv d2">We craft strategic, data-driven brand journeys<br>that live in the real world.</p>
+    <p class="hero-desc rv d3">End-to-end points of presence across strategically defined consumer journeys — from home to airport, to mall, and back. Closed-loop visibility that maximises impact and delivers measurable ROI.</p>
+    <div class="hero-btns rv d4">
+      <button class="btn-p" onclick="goto('contact')">Book a Campaign</button>
+      <button class="btn-s" onclick="goto('services')">Explore Services →</button>
+    </div>
+    <div class="hero-stats rv">
+      <div class="hero-stat">
+        <span class="hstat-n" data-target="35" data-suffix="+">35+</span>
+        <span class="hstat-l">Screens Live</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hstat-n" data-target="500" data-suffix="K+">500K+</span>
+        <span class="hstat-l">Daily Impressions</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hstat-n" data-target="21" data-suffix="M">21M</span>
+        <span class="hstat-l">Airport Passengers/yr</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hstat-n" data-target="6" data-suffix="+">6+</span>
+        <span class="hstat-l">Premium Locations</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div id="trust">
+  <div class="trust-track">
+    <span class="trust-item">Dainfern Square</span><span class="trust-sep"></span>
+    <span class="trust-item">OR Tambo International</span><span class="trust-sep"></span>
+    <span class="trust-item">King Shaka Airport</span><span class="trust-sep"></span>
+    <span class="trust-item">Planet Fitness</span><span class="trust-sep"></span>
+    <span class="trust-item">Cape Town International</span><span class="trust-sep"></span>
+    <span class="trust-item">Witkoppen Road</span><span class="trust-sep"></span>
+    <span class="trust-item">Winnie Mandela Drive</span><span class="trust-sep"></span>
+    <span class="trust-item">Fourways</span><span class="trust-sep"></span>
+    <span class="trust-item">Dainfern Square</span><span class="trust-sep"></span>
+    <span class="trust-item">OR Tambo International</span><span class="trust-sep"></span>
+    <span class="trust-item">King Shaka Airport</span><span class="trust-sep"></span>
+    <span class="trust-item">Planet Fitness</span><span class="trust-sep"></span>
+    <span class="trust-item">Cape Town International</span><span class="trust-sep"></span>
+    <span class="trust-item">Witkoppen Road</span><span class="trust-sep"></span>
+    <span class="trust-item">Winnie Mandela Drive</span><span class="trust-sep"></span>
+    <span class="trust-item">Fourways</span><span class="trust-sep"></span>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section light">
+  <div class="wrap">
+    <div class="about-wrap">
+      <div class="rv">
+        <span class="eyebrow">The Ecosystem Advantage</span>
+        <h2 class="s-title">Closed-loop.<br>End-to-end.<br>Always on.</h2>
+        <p class="about-desc">The Grid is not a billboard company. We are an ecosystem-style advertising and marketing agency presenting clients with a closed-loop, journey-style value proposition — end-to-end points of presence based on waypoints along a strategically defined consumer journey.</p>
+        <p class="about-desc">Our diverse offering delivers value across multiple mediums of engagement, keeping your brand top-of-mind at every critical touchpoint — from the morning commute billboard, through airport security, to the in-mall DOOH screen, and home again. Every placement is a deliberate strategic decision.</p>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-ic"><i class="ti ti-route"></i></div>
+            <div>
+              <div class="pillar-t">Strategic Journey Mapping</div>
+              <div class="pillar-d">We identify where your audience lives, travels, shops and works, then place your brand at every waypoint along that journey.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-ic"><i class="ti ti-chart-dots"></i></div>
+            <div>
+              <div class="pillar-t">Data-Driven Intelligence</div>
+              <div class="pillar-d">Audience measurement, footfall data, and impression modelling deliver real-world evidence of campaign performance — not just eyeballs, but attribution.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-ic"><i class="ti ti-building-skyscraper"></i></div>
+            <div>
+              <div class="pillar-t">Premium Presence Network</div>
+              <div class="pillar-d">Our curated network spans Johannesburg's highest-LSM commercial zones and South Africa's three busiest international airports.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rv d2">
+        <div class="about-card">
+          <div class="ac-glow"></div>
+          <div class="ac-label">Live Network Overview</div>
+          <div class="ac-metric">
+            <div class="ac-num">21M</div>
+            <div class="ac-sub">Airport passengers reached annually</div>
+            <div class="ac-bar"><div class="ac-fill" style="width:85%;background:var(--cornflower)"></div></div>
+          </div>
+          <div class="ac-metric">
+            <div class="ac-num">500K+</div>
+            <div class="ac-sub">Daily digital impressions across network</div>
+            <div class="ac-bar"><div class="ac-fill" style="width:72%;background:var(--flame)"></div></div>
+          </div>
+          <div class="ac-metric" style="margin-bottom:16px">
+            <div class="ac-num">35+</div>
+            <div class="ac-sub">Premium screens monitored 24/7</div>
+            <div class="ac-bar"><div class="ac-fill" style="width:95%;background:var(--viridian)"></div></div>
+          </div>
+          <div class="ac-minis">
+            <div class="ac-mini">
+              <div class="ac-mini-n" style="color:var(--flame)">6+</div>
+              <div class="ac-mini-l">Locations</div>
+            </div>
+            <div class="ac-mini">
+              <div class="ac-mini-n" style="color:var(--cornflower)">3</div>
+              <div class="ac-mini-l">Airports</div>
+            </div>
+            <div class="ac-mini">
+              <div class="ac-mini-n" style="color:var(--viridian)">4</div>
+              <div class="ac-mini-l">Services</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services" class="section">
+  <div class="wrap">
+    <div class="svc-hdr rv">
+      <div>
+        <span class="eyebrow">What We Offer</span>
+        <h2 class="s-title">One ecosystem.<br>Multiple touchpoints.</h2>
+      </div>
+      <p class="svc-hdr-note">Hover each card to reveal what makes each offering uniquely powerful for your brand.</p>
+    </div>
+
+    <div class="svc-grid rv">
+      <!-- LED Billboards -->
+      <div class="flip led">
+        <div class="flip-in">
+          <div class="ff">
+            <i class="ti ti-device-tv f-ic"></i>
+            <div class="f-name">LED Billboards</div>
+            <div class="f-tag">Premium DOOH screens in Johannesburg's highest-LSM commercial zones</div>
+            <div class="f-hint">Hover to explore <i class="ti ti-arrow-right" style="font-size:11px"></i></div>
+          </div>
+          <div class="fb">
+            <div class="fb-t">Digital Out-of-Home</div>
+            <div class="fb-b">Dynamic, loop-ready campaigns across Dainfern Square, Planet Fitness, and Witkoppen Road. Each screen is data-monitored for uptime and performance — delivering your creative to verified high-LSM audiences day and night.</div>
+            <div class="fb-loc">Dainfern Square · Planet Fitness · Witkoppen Road</div>
+          </div>
+        </div>
+      </div>
+      <!-- Airport Trays -->
+      <div class="flip apt">
+        <div class="flip-in">
+          <div class="ff">
+            <i class="ti ti-plane f-ic"></i>
+            <div class="f-name">Airport Security Trays</div>
+            <div class="f-tag">Captive audience at security checkpoints — 21M passengers per year</div>
+            <div class="f-hint">Hover to explore <i class="ti ti-arrow-right" style="font-size:11px"></i></div>
+          </div>
+          <div class="fb">
+            <div class="fb-t">Captive Dwell-Time Media</div>
+            <div class="fb-b">Security tray branding reaches over 21 million passengers annually. Peak dwell time, no scrolling, full visual attention — the most captive, undistracted audience in advertising. Zero competition for attention at the security checkpoint.</div>
+            <div class="fb-loc">OR Tambo · King Shaka · Cape Town Intl</div>
+          </div>
+        </div>
+      </div>
+      <!-- Print Billboards -->
+      <div class="flip prt">
+        <div class="flip-in">
+          <div class="ff">
+            <i class="ti ti-billboard f-ic"></i>
+            <div class="f-name">Print Billboards</div>
+            <div class="f-tag">High-impact static OOH on Johannesburg's busiest arterial routes</div>
+            <div class="f-hint">Hover to explore <i class="ti ti-arrow-right" style="font-size:11px"></i></div>
+          </div>
+          <div class="fb">
+            <div class="fb-t">Static Large Format</div>
+            <div class="fb-b">The iconic 10m × 70m static at Dainfern Square is one of Johannesburg's most visible outdoor formats — strategically placed on Winnie Mandela Drive for maximum commuter impressions. Dominant, unmissable, always on.</div>
+            <div class="fb-loc">Winnie Mandela Drive · Dainfern · Fourways</div>
+          </div>
+        </div>
+      </div>
+      <!-- Data Analytics -->
+      <div class="flip dat">
+        <div class="flip-in">
+          <div class="ff">
+            <i class="ti ti-chart-dots f-ic"></i>
+            <div class="f-name">Data &amp; Analytics</div>
+            <div class="f-tag">Audience measurement, ROI tracking, and campaign attribution</div>
+            <div class="f-hint">Hover to explore <i class="ti ti-arrow-right" style="font-size:11px"></i></div>
+          </div>
+          <div class="fb">
+            <div class="fb-t">Intelligent Attribution</div>
+            <div class="fb-b">Location data, footfall measurement, and impression modelling give clients real-world evidence of campaign performance. Demographic profiling, audience insights, and clear attribution — not just eyeballs, but business results.</div>
+            <div class="fb-loc">Audience Insights · Footfall · Attribution</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journey Strategy Feature -->
+    <div class="jf rv">
+      <div>
+        <div class="jf-eyebrow">Journey Strategy</div>
+        <div class="jf-title">The Closed-Loop Philosophy — Where Advertising Becomes a Journey</div>
+        <div class="jf-body">We don't place ads. We architect consumer journeys. By mapping your audience's daily movement and placing strategic touchpoints at every waypoint, we create a closed-loop ecosystem that keeps your brand omnipresent across an entire day in the life of your target consumer.</div>
+        <button class="btn-p" onclick="goto('journey')">See How It Works</button>
+      </div>
+      <div>
+        <div class="jf-nodes">
+          <div class="jfn">
+            <div class="jfn-dot" style="border-color:rgba(189,194,191,.4);background:rgba(48,52,63,.5)"><i class="ti ti-home" style="color:#BDC2BF;font-size:17px"></i></div>
+            <div class="jfn-l">Home</div>
+          </div>
+          <div class="jf-line"></div>
+          <div class="jfn">
+            <div class="jfn-dot" style="border-color:rgba(113,137,255,.4);background:rgba(27,58,75,.5)"><i class="ti ti-plane" style="color:#7189FF;font-size:17px"></i></div>
+            <div class="jfn-l">Airport</div>
+          </div>
+          <div class="jf-line"></div>
+          <div class="jfn">
+            <div class="jfn-dot" style="border-color:rgba(65,123,90,.4);background:rgba(42,53,32,.5)"><i class="ti ti-building-store" style="color:#417B5A;font-size:17px"></i></div>
+            <div class="jfn-l">Mall</div>
+          </div>
+          <div class="jf-line"></div>
+          <div class="jfn">
+            <div class="jfn-dot" style="border-color:rgba(207,92,54,.5);background:rgba(48,52,63,.5)"><i class="ti ti-home" style="color:#CF5C36;font-size:17px"></i></div>
+            <div class="jfn-l">Closed Loop</div>
+          </div>
+        </div>
+        <div class="jf-caption">Your brand is present at <strong>every waypoint</strong> of the consumer's daily journey — creating repeated, sequenced touchpoints that build recall and drive conversion.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSED LOOP JOURNEY ═══ -->
+<section id="journey" class="section">
+  <div class="j-acc"></div>
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">The Journey Philosophy</span>
+      <h2 class="s-title">Intercept your audience<br>at every waypoint.</h2>
+      <p class="s-sub">Select a waypoint to see how The Grid positions your brand at each stage of the consumer journey — from morning to evening.</p>
+    </div>
+    <div class="j-map rv">
+      <div class="j-steps">
+        <div class="j-step on" id="js0" onclick="setStep(0)">
+          <div class="j-dot" style="border-color:rgba(189,194,191,.3)"><i class="ti ti-home" style="color:#BDC2BF;font-size:17px"></i></div>
+          <span class="j-lbl">Home</span>
+        </div>
+        <div class="j-line" id="jl0"></div>
+        <div class="j-step" id="js1" onclick="setStep(1)">
+          <div class="j-dot" style="border-color:rgba(113,137,255,.3)"><i class="ti ti-plane" style="color:#7189FF;font-size:17px"></i></div>
+          <span class="j-lbl">Airport</span>
+        </div>
+        <div class="j-line" id="jl1"></div>
+        <div class="j-step" id="js2" onclick="setStep(2)">
+          <div class="j-dot" style="border-color:rgba(65,123,90,.3)"><i class="ti ti-building-store" style="color:#417B5A;font-size:17px"></i></div>
+          <span class="j-lbl">Mall</span>
+        </div>
+        <div class="j-line" id="jl2"></div>
+        <div class="j-step" id="js3" onclick="setStep(3)">
+          <div class="j-dot" style="border-color:rgba(207,92,54,.4)"><i class="ti ti-home" style="color:#CF5C36;font-size:17px"></i></div>
+          <span class="j-lbl">Closed Loop</span>
+        </div>
+      </div>
+      <div class="j-detail">
+        <p id="j-text">Select a waypoint above to see how The Grid places your brand at each stage of the consumer journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ POPS ═══ -->
+<section id="pops" class="section">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Points of Presence</span>
+      <h2 class="s-title">Where we live<br>in your world.</h2>
+      <p class="s-sub">Our strategically curated network spans Johannesburg's premier commercial zones and South Africa's three busiest airports.</p>
+    </div>
+    <div class="pops-filter rv">
+      <button class="pf-btn on" onclick="filterPops(this,'all')">All Locations</button>
+      <button class="pf-btn" onclick="filterPops(this,'dooh')">DOOH Screens</button>
+      <button class="pf-btn" onclick="filterPops(this,'airport')">Airports</button>
+    </div>
+    <div class="pops-grid rv">
+      <div class="pop" data-type="dooh">
+        <div class="pop-dot" style="background:var(--flame)"></div>
+        <div>
+          <div class="pop-t">Dainfern Square</div>
+          <div class="pop-k">DOOH · Static Billboard</div>
+          <div class="pop-d">Flagship location featuring both the iconic 10m × 70m static format and premium DOOH screens in Johannesburg's highest-LSM retail precinct.</div>
+        </div>
+      </div>
+      <div class="pop" data-type="dooh">
+        <div class="pop-dot" style="background:var(--flame)"></div>
+        <div>
+          <div class="pop-t">Planet Fitness</div>
+          <div class="pop-k">DOOH · 5 Screens</div>
+          <div class="pop-d">Five premium screens reaching active, health-conscious high-LSM consumers. High dwell time, premium demographic, captive gym environment.</div>
+        </div>
+      </div>
+      <div class="pop" data-type="dooh">
+        <div class="pop-dot" style="background:var(--flame)"></div>
+        <div>
+          <div class="pop-t">Witkoppen Road</div>
+          <div class="pop-k">Digital Billboard</div>
+          <div class="pop-d">High-traffic arterial route billboard capturing thousands of daily commuters along one of Johannesburg's busiest commercial corridors.</div>
+        </div>
+      </div>
+      <div class="pop" data-type="airport">
+        <div class="pop-dot" style="background:var(--cornflower)"></div>
+        <div>
+          <div class="pop-t">OR Tambo International</div>
+          <div class="pop-k">Airport · Security Trays</div>
+          <div class="pop-d">South Africa's busiest airport. Security tray branding reaches every departing passenger — a captive, dwell-time-rich touchpoint with guaranteed attention.</div>
+        </div>
+      </div>
+      <div class="pop" data-type="airport">
+        <div class="pop-dot" style="background:var(--cornflower)"></div>
+        <div>
+          <div class="pop-t">King Shaka International</div>
+          <div class="pop-k">Airport · Security Trays</div>
+          <div class="pop-d">Durban's premier gateway airport. Premium business and leisure traveller demographic. Full security checkpoint tray branding coverage.</div>
+        </div>
+      </div>
+      <div class="pop" data-type="airport">
+        <div class="pop-dot" style="background:var(--viridian)"></div>
+        <div>
+          <div class="pop-t">Cape Town International</div>
+          <div class="pop-k">Airport · Security Trays</div>
+          <div class="pop-d">Cape Town's primary airport — gateway to the Western Cape and one of Africa's most visited destinations. National reach for your brand.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section id="why" class="section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="eyebrow">The Grid Difference</span>
+      <h2 class="s-title">Why leading brands<br>choose The Grid.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-c rv">
+        <div class="why-ic"><i class="ti ti-infinity"></i></div>
+        <div class="why-t">Closed-Loop Strategy</div>
+        <div class="why-d">We architect end-to-end consumer journey campaigns — intercepting your audience at every critical touchpoint across their full daily journey, not just one placement.</div>
+      </div>
+      <div class="why-c rv d1">
+        <div class="why-ic"><i class="ti ti-database"></i></div>
+        <div class="why-t">Data-Driven Results</div>
+        <div class="why-d">Every campaign is backed by audience data, footfall measurement, and attribution modelling. Real-world evidence of performance, not estimates or projections.</div>
+      </div>
+      <div class="why-c rv d2">
+        <div class="why-ic"><i class="ti ti-crown"></i></div>
+        <div class="why-t">Premium-Only Network</div>
+        <div class="why-d">Locations deliberately curated for the highest-LSM audiences. We don't chase volume — we deliver quality, relevance, and premium brand environments exclusively.</div>
+      </div>
+      <div class="why-c rv d3">
+        <div class="why-ic"><i class="ti ti-settings-automation"></i></div>
+        <div class="why-t">End-to-End Management</div>
+        <div class="why-d">From strategy and creative briefing to placement, monitoring, and reporting — every element of your campaign managed so you can focus on your business.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section id="stats" class="section">
+  <div class="wrap">
+    <div class="stats-grid rv">
+      <div class="stat-it">
+        <span class="stat-n" data-target="35" data-suffix="+">35+</span>
+        <span class="stat-l">Premium Screens Live</span>
+      </div>
+      <div class="stat-it">
+        <span class="stat-n" data-target="500" data-suffix="K+">500K+</span>
+        <span class="stat-l">Daily Impressions</span>
+      </div>
+      <div class="stat-it">
+        <span class="stat-n" data-target="21" data-suffix="M">21M</span>
+        <span class="stat-l">Airport Passengers / Year</span>
+      </div>
+      <div class="stat-it">
+        <span class="stat-n" data-target="3">3</span>
+        <span class="stat-l">International Airports</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CAMPAIGN SHOWCASE ═══ -->
+<section id="showcase" class="section">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Campaign Showcase</span>
+      <h2 class="s-title">Where strategy meets<br>the real world.</h2>
+      <p class="s-sub" style="margin-bottom:0">Every screen placement is a deliberate strategic decision — here's how we bring brand journeys to life.</p>
+    </div>
+    <div class="sc-grid rv">
+      <div class="sc-item sc-main">
+        <div class="sc-vis" style="height:100%;background:linear-gradient(135deg,#200d05,#3f1e0c)">
+          <div class="sc-bg-ic"><i class="ti ti-device-tv"></i></div>
+          <div class="sc-ov"></div>
+          <span class="sc-tag" style="background:rgba(207,92,54,.18);border:1px solid rgba(207,92,54,.3);color:var(--flame)">DOOH Network</span>
+          <div class="sc-title">Dainfern Square — LED Flagship Campaign</div>
+          <div class="sc-sub">High-LSM commercial zone · Dynamic creative · 24/7 uptime monitoring · Real-time scheduling</div>
+        </div>
+      </div>
+      <div class="sc-item-side" style="display:grid;gap:14px">
+        <div class="sc-item sc-sm">
+          <div class="sc-vis" style="height:100%;background:linear-gradient(135deg,#0e1438,#1a2255)">
+            <div class="sc-bg-ic" style="font-size:60px"><i class="ti ti-plane"></i></div>
+            <div class="sc-ov"></div>
+            <span class="sc-tag" style="background:rgba(113,137,255,.18);border:1px solid rgba(113,137,255,.3);color:var(--cornflower)">Airport</span>
+            <div class="sc-title" style="font-size:14px">OR Tambo Security Tray Activation</div>
+            <div class="sc-sub">21M passengers/yr · Peak dwell-time · Zero distraction</div>
+          </div>
+        </div>
+        <div class="sc-item sc-sm">
+          <div class="sc-vis" style="height:100%;background:linear-gradient(135deg,#0c2015,#163322)">
+            <div class="sc-bg-ic" style="font-size:60px"><i class="ti ti-chart-dots"></i></div>
+            <div class="sc-ov"></div>
+            <span class="sc-tag" style="background:rgba(65,123,90,.18);border:1px solid rgba(65,123,90,.3);color:var(--viridian)">Analytics</span>
+            <div class="sc-title" style="font-size:14px">Closed-Loop Attribution Report</div>
+            <div class="sc-sub">Footfall data · Audience measurement · Proven ROI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section id="team" class="section">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">The Team</span>
+      <h2 class="s-title">Strategy behind<br>every screen.</h2>
+      <p class="s-sub">Hover a card to reveal the core capabilities driving every campaign we run.</p>
+    </div>
+    <div class="team-grid rv">
+      <div class="team-c">
+        <div class="t-av" style="background:linear-gradient(135deg,#3a1208,rgba(207,92,54,.25))"><span>NM</span></div>
+        <div class="t-inf"><div class="t-name">N. Mthembu</div><div class="t-role">CEO &amp; Founder</div></div>
+        <div class="t-skills"><span class="t-skill">Strategy</span><span class="t-skill">B-BBEE</span><span class="t-skill">Client Relations</span></div>
+        <div class="t-rev"><p>Campaign architecture, B-BBEE compliance, executive client strategy, and the driving vision behind The Grid's closed-loop philosophy and ecosystem model.</p></div>
+      </div>
+      <div class="team-c">
+        <div class="t-av" style="background:linear-gradient(135deg,#0e1438,rgba(113,137,255,.25))"><span>SK</span></div>
+        <div class="t-inf"><div class="t-name">S. Khumalo</div><div class="t-role">Head of Sales</div></div>
+        <div class="t-skills"><span class="t-skill">Media Buying</span><span class="t-skill">Rate Cards</span><span class="t-skill">Negotiations</span></div>
+        <div class="t-rev"><p>Media buying, advertiser relations, rate card negotiation, and strategic sales partnerships — connecting ambitious brands to The Grid ecosystem.</p></div>
+      </div>
+      <div class="team-c">
+        <div class="t-av" style="background:linear-gradient(135deg,#1c1c10,rgba(189,194,191,.2))"><span>TN</span></div>
+        <div class="t-inf"><div class="t-name">T. Nkosi</div><div class="t-role">Creative Director</div></div>
+        <div class="t-skills"><span class="t-skill">Campaign Creative</span><span class="t-skill">Brand Identity</span><span class="t-skill">UI/UX</span></div>
+        <div class="t-rev"><p>Campaign creative direction, brand identity, visual storytelling, and digital design — ensuring every placement makes the strongest possible visual impact.</p></div>
+      </div>
+      <div class="team-c">
+        <div class="t-av" style="background:linear-gradient(135deg,#0c2015,rgba(65,123,90,.25))"><span>LM</span></div>
+        <div class="t-inf"><div class="t-name">L. Mokoena</div><div class="t-role">Data &amp; Analytics</div></div>
+        <div class="t-skills"><span class="t-skill">Audience Data</span><span class="t-skill">Footfall</span><span class="t-skill">Attribution</span></div>
+        <div class="t-rev"><p>Audience data analysis, footfall insights, campaign attribution, and ROI reporting — turning real-world advertising into measurable business results.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testi" class="section">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="eyebrow">Client Voices</span>
+      <h2 class="s-title">What brands say<br>about The Grid.</h2>
+    </div>
+    <div class="testi-grid rv">
+      <div class="testi-c">
+        <div class="testi-q">"</div>
+        <p class="testi-t">The closed-loop approach transformed how we think about OOH. We could see exactly how the airport placement was driving footfall to our retail locations. The attribution data was a revelation for our board.</p>
+        <div class="testi-auth">
+          <div class="testi-av">JV</div>
+          <div><div class="testi-n">Brand Marketing Director</div><div class="testi-co">FMCG — Johannesburg</div></div>
+        </div>
+      </div>
+      <div class="testi-c">
+        <div class="testi-q">"</div>
+        <p class="testi-t">We needed premium, not just presence. The Grid delivered both. The Dainfern Square placement alone exceeded our impression targets by 40%. The strategic thinking behind the placement made all the difference.</p>
+        <div class="testi-auth">
+          <div class="testi-av">SM</div>
+          <div><div class="testi-n">Head of Brand</div><div class="testi-co">Financial Services — Sandton</div></div>
+        </div>
+      </div>
+      <div class="testi-c">
+        <div class="testi-q">"</div>
+        <p class="testi-t">The airport tray execution at OR Tambo was brilliant. Our target audience was holding our brand in their hands for minutes. The conversion impact was unlike any OOH we had ever run before.</p>
+        <div class="testi-auth">
+          <div class="testi-av">KD</div>
+          <div><div class="testi-n">Chief Marketing Officer</div><div class="testi-co">Travel &amp; Hospitality — Cape Town</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="section">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="s-title">Ready to plug in?</h2>
+      <p class="s-sub">Direct lines, no gatekeepers. We respond within 1 business day.</p>
+    </div>
+    <div class="contact-wrap">
+      <div class="rv">
+        <p class="c-pre">Whether you're planning a campaign, want to understand our network, or need a tailored media strategy — our team is ready. No automated responses, no holding queues. Direct access to the people who build your campaign.</p>
+        <div class="c-items">
+          <div class="c-item">
+            <div class="c-ic"><i class="ti ti-phone"></i></div>
+            <div><div class="c-lbl">Call Us</div><div class="c-val">+27 79 365 0188</div></div>
+          </div>
+          <div class="c-item">
+            <div class="c-ic"><i class="ti ti-mail"></i></div>
+            <div><div class="c-lbl">Email Us</div><div class="c-val">sales@thegridtech.co.za</div></div>
+          </div>
+          <div class="c-item">
+            <div class="c-ic"><i class="ti ti-map-pin"></i></div>
+            <div><div class="c-lbl">Location</div><div class="c-val">Johannesburg, South Africa</div></div>
+          </div>
+        </div>
+        <button class="wa-btn" style="margin-top:14px">
+          <i class="ti ti-brand-whatsapp" style="font-size:19px"></i>Chat on WhatsApp
+        </button>
+        <div class="soc-row">
+          <div class="soc-btn"><i class="ti ti-brand-instagram"></i><span>Instagram</span></div>
+          <div class="soc-btn"><i class="ti ti-brand-linkedin"></i><span>LinkedIn</span></div>
+          <div class="soc-btn"><i class="ti ti-brand-facebook"></i><span>Facebook</span></div>
+        </div>
+      </div>
+      <div class="rv d2">
+        <div class="cform">
+          <div class="cf-title">Start a Campaign Brief</div>
+          <div class="cf-sub">Tell us your goals — we'll craft a strategic proposal within 24 hours.</div>
+          <div class="f-row">
+            <div><label class="f-lbl">Your Name</label><input class="f-in" type="text" placeholder="Jane Smith"></div>
+            <div><label class="f-lbl">Company</label><input class="f-in" type="text" placeholder="Acme Corp"></div>
+          </div>
+          <div class="f-grp"><label class="f-lbl">Email Address</label><input class="f-in" type="email" placeholder="jane@company.co.za"></div>
+          <div class="f-grp">
+            <label class="f-lbl">Campaign Type</label>
+            <select class="f-sel">
+              <option value="">Select a service...</option>
+              <option>LED Billboards (DOOH)</option>
+              <option>Airport Security Trays</option>
+              <option>Print Billboards</option>
+              <option>Data &amp; Analytics</option>
+              <option>Full Ecosystem Campaign</option>
+            </select>
+          </div>
+          <div class="f-grp"><label class="f-lbl">Campaign Goals</label><textarea class="f-ta" placeholder="Tell us about your brand, target audience, and campaign objectives..."></textarea></div>
+          <button class="f-submit">Send Brief &nbsp;&rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="nav-brand" style="display:inline-flex;margin-bottom:14px">
+          <div class="nav-mark">GT</div>
+          <span class="nav-word" style="margin-left:11px">THE GRID</span>
+        </div>
+        <p class="foot-desc">Strategic, closed-loop ecosystem advertising. End-to-end points of presence that deliver real-world brand journeys and measurable ROI for ambitious brands.</p>
+        <div class="foot-soc">
+          <div class="foot-soc-btn"><i class="ti ti-brand-instagram"></i></div>
+          <div class="foot-soc-btn"><i class="ti ti-brand-linkedin"></i></div>
+          <div class="foot-soc-btn"><i class="ti ti-brand-facebook"></i></div>
+          <div class="foot-soc-btn"><i class="ti ti-brand-whatsapp"></i></div>
+        </div>
+      </div>
+      <div>
+        <div class="foot-col-t">Services</div>
+        <ul class="foot-links">
+          <li><a href="#services">LED Billboards</a></li>
+          <li><a href="#services">Airport Trays</a></li>
+          <li><a href="#services">Print Billboards</a></li>
+          <li><a href="#services">Data &amp; Analytics</a></li>
+          <li><a href="#journey">Journey Strategy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-t">Company</div>
+        <ul class="foot-links">
+          <li><a href="#about">About The Grid</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#pops">Points of Presence</a></li>
+          <li><a href="#showcase">Case Studies</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-t">Contact</div>
+        <ul class="foot-links">
+          <li><a href="tel:+27793650188">+27 79 365 0188</a></li>
+          <li><a href="mailto:sales@thegridtech.co.za">sales@thegridtech.co.za</a></li>
+          <li><a href="#contact">Johannesburg, SA</a></li>
+          <li><a href="#contact">Download Media Kit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-btm">
+      <span class="foot-copy">© 2026 The Grid Technologies (Pty) Ltd. All rights reserved. Johannesburg, South Africa.</span>
+      <div class="foot-legal">
+        <a href="#">POPIA Policy</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Media Kit</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── NAV ───
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 20), {passive:true});
+
+// ─── SMOOTH GOTO ───
+function goto(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+
+// ─── MOBILE MENU ───
+function toggleMob(){ document.getElementById('mob').classList.toggle('open'); }
+
+// ─── REVEAL ───
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
+}, {threshold:.1});
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+
+// Hero reveals immediately
+setTimeout(() => document.querySelectorAll('#hero .rv').forEach(el => el.classList.add('on')), 80);
+
+// ─── COUNTER ───
+function runCounter(el){
+  const target = +el.dataset.target;
+  const suffix = el.dataset.suffix || '+';
+  let n = 0, step = Math.ceil(target/50);
+  const t = setInterval(() => {
+    n = Math.min(n + step, target);
+    el.textContent = n + suffix;
+    if(n >= target) clearInterval(t);
+  }, 36);
+}
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-target]').forEach(runCounter);
+      co.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.hero-stats,.stats-grid').forEach(el => co.observe(el));
+
+// ─── JOURNEY MAP ───
+const jTexts = [
+  'Home — Brand awareness via digital screens on the morning commute. The Witkoppen Road billboard creates top-of-mind recall before your audience even leaves the neighbourhood. The journey begins.',
+  'Airport — Security tray branding at OR Tambo, King Shaka & Cape Town International. 21 million passengers per year. Peak dwell time, zero distractions, full brand attention at the critical pre-departure moment.',
+  'Mall — DOOH screens at Dainfern Square & Planet Fitness capture high-LSM shoppers and active consumers in-venue. Your brand is present during high-intent purchase decision moments.',
+  'Closed Loop Complete — Your brand has been present at every waypoint. Repeated, sequenced touchpoints have built recall, reinforced messaging, and driven measurable conversion. The journey is complete.'
+];
+function setStep(i){
+  for(let n=0;n<4;n++) document.getElementById('js'+n).classList.toggle('on', n===i);
+  for(let n=0;n<3;n++) { const l=document.getElementById('jl'+n); if(l) l.classList.toggle('on', n<i); }
+  document.getElementById('j-text').textContent = jTexts[i];
+}
+
+// ─── POPS FILTER ───
+function filterPops(btn, type){
+  document.querySelectorAll('.pf-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.pop').forEach(c => {
+    const show = type === 'all' || c.dataset.type === type;
+    c.style.display = show ? 'flex' : 'none';
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--flame:#CF5C36;--gunmetal:#30343F;--silver:#BDC2BF;--viridian:#417B5A;--cornflower:#7189FF;--dark:#1a1c22;--darkb:#22262f}
+.mock{font-family:var(--font-sans);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;background:#1a1c22}
+
+/* NAV */
+.nav{background:#1a1c22;border-bottom:0.5px solid rgba(255,255,255,0.08);padding:0 28px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:32px;height:32px;background:#30343F;border:1px solid #BDC2BF55;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:#BDC2BF;letter-spacing:-1px}
+.logo-text{font-size:14px;font-weight:500;color:#fff;letter-spacing:0.06em}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-link{font-size:12px;color:rgba(255,255,255,0.55);cursor:pointer;transition:color .2s}
+.nav-link:hover{color:#fff}
+.nav-cta{background:#CF5C36;color:#fff;font-size:12px;font-weight:500;padding:7px 16px;border-radius:6px;cursor:pointer;border:none}
+
+/* HERO */
+.hero{background:#1a1c22;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:52px 28px 48px;text-align:center;border-bottom:0.5px solid rgba(255,255,255,0.06);position:relative;overflow:hidden}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(189,194,191,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(189,194,191,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.hero-eyebrow{font-size:11px;letter-spacing:0.14em;color:#CF5C36;text-transform:uppercase;margin-bottom:16px;font-weight:500}
+.hero-h1{font-size:32px;font-weight:500;color:#fff;line-height:1.2;margin-bottom:12px;max-width:520px}
+.hero-h1 span{color:#CF5C36}
+.hero-sub{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:420px;margin-bottom:28px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#CF5C36;color:#fff;font-size:13px;font-weight:500;padding:10px 22px;border-radius:7px;cursor:pointer;border:none}
+.btn-outline{background:transparent;color:#BDC2BF;font-size:13px;padding:10px 22px;border-radius:7px;cursor:pointer;border:1px solid rgba(189,194,191,0.3)}
+.hero-stats{display:flex;gap:0;margin-top:40px;border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;width:100%;max-width:560px}
+.stat{flex:1;padding:14px 10px;text-align:center;border-right:0.5px solid rgba(255,255,255,0.08)}
+.stat:last-child{border-right:none}
+.stat-num{font-size:22px;font-weight:500;color:#CF5C36}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+
+/* SECTION LABELS */
+.sec{padding:36px 28px}
+.sec-label{font-size:11px;letter-spacing:0.12em;color:#CF5C36;text-transform:uppercase;font-weight:500;margin-bottom:6px}
+.sec-title{font-size:20px;font-weight:500;color:#fff;margin-bottom:6px}
+.sec-sub{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;margin-bottom:24px;max-width:480px}
+
+/* SERVICES FLIP CARDS */
+.services{background:#22262f;padding:36px 28px;border-top:0.5px solid rgba(255,255,255,0.06)}
+.flip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.flip-card{background:#2d3240;border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:18px 14px;cursor:pointer;transition:border-color .25s,background .25s}
+.flip-card:hover{border-color:#CF5C3660;background:#322836}
+.flip-card.active{border-color:#CF5C36;background:#2d2520}
+.flip-icon{font-size:22px;color:#CF5C36;margin-bottom:10px}
+.flip-title{font-size:13px;font-weight:500;color:#fff;margin-bottom:5px}
+.flip-desc{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5}
+.flip-detail{background:#2d2520;border:0.5px solid #CF5C3640;border-radius:10px;padding:16px 18px;margin-top:10px;display:none}
+.flip-detail.show{display:block}
+.flip-detail p{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6}
+.flip-detail strong{color:#CF5C36;font-weight:500}
+
+/* POPS / JOURNEY MAP */
+.pops{background:#1e2128;padding:36px 28px;border-top:0.5px solid rgba(255,255,255,0.06)}
+.map-area{background:#22262f;border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;padding:20px;margin-bottom:16px;position:relative;min-height:160px}
+.map-title{font-size:12px;color:rgba(255,255,255,0.35);text-align:center;margin-bottom:12px}
+.journey-line{display:flex;align-items:center;justify-content:space-between;padding:0 12px;margin-bottom:16px}
+.j-node{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer}
+.j-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid transparent;transition:border-color .2s}
+.j-dot.home{background:#30343F;border-color:#BDC2BF55}
+.j-dot.airport{background:#1B3A4B;border-color:#7189FF55}
+.j-dot.mall{background:#2A3520;border-color:#417B5A55}
+.j-dot.active{border-color:#CF5C36 !important}
+.j-label{font-size:10px;color:rgba(255,255,255,0.45)}
+.j-line{flex:1;height:1px;background:rgba(255,255,255,0.1);margin:0 4px;margin-bottom:22px}
+.j-line.active{background:#CF5C3660}
+.pop-pins{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pin{background:#2d3240;border:0.5px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:8px;cursor:pointer;transition:border-color .2s}
+.pin:hover{border-color:#CF5C3650}
+.pin-dot{width:8px;height:8px;border-radius:50%;background:#CF5C36;flex-shrink:0}
+.pin-name{font-size:11px;color:#fff;font-weight:500}
+.pin-type{font-size:10px;color:rgba(255,255,255,0.35)}
+
+/* TEAM */
+.team{background:#22262f;padding:36px 28px;border-top:0.5px solid rgba(255,255,255,0.06)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.team-card{background:#2d3240;border:0.5px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .2s}
+.team-card:hover{border-color:#CF5C3650}
+.team-photo{height:70px;background:#30343F;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:500;color:#BDC2BF;border-bottom:0.5px solid rgba(255,255,255,0.08)}
+.team-info{padding:10px 12px}
+.team-name{font-size:12px;font-weight:500;color:#fff;margin-bottom:2px}
+.team-role{font-size:10px;color:rgba(255,255,255,0.4)}
+.team-flip{background:#2d2520;padding:8px 12px;border-top:0.5px solid #CF5C3625;display:none}
+.team-flip.show{display:block}
+.team-flip p{font-size:10px;color:rgba(255,255,255,0.55);line-height:1.5}
+
+/* CONTACT */
+.contact{background:#1a1c22;padding:36px 28px;border-top:0.5px solid rgba(255,255,255,0.06)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact-left{display:flex;flex-direction:column;gap:10px}
+.contact-item{display:flex;align-items:center;gap:10px;background:#22262f;border:0.5px solid rgba(255,255,255,0.07);border-radius:8px;padding:12px 14px}
+.contact-icon{font-size:18px;color:#CF5C36;flex-shrink:0}
+.contact-label{font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:2px}
+.contact-val{font-size:13px;color:#fff;font-weight:500}
+.wa-btn{background:#417B5A;color:#fff;font-size:13px;font-weight:500;padding:11px 18px;border-radius:7px;border:none;cursor:pointer;display:flex;align-items:center;gap:8px;justify-content:center}
+.social-row{display:flex;gap:8px;margin-top:4px}
+.social-btn{flex:1;background:#2d3240;border:0.5px solid rgba(255,255,255,0.08);border-radius:7px;padding:10px 0;font-size:11px;color:rgba(255,255,255,0.55);cursor:pointer;text-align:center;transition:border-color .2s}
+.social-btn:hover{border-color:#CF5C3660;color:#fff}
+.contact-form{background:#22262f;border:0.5px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px}
+.form-title{font-size:13px;font-weight:500;color:#fff;margin-bottom:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.form-input{background:#30343F;border:0.5px solid rgba(255,255,255,0.1);border-radius:6px;padding:9px 12px;font-size:12px;color:#fff;width:100%;outline:none}
+.form-input::placeholder{color:rgba(255,255,255,0.3)}
+.form-input:focus{border-color:#CF5C36}
+.form-ta{background:#30343F;border:0.5px solid rgba(255,255,255,0.1);border-radius:6px;padding:9px 12px;font-size:12px;color:#fff;width:100%;outline:none;resize:none;height:70px}
+.form-ta::placeholder{color:rgba(255,255,255,0.3)}
+.form-submit{width:100%;background:#CF5C36;color:#fff;font-size:13px;font-weight:500;padding:10px;border-radius:6px;border:none;cursor:pointer;margin-top:8px}
+
+/* FOOTER */
+.footer{background:#111318;padding:20px 28px;border-top:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-size:13px;font-weight:500;color:#BDC2BF;letter-spacing:0.06em}
+.footer-tag{font-size:11px;color:rgba(255,255,255,0.25)}
+.footer-links{display:flex;gap:16px}
+.footer-link{font-size:11px;color:rgba(255,255,255,0.3);cursor:pointer}
+
+/* SECTION NAV PILLS */
+.sec-nav{background:#22262f;padding:10px 28px;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;gap:6px;overflow-x:auto}
+.sec-pill{font-size:11px;color:rgba(255,255,255,0.4);padding:5px 12px;border-radius:20px;cursor:pointer;border:0.5px solid transparent;white-space:nowrap;transition:all .2s}
+.sec-pill:hover{color:#fff;border-color:rgba(255,255,255,0.15)}
+.sec-pill.on{color:#CF5C36;border-color:#CF5C3640;background:#CF5C3610}
+
+@keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#CF5C36;display:inline-block;animation:pulse 2s ease-in-out infinite;margin-right:5px}
+</style>
+
+<h2 class="sr-only">Interactive website mockup for The Grid Technologies, showing all five sections: hero, services, points of presence, team, and contact</h2>
+
+<div class="mock">
+
+  <div class="nav">
+    <div class="nav-logo">
+      <div class="logo-mark">GT</div>
+      <span class="logo-text">THE GRID</span>
+    </div>
+    <div class="nav-links">
+      <span class="nav-link" onclick="scrollTo('s-services')">Services</span>
+      <span class="nav-link" onclick="scrollTo('s-pops')">POPs</span>
+      <span class="nav-link" onclick="scrollTo('s-team')">Team</span>
+      <span class="nav-link" onclick="scrollTo('s-contact')">Contact</span>
+      <button class="nav-cta">Plug In</button>
+    </div>
+  </div>
+
+  <div class="sec-nav">
+    <span class="sec-pill on" onclick="setActive(this,'s-hero')"><span class="live-dot"></span>Landing</span>
+    <span class="sec-pill" onclick="setActive(this,'s-services')">Services</span>
+    <span class="sec-pill" onclick="setActive(this,'s-pops')">POPs</span>
+    <span class="sec-pill" onclick="setActive(this,'s-team')">Team</span>
+    <span class="sec-pill" onclick="setActive(this,'s-contact')">Contact</span>
+  </div>
+
+  <div id="s-hero" class="hero">
+    <div class="hero-bg-grid"></div>
+    <p class="hero-eyebrow">Plug into The Grid</p>
+    <h1 class="hero-h1">We craft <span>strategic brand journeys</span> that live in the real world</h1>
+    <p class="hero-sub">End-to-end points of presence along a strategically defined journey — maximising impact and delivering ROI for ambitious brands.</p>
+    <div class="hero-btns">
+      <button class="btn-primary">Book a campaign</button>
+      <button class="btn-outline">Download media kit</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">35+</div><div class="stat-label">Screens live</div></div>
+      <div class="stat"><div class="stat-num">500K+</div><div class="stat-label">Daily impressions</div></div>
+      <div class="stat"><div class="stat-num">21M</div><div class="stat-label">Airport passengers/yr</div></div>
+      <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Premium locations</div></div>
+    </div>
+  </div>
+
+  <div id="s-services" class="services">
+    <p class="sec-label">What we offer</p>
+    <p class="sec-title">Closed loop. End-to-end. Always on.</p>
+    <p class="sec-sub">Click any offering to explore the detail behind the strategy.</p>
+    <div class="flip-grid">
+      <div class="flip-card" onclick="flipCard(this,'led')">
+        <div class="flip-icon"><i class="ti ti-device-tv" aria-hidden="true"></i></div>
+        <div class="flip-title">LED Billboards</div>
+        <div class="flip-desc">Premium DOOH screens in high-LSM locations</div>
+      </div>
+      <div class="flip-card" onclick="flipCard(this,'airport')">
+        <div class="flip-icon"><i class="ti ti-plane" aria-hidden="true"></i></div>
+        <div class="flip-title">Airport Trays</div>
+        <div class="flip-desc">Captive audience at security checkpoints</div>
+      </div>
+      <div class="flip-card" onclick="flipCard(this,'print')">
+        <div class="flip-icon"><i class="ti ti-billboard" aria-hidden="true"></i></div>
+        <div class="flip-title">Print Billboards</div>
+        <div class="flip-desc">High-impact static OOH on arterial routes</div>
+      </div>
+      <div class="flip-card" onclick="flipCard(this,'data')">
+        <div class="flip-icon"><i class="ti ti-chart-dots" aria-hidden="true"></i></div>
+        <div class="flip-title">Data & Analytics</div>
+        <div class="flip-desc">Audience measurement and ROI tracking</div>
+      </div>
+    </div>
+    <div id="detail-led" class="flip-detail"><p><strong>Dainfern Square · Planet Fitness · Witkoppen Road</strong><br>Our DOOH network delivers dynamic, loop-ready campaigns across Johannesburg's highest-LSM commercial zones. Each screen is data-monitored for uptime and performance.</p></div>
+    <div id="detail-airport" class="flip-detail"><p><strong>OR Tambo · King Shaka · Cape Town International</strong><br>Security tray branding reaches <strong>21 million passengers per year</strong> — a captive, dwell-time-rich touchpoint with zero scrolling and full visual attention.</p></div>
+    <div id="detail-print" class="flip-detail"><p><strong>Winnie Mandela Drive · Dainfern · Fourways</strong><br>The iconic 10m × 70m static at Dainfern Square is one of Johannesburg's most visible outdoor formats. Strategically placed on high-traffic commuter routes.</p></div>
+    <div id="detail-data" class="flip-detail"><p><strong>Audience insights · Footfall data · Campaign attribution</strong><br>We combine location data, footfall measurement, and impression modelling to give clients real-world evidence of campaign performance — not just eyeballs.</p></div>
+  </div>
+
+  <div id="s-pops" class="pops">
+    <p class="sec-label">Points of presence</p>
+    <p class="sec-title">The closed loop journey</p>
+    <p class="sec-sub">Tap a waypoint to see how we intercept your audience across their daily journey.</p>
+    <div class="map-area">
+      <p class="map-title">Johannesburg — brand journey map</p>
+      <div class="journey-line">
+        <div class="j-node" onclick="setJourney(0)">
+          <div class="j-dot home active" id="jd0"><i class="ti ti-home" style="font-size:16px;color:#BDC2BF" aria-hidden="true"></i></div>
+          <span class="j-label">Home</span>
+        </div>
+        <div class="j-line" id="jl0"></div>
+        <div class="j-node" onclick="setJourney(1)">
+          <div class="j-dot airport" id="jd1"><i class="ti ti-plane" style="font-size:16px;color:#7189FF" aria-hidden="true"></i></div>
+          <span class="j-label">Airport</span>
+        </div>
+        <div class="j-line" id="jl1"></div>
+        <div class="j-node" onclick="setJourney(2)">
+          <div class="j-dot mall" id="jd2"><i class="ti ti-building-store" style="font-size:16px;color:#417B5A" aria-hidden="true"></i></div>
+          <span class="j-label">Mall</span>
+        </div>
+        <div class="j-line" id="jl2"></div>
+        <div class="j-node" onclick="setJourney(3)">
+          <div class="j-dot home" id="jd3"><i class="ti ti-home" style="font-size:16px;color:#BDC2BF" aria-hidden="true"></i></div>
+          <span class="j-label">Home</span>
+        </div>
+      </div>
+      <div id="journey-detail" style="font-size:12px;color:rgba(255,255,255,0.55);text-align:center;padding:0 20px;min-height:28px">Tap a waypoint to see brand touchpoints along the journey.</div>
+    </div>
+    <div class="pop-pins">
+      <div class="pin"><div class="pin-dot"></div><div><div class="pin-name">Dainfern Square</div><div class="pin-type">DOOH · Static</div></div></div>
+      <div class="pin"><div class="pin-dot"></div><div><div class="pin-name">Planet Fitness</div><div class="pin-type">DOOH · 5 screens</div></div></div>
+      <div class="pin"><div class="pin-dot"></div><div><div class="pin-name">Witkoppen Road</div><div class="pin-type">Digital billboard</div></div></div>
+      <div class="pin"><div class="pin-dot" style="background:#7189FF"></div><div><div class="pin-name">OR Tambo Airport</div><div class="pin-type">Security trays</div></div></div>
+      <div class="pin"><div class="pin-dot" style="background:#7189FF"></div><div><div class="pin-name">King Shaka Airport</div><div class="pin-type">Security trays</div></div></div>
+      <div class="pin"><div class="pin-dot" style="background:#417B5A"></div><div><div class="pin-name">Cape Town Intl</div><div class="pin-type">Security trays</div></div></div>
+    </div>
+  </div>
+
+  <div id="s-team" class="team">
+    <p class="sec-label">The team</p>
+    <p class="sec-title">Strategy behind every screen</p>
+    <p class="sec-sub">Hover a card to reveal core capabilities.</p>
+    <div class="team-grid">
+      <div class="team-card" onmouseenter="showTeam(this)" onmouseleave="hideTeam(this)">
+        <div class="team-photo">NM</div>
+        <div class="team-info"><div class="team-name">N. Mthembu</div><div class="team-role">CEO & Founder</div></div>
+        <div class="team-flip"><p>Strategy · B-BBEE · Client relations · Campaign architecture</p></div>
+      </div>
+      <div class="team-card" onmouseenter="showTeam(this)" onmouseleave="hideTeam(this)">
+        <div class="team-photo">SK</div>
+        <div class="team-info"><div class="team-name">S. Khumalo</div><div class="team-role">Head of Sales</div></div>
+        <div class="team-flip"><p>Media buying · Rate cards · Advertiser relations · Negotiations</p></div>
+      </div>
+      <div class="team-card" onmouseenter="showTeam(this)" onmouseleave="hideTeam(this)">
+        <div class="team-photo">TN</div>
+        <div class="team-info"><div class="team-name">T. Nkosi</div><div class="team-role">Creative Director</div></div>
+        <div class="team-flip"><p>Campaign creative · Brand identity · Visual storytelling · UI</p></div>
+      </div>
+      <div class="team-card" onmouseenter="showTeam(this)" onmouseleave="hideTeam(this)">
+        <div class="team-photo">LM</div>
+        <div class="team-info"><div class="team-name">L. Mokoena</div><div class="team-role">Data & Analytics</div></div>
+        <div class="team-flip"><p>Audience data · Footfall insights · Attribution · Reporting</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="s-contact" class="contact">
+    <p class="sec-label">Get in touch</p>
+    <p class="sec-title">Ready to plug in?</p>
+    <p class="sec-sub">Direct lines, no gatekeepers. We respond within 1 business day.</p>
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="contact-item">
+          <i class="ti ti-phone contact-icon" aria-hidden="true"></i>
+          <div><div class="contact-label">Call us</div><div class="contact-val">+27 79 365 0188</div></div>
+        </div>
+        <div class="contact-item">
+          <i class="ti ti-mail contact-icon" aria-hidden="true"></i>
+          <div><div class="contact-label">Email us</div><div class="contact-val">sales@thegridtech.co.za</div></div>
+        </div>
+        <button class="wa-btn"><i class="ti ti-brand-whatsapp" style="font-size:18px" aria-hidden="true"></i> Chat on WhatsApp</button>
+        <div class="social-row">
+          <div class="social-btn"><i class="ti ti-brand-instagram" style="font-size:14px" aria-hidden="true"></i> Instagram</div>
+          <div class="social-btn"><i class="ti ti-brand-linkedin" style="font-size:14px" aria-hidden="true"></i> LinkedIn</div>
+          <div class="social-btn"><i class="ti ti-brand-facebook" style="font-size:14px" aria-hidden="true"></i> Facebook</div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-title">Start a campaign brief</div>
+        <div class="form-row">
+          <input class="form-input" placeholder="Your name">
+          <input class="form-input" placeholder="Company">
+        </div>
+        <input class="form-input" placeholder="Email address" style="width:100%;margin-bottom:8px">
+        <textarea class="form-ta" placeholder="Tell us about your campaign goals..."></textarea>
+        <button class="form-submit">Send brief &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="footer-logo">THE GRID TECHNOLOGIES</div>
+      <div class="footer-tag">Plug into the ecosystem · Johannesburg, SA</div>
+    </div>
+    <div class="footer-links">
+      <span class="footer-link">POPIA Policy</span>
+      <span class="footer-link">Media Kit</span>
+      <span class="footer-link">©2026</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const journeyText = [
+  'Home — Brand awareness via digital screens seen on the morning commute. Witkoppen Road billboard creates top-of-mind recall.',
+  'Airport — Security tray branding at OR Tambo & King Shaka. 21M passengers/year. Peak dwell time, full attention.',
+  'Mall — DOOH screens at Dainfern Square & Planet Fitness capture high-LSM shoppers and active consumers in-venue.',
+  'Home — Campaign complete. Closed loop delivered. Brand visibility at every waypoint on the consumer journey.'
+];
+function setJourney(i) {
+  for(let n=0;n<4;n++){
+    document.getElementById('jd'+n).classList.toggle('active', n===i);
+  }
+  for(let n=0;n<3;n++){
+    document.getElementById('jl'+n).classList.toggle('active', n<i);
+  }
+  document.getElementById('journey-detail').textContent = journeyText[i];
+}
+function flipCard(el, key) {
+  const wasActive = el.classList.contains('active');
+  document.querySelectorAll('.flip-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.flip-detail').forEach(d => d.classList.remove('show'));
+  if(!wasActive) {
+    el.classList.add('active');
+    const det = document.getElementById('detail-'+key);
+    if(det) det.classList.add('show');
+  }
+}
+function showTeam(el) { el.querySelector('.team-flip').classList.add('show'); }
+function hideTeam(el) { el.querySelector('.team-flip').classList.remove('show'); }
+function setActive(pill, id) {
+  document.querySelectorAll('.sec-pill').forEach(p => p.classList.remove('on'));
+  pill.classList.add('on');
+  document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
