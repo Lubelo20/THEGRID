@@ -220,3 +220,5 @@ select.f-in option{background:var(--base2);color:#fff}
 .marquee-track{will-change:transform}
 /* team: single column on small phones */
 @media(max-width:460px){.team-grid{grid-template-columns:1fr}}
+
+@media (prefers-reduced-motion: reduce){.marquee-track > [aria-hidden]{display:none}}

@@ -4,10 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   const hbg = document.querySelector('.hbg'), mob = document.getElementById('mob');
-  const toggle = (open) => { hbg.classList.toggle('open', open); hbg.setAttribute('aria-expanded', open); hbg.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); mob.hidden = !open; };
+  const toggle = (open) => { hbg.classList.toggle('open', open); hbg.setAttribute('aria-expanded', open); hbg.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); mob.hidden = !open; if (open) mob.querySelector('a').focus(); };
   toggle(false);
   hbg.addEventListener('click', () => toggle(mob.hidden));
   mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !mob.hidden) { toggle(false); hbg.focus(); } });
 
   // active section highlight
   const links = [...document.querySelectorAll('.nav-links a')];
