@@ -166,3 +166,18 @@ h1,h2,h3,h4{font-family:var(--ff-h);font-weight:800;line-height:1.04;letter-spac
 .marquee-track span:hover{opacity:.85}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}}
+
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.tcard{background:#fff;border:1px solid rgba(22,19,15,.1);border-radius:var(--r);overflow:hidden;transition:border-color .25s,transform .2s}
+.tcard:hover{border-color:var(--viridian);transform:translateY(-4px)}
+.tav{height:150px;display:flex;align-items:center;justify-content:center}
+.tav span{font-family:var(--ff-h);font-weight:900;font-size:34px;color:rgba(255,255,255,.25)}
+.tbody{padding:16px}
+.tbody h3{font-size:15px;font-weight:700;color:var(--ink)}
+.trole{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--viridian);display:block;margin:3px 0 11px}
+.tskills{display:flex;flex-wrap:wrap;gap:5px}
+.tskills span{font-size:10px;padding:3px 9px;border-radius:var(--r-pill);border:1px solid rgba(22,19,15,.15);color:var(--t-on-silver-2)}
+.trev{max-height:0;overflow:hidden;background:rgba(65,123,90,.07);transition:max-height .35s var(--ease)}
+.tcard:hover .trev,.tcard:focus-within .trev{max-height:140px}
+.trev p{font-size:12px;line-height:1.6;color:var(--t-on-silver-2);padding:14px 16px}
+@media(max-width:860px){.team-grid{grid-template-columns:1fr 1fr}}
