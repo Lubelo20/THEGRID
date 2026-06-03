@@ -3,7 +3,7 @@
 
 :root{
   --gunmetal:#30343F; --base:#16181d; --base2:#1c1f27;
-  --flame:#CF5C36; --flame-h:#e06a42;
+  --flame:#CF5C36; --flame-h:#e06a42; --flame-ink:#7c3318;
   --silver:#BDC2BF; --silver-l:#cdd1ce; --silver-d:#a9aeab;
   --viridian:#417B5A; --cornflower:#7189FF;
   --ink:#16130f;
@@ -38,6 +38,7 @@ h1,h2,h3,h4{font-family:var(--ff-h);font-weight:800;line-height:1.04;letter-spac
 .s-sub{font-size:16px;line-height:1.7;max-width:560px}
 .band-dark .s-sub{color:var(--t-on-dark-2)}
 .band-silver .s-sub{color:var(--t-on-silver-2)}
+.band-silver .eyebrow,.band-silver .mv-k{color:var(--flame-ink)}
 
 /* buttons */
 .btn-p{display:inline-block;font-family:var(--ff-h);font-size:13px;font-weight:700;letter-spacing:.03em;background:var(--flame);color:#fff;padding:14px 28px;border-radius:var(--r-pill);border:none;cursor:pointer;transition:background .25s,transform .2s,box-shadow .25s}
