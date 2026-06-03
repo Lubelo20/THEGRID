@@ -44,4 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (jText) jText.textContent = jTexts[i];
   };
   steps.forEach((s, i) => s.addEventListener('click', () => setStep(i)));
+
+  // contact form (no backend yet — validate + show success; swap to Formspree later)
+  const form = document.querySelector('.cform');
+  if (form) form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    form.querySelector('.f-msg').hidden = false;
+    form.querySelectorAll('.f-in').forEach(i => i.value = '');
+  });
 });
