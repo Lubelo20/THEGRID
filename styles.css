@@ -236,5 +236,5 @@ select.f-in option{background:var(--base2);color:#fff}
 #mob a.active{color:var(--flame)}
 
 /* ── home: journey explainer video ── */
-.video-frame{display:block;width:100%;aspect-ratio:16/9;margin-top:36px;border-radius:18px;overflow:hidden;background:var(--gunmetal);border:1px solid rgba(22,19,15,.14);object-fit:cover}
+.video-frame{display:block;width:100%;max-width:720px;aspect-ratio:16/9;margin:36px auto 0;border-radius:18px;overflow:hidden;background:var(--gunmetal);border:1px solid rgba(22,19,15,.14);object-fit:cover}
 .video-cap{text-align:center;font-size:12px;color:var(--t-on-silver-2);margin-top:12px}
