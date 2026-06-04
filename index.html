@@ -5,13 +5,73 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The Grid Technologies — 100% Black-owned digital Out-of-Home advertising. Strategic, data-driven brand journeys across premium points of presence in South Africa.">
 <title>The Grid Technologies — Digital Out-of-Home Advertising</title>
+<meta name="theme-color" content="#16181d">
+<link rel="canonical" href="https://www.thegridtech.co.za/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Grid Technologies">
+<meta property="og:title" content="The Grid Technologies — Digital Out-of-Home Advertising">
+<meta property="og:description" content="100% Black-owned digital Out-of-Home advertising. Strategic, data-driven brand journeys across premium points of presence in South Africa.">
+<meta property="og:url" content="https://www.thegridtech.co.za/">
+<meta property="og:image" content="https://www.thegridtech.co.za/assets/video/journey-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="grid-splash" role="dialog" aria-modal="true" aria-label="The Grid intro animation">
+  <div id="grid-splash-canvas"></div>
+  <button id="grid-splash-skip" type="button">Skip &#9656;</button>
+</div>
+<script src="grid-intro.js"></script>
+<script>
+(function () {
+  var splash = document.getElementById('grid-splash');
+  if (!splash) return;
+  // Returning visitors (this session) and reduced-motion users go straight in.
+  var seen; try { seen = sessionStorage.getItem('gridIntroSeen'); } catch (e) {}
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (seen || reduce) { splash.remove(); return; }
+
+  var html = document.documentElement, body = document.body;
+  html.style.overflow = 'hidden'; body.style.overflow = 'hidden';
+
+  var PERIOD = 4600, HOLD = 1000, FADE = 600; // play once, hold, then fade out
+  var ctrl = GridIntro.mount('#grid-splash-canvas', {
+    text: 'The GRID',
+    subtitle: 'DIGITAL OUT-OF-HOME ADVERTISING',
+    font: "'Jost', sans-serif",   // match the site's heading/brand font
+    weight: 800,                   // match brand wordmark weight
+    maxSize: 128,
+    loop: false,
+    period: PERIOD,
+    subtitleColor: '#CF5C36',      // flame, like the site's eyebrows
+    grid: false,                   // dot texture comes from CSS instead
+    background: 'transparent'
+  });
+
+  var done = false;
+  function dismiss() {
+    if (done) return; done = true;
+    clearTimeout(timer);
+    try { sessionStorage.setItem('gridIntroSeen', '1'); } catch (e) {}
+    splash.classList.add('hide');
+    setTimeout(function () {
+      if (ctrl && ctrl.destroy) ctrl.destroy();
+      splash.remove();
+      html.style.overflow = ''; body.style.overflow = '';
+    }, FADE);
+  }
+  var timer = setTimeout(dismiss, PERIOD + HOLD);
+  var skip = document.getElementById('grid-splash-skip');
+  if (skip) skip.addEventListener('click', dismiss);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') dismiss(); });
+})();
+</script>
+<a class="skip" href="#main">Skip to content</a>
 <nav id="nav" aria-label="Primary">
   <a class="brand" href="index.html" aria-label="The Grid — home">
-    <span class="mark" aria-hidden="true">GT</span><!-- ASSET: brushed-aluminium logo -->
+    <span class="mark" aria-hidden="true">GT</span>
     <span class="brand-word">THE GRID</span>
   </a>
   <ul class="nav-links">
@@ -30,10 +90,12 @@
   <a href="clients.html">Clients</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
   <a href="contact.html" class="nav-cta">Plug In</a>
 </div>
-<main>
+<main id="main">
   <section class="band-dark hero">
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="wrap hero-inner">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-hidden="true">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
       <div class="hero-copy">
         <div class="hero-badge rv"><span class="dot"></span>Innovative Digital OOH · 100% Black-Owned · Johannesburg</div>
         <h1 class="hero-h1 rv d1">We don't just find your brand <em>a space.</em></h1>
@@ -43,10 +105,10 @@
           <a href="services.html" class="btn-s">Explore Services →</a>
         </div>
       </div>
-      <div class="hero-media rv d2" role="img" aria-label="The Grid digital billboard in-situ at Dainfern Square with people passing">
-        <span class="hero-media-tag">IN-SITU · PEOPLE · DAINFERN SQUARE</span><!-- ASSET: real in-situ hero photo -->
-      </div>
     </div>
+  </section>
+
+  <section class="stats-band">
     <div class="wrap">
       <div class="stats rv">
         <div class="stat"><b data-target="16" data-suffix="+">0</b><small>Digital Screens Live</small></div>
@@ -72,27 +134,27 @@
     </div>
   </section>
 
-  <section class="band-dark section">
+  <section class="band-dark section video-section">
     <div class="wrap">
-      <div class="video-row">
-        <video class="video-frame rv" controls preload="none" playsinline poster="assets/video/journey-poster.jpg" aria-label="The Grid closed-loop journey explainer video">
+      <div class="video-head rv">
+        <span class="eyebrow">In Motion</span>
+        <h2 class="s-title">The closed-loop journey</h2>
+        <p class="s-sub">See how we place your brand at every waypoint of the consumer's day — home, airport, mall and back again — building recall through repeated, sequenced touchpoints.</p>
+      </div>
+      <div class="video-stage rv d2">
+        <video class="video-frame" id="journeyVideo" autoplay muted loop playsinline controls preload="auto" poster="assets/video/journey-poster.jpg" aria-label="The Grid closed-loop journey explainer video">
           <source src="assets/video/journey.mp4" type="video/mp4">
         </video>
-        <div class="video-copy rv d2">
-          <span class="eyebrow">In Motion</span>
-          <h3>The closed-loop journey</h3>
-          <p>See how we place your brand at every waypoint of the consumer's day — home, airport, mall and back again — building recall through repeated, sequenced touchpoints.</p>
-          <a href="pops.html" class="btn-s">Explore the journey →</a>
-        </div>
       </div>
+      <div class="video-cta rv d3"><a href="pops.html" class="btn-s">Explore the journey →</a></div>
     </div>
   </section>
 
-  <section class="band-dark section">
+  <section class="band-silver section">
     <div class="wrap" style="text-align:center">
       <div class="rv">
         <span class="eyebrow">Trusted By</span>
-        <h2 class="s-title">Brands that move<br>with The Grid.</h2>
+        <h2 class="s-title" style="color:var(--ink)">Brands that move<br>with The Grid.</h2>
         <p class="s-sub" style="margin:0 auto 8px">South Africa's leading brands plug into our network.</p>
       </div>
     </div>
@@ -105,10 +167,10 @@
     </div>
   </section>
 
-  <section class="band-silver section cta-band">
+  <section class="band-dark section cta-band">
     <div class="wrap rv">
       <span class="eyebrow">Start Your Journey</span>
-      <h2 class="s-title" style="color:var(--ink)">Ready to plug in?</h2>
+      <h2 class="s-title">Ready to plug in?</h2>
       <p class="cta-sub">Direct lines, no gatekeepers. We craft a strategic proposal within 24 hours.</p>
       <div class="cta-btns"><a href="contact.html" class="btn-p">Book a Campaign</a><a href="services.html" class="btn-s">Explore Services →</a></div>
     </div>
@@ -117,14 +179,29 @@
 <footer class="band-dark">
   <div class="wrap foot">
     <div class="foot-brand">
-      <a class="brand" href="index.html"><span class="mark" aria-hidden="true">GT</span><span class="brand-word">THE GRID</span></a>
+      <a class="brand" href="index.html"><img class="foot-logo" src="assets/logo-plugged.png" alt=""><span class="brand-word">THE GRID</span></a>
       <p>Strategic, closed-loop ecosystem advertising. 100% Black-owned digital Out-of-Home delivering measurable ROI for ambitious brands.</p>
+      <div class="foot-soc">
+        <a href="https://www.facebook.com/thegridaeonline" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+        <a href="https://x.com/thegridonline" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="ti ti-brand-x" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/company/the-grid-online/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/thegridonline/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+      </div>
     </div>
-    <nav class="foot-links" aria-label="Footer">
-      <a href="services.html">Services</a><a href="pops.html">Points of Presence</a><a href="clients.html">Clients</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+    <nav class="foot-col" aria-label="Footer">
+      <span class="foot-h">Explore</span>
+      <a href="work.html">Way of Work</a><a href="services.html">Services</a><a href="pops.html">Points of Presence</a><a href="clients.html">Clients</a><a href="team.html">Team</a>
     </nav>
+    <div class="foot-col">
+      <span class="foot-h">Get in Touch</span>
+      <a href="tel:+27793650188"><i class="ti ti-phone" aria-hidden="true"></i> +27 79 365 0188</a>
+      <a href="mailto:sales@thegridtech.co.za"><i class="ti ti-mail" aria-hidden="true"></i> sales@thegridtech.co.za</a>
+      <a href="https://wa.me/27793650188" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+      <span class="foot-loc"><i class="ti ti-map-pin" aria-hidden="true"></i> Johannesburg, SA</span>
+      <a href="contact.html" class="nav-cta foot-cta">Plug In</a>
+    </div>
   </div>
-  <div class="wrap foot-btm"><span>© 2026 The Grid Technologies (Pty) Ltd. All rights reserved.</span><span>Johannesburg, SA</span></div>
+  <div class="wrap foot-btm"><span>© 2026 The Grid Technologies (Pty) Ltd. All rights reserved.</span><span>Designed by <a href="https://lubelotechsolutions.co.za/" target="_blank" rel="noopener noreferrer">Lubelo Tech Solutions</a></span></div>
 </footer>
 <script src="script.js"></script>
 </body>

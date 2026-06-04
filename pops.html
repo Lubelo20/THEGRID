@@ -5,13 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The Grid points of presence — premium digital and static OOH locations across Johannesburg and South Africa's three busiest international airports.">
 <title>Points of Presence — The Grid Technologies</title>
+<meta name="theme-color" content="#16181d">
+<link rel="canonical" href="https://www.thegridtech.co.za/pops.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Grid Technologies">
+<meta property="og:title" content="Points of Presence — The Grid Technologies">
+<meta property="og:description" content="Premium digital and static OOH locations across Johannesburg and South Africa's three busiest international airports.">
+<meta property="og:url" content="https://www.thegridtech.co.za/pops.html">
+<meta property="og:image" content="https://www.thegridtech.co.za/assets/video/journey-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <nav id="nav" aria-label="Primary">
   <a class="brand" href="index.html" aria-label="The Grid — home">
-    <span class="mark" aria-hidden="true">GT</span><!-- ASSET: brushed-aluminium logo -->
+    <span class="mark" aria-hidden="true">GT</span>
     <span class="brand-word">THE GRID</span>
   </a>
   <ul class="nav-links">
@@ -30,12 +41,12 @@
   <a href="clients.html">Clients</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
   <a href="contact.html" class="nav-cta">Plug In</a>
 </div>
-<main>
+<main id="main">
   <section class="band-silver section page-top">
     <div class="wrap">
       <div class="rv" style="text-align:center">
         <span class="eyebrow">Points of Presence</span>
-        <h2 class="s-title" style="color:var(--ink)">Intercept your audience<br>at every waypoint.</h2>
+        <h1 class="s-title" style="color:var(--ink)">Intercept your audience<br>at every waypoint.</h1>
         <p class="s-sub" style="margin:0 auto">Select a stage to see how The Grid positions your brand across the day.</p>
       </div>
       <div class="journey rv">
@@ -61,6 +72,37 @@
     </div>
   </section>
 
+  <section class="band-dark section">
+    <div class="wrap" style="text-align:center">
+      <div class="rv">
+        <span class="eyebrow">National Footprint</span>
+        <h2 class="s-title">Our presence,<br>on the map.</h2>
+        <p class="s-sub" style="margin:0 auto">Tap a pin to explore each location. <span style="color:var(--flame)">Flame</span> = digital &amp; static · <span style="color:var(--cornflower)">blue</span> = airport trays · <span style="color:var(--viridian)">green</span> = Cape Town.</p>
+      </div>
+      <div class="gmap rv d2" role="group" aria-label="Map of The Grid points of presence across South Africa">
+        <img class="gmap-land" src="assets/za-map.svg" alt="Map of South Africa" loading="lazy">
+        <svg class="gmap-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="71" y1="31" x2="89" y2="59" vector-effect="non-scaling-stroke"/>
+          <line x1="89" y1="59" x2="13" y2="92" vector-effect="non-scaling-stroke"/>
+          <line x1="13" y1="92" x2="71" y2="31" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <button class="pin pin-flame" style="left:67%;top:29%" data-name="Dainfern Square" data-meta="DOOH · Static · Fourways" data-desc="10 digital screens plus the iconic 10m × 70m static on Winnie Mandela Drive, in JHB's premier high-LSM retail precinct.">
+          <span class="pin-dot"></span><span class="pin-label">Dainfern Square</span></button>
+        <button class="pin pin-flame" style="left:67.5%;top:34%" data-name="Witkoppen Road" data-meta="Digital Billboard · Paulshof" data-desc="High-traffic arterial route between Fourways and Sandton — thousands of AB-income commuters daily.">
+          <span class="pin-dot"></span><span class="pin-label">Witkoppen Road</span></button>
+        <button class="pin pin-flame" style="left:75%;top:28%" data-name="Planet Fitness" data-meta="DOOH · 5 Screens · National" data-desc="Five premium screens reaching an active, health-conscious, high-spending demographic with 45–90 min dwell times.">
+          <span class="pin-dot"></span><span class="pin-label">Planet Fitness</span></button>
+        <button class="pin pin-air" style="left:75%;top:33.5%" data-name="OR Tambo International" data-meta="Airport Trays · Gauteng" data-desc="SA's busiest airport. Every departing passenger handles a branded security tray for 30–60s of undivided attention.">
+          <span class="pin-dot"></span><span class="pin-label">OR Tambo</span></button>
+        <button class="pin pin-air" style="left:89%;top:59%" data-name="King Shaka International" data-meta="Airport Trays · KZN" data-desc="Durban's gateway — a premium business and leisure traveller demographic, full checkpoint coverage.">
+          <span class="pin-dot"></span><span class="pin-label">King Shaka</span></button>
+        <button class="pin pin-cape" style="left:13%;top:92%" data-name="Cape Town International" data-meta="Airport Trays · W. Cape" data-desc="Gateway to the Western Cape — domestic business travellers plus high-income international tourists.">
+          <span class="pin-dot"></span><span class="pin-label">Cape Town</span></button>
+      </div>
+      <div class="gmap-pop rv d3" aria-live="polite"><span class="k">Tap a pin</span><h3>Six premium points of presence</h3><p>From the Johannesburg high-LSM cluster to South Africa's three busiest international airports — select any pin above to see the detail.</p></div>
+    </div>
+  </section>
+
   <section class="band-dark section cta-band">
     <div class="wrap rv">
       <span class="eyebrow">Secure Your Spot</span>
@@ -73,14 +115,29 @@
 <footer class="band-dark">
   <div class="wrap foot">
     <div class="foot-brand">
-      <a class="brand" href="index.html"><span class="mark" aria-hidden="true">GT</span><span class="brand-word">THE GRID</span></a>
+      <a class="brand" href="index.html"><img class="foot-logo" src="assets/logo-plugged.png" alt=""><span class="brand-word">THE GRID</span></a>
       <p>Strategic, closed-loop ecosystem advertising. 100% Black-owned digital Out-of-Home delivering measurable ROI for ambitious brands.</p>
+      <div class="foot-soc">
+        <a href="https://www.facebook.com/thegridaeonline" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
+        <a href="https://x.com/thegridonline" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="ti ti-brand-x" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/company/the-grid-online/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/thegridonline/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+      </div>
     </div>
-    <nav class="foot-links" aria-label="Footer">
-      <a href="services.html">Services</a><a href="pops.html">Points of Presence</a><a href="clients.html">Clients</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+    <nav class="foot-col" aria-label="Footer">
+      <span class="foot-h">Explore</span>
+      <a href="work.html">Way of Work</a><a href="services.html">Services</a><a href="pops.html">Points of Presence</a><a href="clients.html">Clients</a><a href="team.html">Team</a>
     </nav>
+    <div class="foot-col">
+      <span class="foot-h">Get in Touch</span>
+      <a href="tel:+27793650188"><i class="ti ti-phone" aria-hidden="true"></i> +27 79 365 0188</a>
+      <a href="mailto:sales@thegridtech.co.za"><i class="ti ti-mail" aria-hidden="true"></i> sales@thegridtech.co.za</a>
+      <a href="https://wa.me/27793650188" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+      <span class="foot-loc"><i class="ti ti-map-pin" aria-hidden="true"></i> Johannesburg, SA</span>
+      <a href="contact.html" class="nav-cta foot-cta">Plug In</a>
+    </div>
   </div>
-  <div class="wrap foot-btm"><span>© 2026 The Grid Technologies (Pty) Ltd. All rights reserved.</span><span>Johannesburg, SA</span></div>
+  <div class="wrap foot-btm"><span>© 2026 The Grid Technologies (Pty) Ltd. All rights reserved.</span><span>Designed by <a href="https://lubelotechsolutions.co.za/" target="_blank" rel="noopener noreferrer">Lubelo Tech Solutions</a></span></div>
 </footer>
 <script src="script.js"></script>
 </body>
