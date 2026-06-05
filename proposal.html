@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Grid Technologies — Website Proposal</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@page{size:A4;margin:16mm 15mm}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+:root{--flame:#CF5C36;--flame-ink:#a8431f;--gun:#30343F;--ink:#23272f;--mut:#5b616b;--line:#e3e5e8;--silver:#BDC2BF}
+body{font-family:'Nunito Sans',Arial,sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.55}
+h1,h2,h3,h4,.h{font-family:'Jost',Arial,sans-serif;letter-spacing:-.01em}
+p{margin:0 0 8pt}
+strong{color:var(--ink)}
+small{font-size:8.5pt;color:var(--mut)}
+.flame{color:var(--flame)}
+
+/* cover */
+.cover{background:#16181d;color:#fff;height:267mm;margin:-16mm -15mm 0;padding:34mm 18mm;display:flex;flex-direction:column;position:relative;
+ background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:6px 6px;page-break-after:always}
+.cover .mark{font-family:'Jost';font-weight:800;font-size:15pt;letter-spacing:.28em;color:var(--silver)}
+.cover h1{font-weight:800;font-size:42pt;line-height:1.02;margin-top:auto;color:#fff}
+.cover h1 em{font-style:normal;color:var(--flame)}
+.cover .sub{font-family:'Jost';font-weight:500;font-size:13pt;color:rgba(255,255,255,.75);margin-top:10pt}
+.cover .meta{margin-top:26pt;border-top:1px solid rgba(255,255,255,.2);padding-top:14pt;display:flex;justify-content:space-between;font-size:9.5pt;color:rgba(255,255,255,.7)}
+.cover .meta b{color:#fff;font-family:'Jost';font-weight:600;display:block;letter-spacing:.04em}
+
+/* section */
+.sec{page-break-before:always}
+.kick{font-family:'Jost';font-weight:700;font-size:8.5pt;letter-spacing:.22em;text-transform:uppercase;color:var(--flame);display:block;margin-bottom:5pt}
+h2.t{font-weight:800;font-size:21pt;color:var(--gun);margin-bottom:12pt;padding-bottom:9pt;border-bottom:2px solid var(--flame)}
+h3{font-weight:700;font-size:12.5pt;color:var(--gun);margin:14pt 0 6pt}
+h4{font-weight:700;font-size:10.5pt;color:var(--flame-ink);margin:10pt 0 4pt}
+ul{margin:0 0 9pt 16pt}li{margin-bottom:3.5pt}
+.lead{font-size:11.5pt;color:var(--mut);line-height:1.6;margin-bottom:12pt}
+
+table{width:100%;border-collapse:collapse;margin:6pt 0 12pt;font-size:9.3pt}
+th{background:var(--gun);color:#fff;font-family:'Jost';font-weight:600;text-align:left;padding:7pt 9pt;letter-spacing:.02em}
+td{padding:6.5pt 9pt;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f6f7f8}
+.ok{color:#2c7a4b;font-weight:700}
+.part{color:#b8860b;font-weight:700}
+
+.box{background:#f6f7f8;border:1px solid var(--line);border-left:3px solid var(--flame);border-radius:5px;padding:11pt 13pt;margin:10pt 0}
+.grid2{display:flex;gap:14pt}.grid2>div{flex:1}
+.pay{display:flex;gap:10pt;margin:10pt 0}
+.pay .step{flex:1;border:1px solid var(--line);border-top:3px solid var(--flame);border-radius:6px;padding:11pt}
+.pay .step .pct{font-family:'Jost';font-weight:900;font-size:24pt;color:var(--flame);line-height:1}
+.pay .step .lbl{font-family:'Jost';font-weight:700;font-size:9.5pt;color:var(--gun);margin:4pt 0 5pt;text-transform:uppercase;letter-spacing:.04em}
+.amt{font-family:'Jost';font-weight:700;color:var(--gun)}
+.note{font-size:8.7pt;color:var(--mut);font-style:italic}
+.foot{margin-top:16pt;padding-top:9pt;border-top:1px solid var(--line);font-size:8.5pt;color:var(--mut);display:flex;justify-content:space-between}
+.sign{margin-top:16pt;display:flex;gap:20pt}.sign>div{flex:1}
+.sline{margin-top:26pt;border-top:1px solid var(--gun);padding-top:5pt;font-size:9pt;color:var(--mut)}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="mark">THE GRID</div>
+  <h1>Website Design<br><em>Proposal.</em></h1>
+  <div class="sub">Mockup demonstration, build scope, asset requirements &amp; investment</div>
+  <div class="meta">
+    <div><b>Prepared for</b>The Grid Technologies (Pty) Ltd<br>Digital Out-of-Home Advertising</div>
+    <div><b>Prepared by</b>Lubelo Tech Solutions<br>lubelotechsolutions.co.za</div>
+    <div><b>Date</b>5 June 2026<br>Valid 30 days</div>
+  </div>
+</section>
+
+<!-- ============ 1. INTRODUCTION ============ -->
+<section class="sec">
+  <span class="kick">01 — Introduction</span>
+  <h2 class="t">A website that plugs your audience in.</h2>
+  <p class="lead">Lubelo Tech Solutions has designed and built a fully interactive <strong>mockup website</strong> for The Grid Technologies, directly informed by your <em>Website Guideline Document &amp; High-Level CI Guide</em>. This proposal presents what has been built, confirms how it honours your brand, and sets out exactly what is required — assets, content and investment — to take the approved mockup to a launched final product.</p>
+
+  <div class="box">
+    <h4 style="margin-top:0">Please note — this is a mockup / prototype</h4>
+    <p style="margin-bottom:0">The site you have reviewed is a working demonstration of design direction, structure and interactivity. Some imagery, statistics, client logos, team photos and case-study figures are <strong>placeholders or illustrative</strong> and are clearly marked as such. The <strong>final production website</strong> — with your real content, photography and integrations — will be built once this proposal is approved and the initial deposit is received.</p>
+  </div>
+
+  <h3>What this document covers</h3>
+  <ul>
+    <li>How the mockup delivers against your brand guideline (Section 02)</li>
+    <li>Everything that has been designed and built, page by page (Section 03)</li>
+    <li>Build quality — responsive, accessible, SEO &amp; performance (Section 04)</li>
+    <li>The assets, media and copy we need from you for the final build (Section 05)</li>
+    <li>Project phases, timeline, investment and payment milestones (Sections 06–07)</li>
+    <li>Ongoing monthly website maintenance &amp; management (Section 08)</li>
+  </ul>
+</section>
+
+<!-- ============ 2. GUIDELINE ALIGNMENT ============ -->
+<section class="sec">
+  <span class="kick">02 — Brand Guideline Alignment</span>
+  <h2 class="t">Built to your CI guide.</h2>
+  <p class="lead">Every element of the mockup was mapped against your guideline document. The table below shows how each requirement has been delivered.</p>
+  <table>
+    <tr><th style="width:27%">Your guideline</th><th style="width:53%">How we delivered it</th><th style="width:20%">Status</th></tr>
+    <tr><td><strong>Colour palette</strong><br>Gunmetal, Flame, Silver, Viridian, Cornflower</td><td>Implemented as exact design tokens — Gunmetal #30343F, Flame #CF5C36, Silver #BDC2BF, Viridian #417B5A, Cornflower #7189FF. White/silver text with drop shadows where needed.</td><td class="ok">Exact match</td></tr>
+    <tr><td><strong>Core positioning statement</strong> &amp; tone (bold, premium, intelligent, collaborative)</td><td>Used verbatim across the homepage hero and Way of Work. Visual language: sleek minimalism + dynamic movement.</td><td class="ok">Exact match</td></tr>
+    <tr><td><strong>Logo</strong> — brushed aluminium / steel, 3D, beveled; "plugged" variant</td><td>Your refreshed 3D mark used in the navigation; the "plugged-in" variant featured in the footer; logo mark as the browser favicon.</td><td class="ok">Delivered</td></tr>
+    <tr><td><strong>Dark, metallic aesthetic</strong> with perforated texture</td><td>Dark gunmetal bands with the fine dot/perforated texture and alternating silver sections throughout.</td><td class="ok">Delivered</td></tr>
+    <tr><td><strong>Key phrases</strong> (Plug in, Closed-loop journey, Ecosystem, Points of presence…)</td><td>Woven throughout the copy; "Plug In" primary call-to-action; "Plug into The Grid".</td><td class="ok">Delivered</td></tr>
+    <tr><td><strong>Graphically-driven, image-led</strong>, punchy minimal copy</td><td>Image-led layouts with concise descriptors focused on strategy; 150–200 word philosophy section.</td><td class="ok">Delivered</td></tr>
+    <tr><td><strong>Psychological strategy</strong> — priming, storytelling, social proof, scarcity, humanisation</td><td>Animated intro (priming), case-study success stories (transformation narrative), stats &amp; client wall (social proof), "book up fast" (scarcity), team &amp; trust section (humanisation).</td><td class="ok">Delivered</td></tr>
+    <tr><td><strong>Website flowchart</strong> — sections, icon selector, flip cards, animated journey map, team flip cards, contact + socials</td><td>Icon navigation; Services flip-cards; animated journey + <strong>provinces map with location pins</strong>; team hover/tap cards; full contact suite. (Expanded with Way of Work, Clients &amp; Data pages.)</td><td class="ok">Delivered</td></tr>
+    <tr><td><strong>Animation &amp; dynamic movement</strong></td><td>Particle "The Grid" intro, type-on positioning quote, scroll reveals, animated counters &amp; charts, pulsing map pins.</td><td class="ok">Delivered</td></tr>
+    <tr><td><strong>Typography</strong> — Century Gothic (headlines) + Avenir (body)</td><td>Implemented with the closest free web-font equivalents — <strong>Jost</strong> (geometric, Century-Gothic-like) + <strong>Nunito Sans</strong> (Avenir-like). Licensed Century Gothic / Avenir web fonts can be wired in on request.</td><td class="part">Substitutes — decision needed</td></tr>
+    <tr><td><strong>Photography rule</strong> — 2 of 3: hero asset, in-situ, people</td><td>Layouts and placeholders are built to the rule; real photography (esp. "people in image") to be supplied for the final build.</td><td class="part">Awaiting assets</td></tr>
+  </table>
+</section>
+
+<!-- ============ 3. WHAT'S BEEN BUILT ============ -->
+<section class="sec">
+  <span class="kick">03 — What We've Built</span>
+  <h2 class="t">The mockup, page by page.</h2>
+  <p class="lead">A fast, dependency-free, fully responsive site spanning eight pages with rich interactivity.</p>
+
+  <h3>Home</h3>
+  <ul>
+    <li>Cinematic <strong>particle intro splash</strong> that forms "The Grid", then reveals the site (shown once per visit, skippable, reduced-motion safe)</li>
+    <li>Video hero with positioning statement and primary CTAs</li>
+    <li>Animated <strong>key-stat counters</strong>, "explore the ecosystem" pillars, closed-loop <strong>journey video</strong>, scrolling client wall, and conversion band</li>
+  </ul>
+  <h3>Way of Work</h3>
+  <ul><li>Mission &amp; vision, strategic pillars, "our story", a <strong>type-on animated positioning quote</strong> over a brand image, and the Home → Airport → Mall → Home journey told visually</li></ul>
+  <h3>Services &amp; Data</h3>
+  <ul>
+    <li>Five <strong>flip cards</strong> — Digital Billboards (DOOH), Airport Security Trays, Static Large-Format, <strong>Mobile Billboards</strong> and Brand Activations — that flip on hover and tap</li>
+    <li>Dedicated <strong>Data &amp; Analytics page</strong>: why data matters, how it's captured → measured → attributed → optimised, and what we measure</li>
+  </ul>
+  <h3>Points of Presence (POPs)</h3>
+  <ul><li>Interactive journey stepper, location cards, and an <strong>animated map of South Africa's provinces</strong> with geographically-placed, colour-coded pins that reveal each location on tap</li></ul>
+  <h3>Clients</h3>
+  <ul><li>Scrolling client wall and a <strong>Success Stories</strong> section with animated bar &amp; trend charts set over a real campaign photo (figures illustrative until verified data is supplied)</li></ul>
+  <h3>Team</h3>
+  <ul><li>Hover/tap capability cards plus a <strong>"why brands trust us"</strong> credibility section and testimonial</li></ul>
+  <h3>Contact</h3>
+  <ul><li>Direct phone, email, WhatsApp, campaign brief form and an embedded <strong>location map</strong>; social links consolidated in the footer</li></ul>
+</section>
+
+<!-- ============ 4. BUILD QUALITY ============ -->
+<section class="sec">
+  <span class="kick">04 — Build Quality</span>
+  <h2 class="t">Engineered properly.</h2>
+  <div class="grid2">
+    <div>
+      <h3>Responsive &amp; mobile</h3>
+      <ul><li>Fluid layouts from large desktop to phone</li><li>Collapsing hamburger navigation</li><li>Tap-friendly flip cards &amp; map pins</li><li>Mobile-specific refinements</li></ul>
+      <h3>Accessibility</h3>
+      <ul><li>Keyboard navigation &amp; focus states</li><li>Skip links, ARIA labels, live regions</li><li>Honours "reduced motion" preferences</li></ul>
+    </div>
+    <div>
+      <h3>Performance</h3>
+      <ul><li>Lightweight, no heavy frameworks</li><li>Lazy-loaded media, optimised assets</li><li>Fast first paint</li></ul>
+      <h3>SEO foundations</h3>
+      <ul><li>Per-page titles &amp; meta descriptions</li><li>Open Graph / social share cards</li><li>Sitemap, robots.txt, canonical URLs, favicon</li></ul>
+    </div>
+  </div>
+  <div class="box"><p style="margin-bottom:0"><strong>Tech approach:</strong> hand-built HTML5, CSS3 and vanilla JavaScript — no bloated page-builders. The result is fast, secure, easy to maintain and fully owned by The Grid.</p></div>
+</section>
+
+<!-- ============ 5. WHAT WE NEED ============ -->
+<section class="sec">
+  <span class="kick">05 — What We Need From You</span>
+  <h2 class="t">Assets &amp; content checklist.</h2>
+  <p class="lead">To build the final website we will need the following. The more complete these are at hand-over, the faster and smoother the build.</p>
+
+  <h3>Brand &amp; global (applies site-wide)</h3>
+  <table>
+    <tr><th style="width:32%">Item</th><th>Detail / format</th></tr>
+    <tr><td>Logo suite</td><td>Final 3D mark + "plugged" variant — transparent PNG <em>and</em> vector (SVG / AI / EPS), light &amp; dark versions</td></tr>
+    <tr><td>Typography decision</td><td>Either licence Century Gothic + Avenir web fonts (supply files/licence) or approve the Jost + Nunito Sans substitutes</td></tr>
+    <tr><td>Company details</td><td>Registered name &amp; reg. number, B-BBEE certificate &amp; level, VAT no. (if any)</td></tr>
+    <tr><td>Verified contacts</td><td>Phone, email, <strong>exact office address</strong> (for the map pin), business hours</td></tr>
+    <tr><td>Social media</td><td>Confirmed URLs — <strong>Instagram handle to confirm</strong>; Facebook, X, LinkedIn</td></tr>
+    <tr><td>Domain &amp; accounts</td><td>Access to the domain registrar / DNS for thegridtech.co.za; Google account for Analytics &amp; Search Console</td></tr>
+  </table>
+
+  <h3>Per page — images, video &amp; text</h3>
+  <table>
+    <tr><th style="width:16%">Page</th><th style="width:40%">Images &amp; video</th><th>Text / copy</th></tr>
+    <tr><td><strong>Home</strong></td><td>Hero video (15–30s, ≥1080p) or hero image; closed-loop journey explainer video (30–60s); real client logos (vector/PNG, with permission)</td><td>Final headline &amp; tagline sign-off; confirmed key stats (screens, impressions, passengers, ownership)</td></tr>
+    <tr><td><strong>Way of Work</strong></td><td>3 journey-stage photos (Home/commute, Airport, Mall) — real, in-situ, ideally with people; 1 wide brand/quote-band photo</td><td>Final Mission &amp; Vision; "Our Story" (≈150–200 words) approval; positioning statement (confirmed)</td></tr>
+    <tr><td><strong>Services</strong></td><td>One strong photo per format: DOOH screens, airport trays (close-up + in-situ), the 10m×70m static, mobile/roaming billboards, activations (with people)</td><td>Confirm the 5 offerings; final description per format</td></tr>
+    <tr><td><strong>Data &amp; Analytics</strong></td><td>Sample report visuals / anonymised dashboard screenshots; data-partner logos (e.g. measurement partners) with permission</td><td>Methodology copy; the real metrics you track; verified headline figures</td></tr>
+    <tr><td><strong>POPs</strong></td><td>Optional real photo per location</td><td>Confirmed list of all locations with specs (screen counts, sizes, formats) and exact addresses / GPS for accurate pins</td></tr>
+    <tr><td><strong>Clients</strong></td><td>Real client logos (vector) + permission</td><td>2–4 case studies with <strong>verified</strong> metrics (recall, footfall, impressions, ROI); real testimonials (name, role, company) with permission</td></tr>
+    <tr><td><strong>Team</strong></td><td>Professional headshots — consistent style/background, high-res, one per member</td><td>Confirmed names, titles, short bios &amp; 3 capability tags each; confirm full team list</td></tr>
+    <tr><td><strong>Contact</strong></td><td>—</td><td>Confirmed phone/email/address &amp; hours; WhatsApp number (and whether a WhatsApp Business bot is wanted); form recipient email</td></tr>
+  </table>
+  <p class="note">Photography guidance (per your CI guide): every image should contain at least two of — (1) hero positioning of the asset, (2) in-situ visual context, (3) people in the image.</p>
+</section>
+
+<!-- ============ 6. PHASES ============ -->
+<section class="sec">
+  <span class="kick">06 — Process &amp; Timeline</span>
+  <h2 class="t">From approval to launch.</h2>
+  <table>
+    <tr><th style="width:22%">Phase</th><th>Activities</th><th style="width:18%">Milestone</th></tr>
+    <tr><td><strong>0 · Kick-off</strong></td><td>Proposal approval, deposit, asset &amp; content collection, font &amp; hosting decisions</td><td>50% deposit</td></tr>
+    <tr><td><strong>1 · Build</strong></td><td>Final design build — real content, photography, copy, integrations, font licensing; production-grade pages</td><td>—</td></tr>
+    <tr><td><strong>2 · MVP review</strong></td><td>Full working site on a staging URL for your review, feedback &amp; sign-off rounds</td><td>25% on sign-off</td></tr>
+    <tr><td><strong>3 · Launch</strong></td><td>QA, cross-browser/device testing, SEO &amp; performance pass, form/analytics/WhatsApp integration, domain go-live</td><td>25% on launch</td></tr>
+  </table>
+  <div class="box"><p style="margin-bottom:0"><strong>Indicative timeline:</strong> approximately <strong>4–6 weeks</strong> from receipt of the deposit and complete assets — comfortably within your guideline document's time horizon. Timelines depend on asset readiness and feedback turnaround.</p></div>
+</section>
+
+<!-- ============ 7. INVESTMENT ============ -->
+<section class="sec">
+  <span class="kick">07 — Investment</span>
+  <h2 class="t">Pricing &amp; payment milestones.</h2>
+  <p class="lead">A once-off project fee of <strong>R22 000</strong>, paid across three stages so you pay as value is delivered.</p>
+  <div class="pay">
+    <div class="step"><div class="pct">50%</div><div class="lbl">Deposit · R11 000</div>Payable on approval of this proposal. Commences the final build and asset collection.</div>
+    <div class="step"><div class="pct">25%</div><div class="lbl">MVP · R5 500</div>Payable once you have reviewed the full working website and are happy with it.</div>
+    <div class="step"><div class="pct">25%</div><div class="lbl">Launch · R5 500</div>Payable on go-live of the final website to your domain.</div>
+  </div>
+
+  <h3>Cost breakdown</h3>
+  <table>
+    <tr><th>Component</th><th style="width:22%">Cost</th></tr>
+    <tr><td>Design &amp; UX — brand application across all pages</td><td class="amt">R5 000</td></tr>
+    <tr><td>Front-end development — 8 hand-coded, fully responsive pages</td><td class="amt">R8 000</td></tr>
+    <tr><td>Custom interactive features — particle intro, animated SA provinces map, animated charts, flip cards, type-on quote</td><td class="amt">R5 000</td></tr>
+    <tr><td>SEO, performance &amp; accessibility setup</td><td class="amt">R2 000</td></tr>
+    <tr><td>Integrations (contact form, analytics), QA &amp; launch</td><td class="amt">R2 000</td></tr>
+    <tr><td><strong>Total — once-off</strong></td><td class="amt"><strong>R22 000</strong></td></tr>
+  </table>
+
+  <h3>Payment schedule</h3>
+  <table>
+    <tr><th>Milestone</th><th style="width:14%">Share</th><th style="width:20%">Amount</th><th style="width:26%">When</th></tr>
+    <tr><td>Deposit</td><td>50%</td><td class="amt">R11 000</td><td>On approval</td></tr>
+    <tr><td>MVP sign-off</td><td>25%</td><td class="amt">R5 500</td><td>On sign-off</td></tr>
+    <tr><td>Launch</td><td>25%</td><td class="amt">R5 500</td><td>On go-live</td></tr>
+  </table>
+  <p class="note">Excludes domain &amp; hosting (covered by the monthly plan) and optional add-ons — professional photo/video shoot, copywriting, WhatsApp bot, advanced analytics. Social media management is offered separately as its own monthly service.</p>
+</section>
+
+<!-- ============ 8. MAINTENANCE ============ -->
+<section class="sec">
+  <span class="kick">08 — Ongoing Maintenance</span>
+  <h2 class="t">Monthly website management.</h2>
+  <p class="lead">A live website needs ongoing care. Our monthly retainer keeps The Grid's site fast, secure, current and online — so you never have to think about it.</p>
+  <div class="grid2">
+    <div>
+      <h4>Included every month</h4>
+      <ul>
+        <li>Hosting &amp; domain management, SSL certificate</li>
+        <li>Security monitoring, patches &amp; hardening</li>
+        <li>Automated backups &amp; restore cover</li>
+        <li>Uptime monitoring</li>
+        <li>Content updates — text &amp; image swaps (up to a set number of hours)</li>
+        <li>Monthly analytics &amp; performance report</li>
+        <li>Email &amp; phone support with agreed response time</li>
+        <li>Minor fixes &amp; small enhancements</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Optional add-ons</h4>
+      <ul>
+        <li>New pages, sections or campaign landing pages</li>
+        <li>Seasonal creative / banner refreshes</li>
+        <li>Ongoing photo &amp; video production</li>
+        <li>SEO growth &amp; content marketing</li>
+        <li>Custom quoting system (CRM) &amp; advanced integrations — WhatsApp bot, dashboards</li>
+      </ul>
+      <div class="box" style="margin-top:6pt"><div class="amt" style="font-size:14pt">R2 000 <span style="font-size:9pt;font-weight:400;color:var(--mut)">/ month</span></div><p class="note" style="margin:4pt 0 0">Billed monthly from launch. 12-month term; cancellable on one month's notice. Final figure confirmed in the cost schedule.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. NEXT STEPS ============ -->
+<section class="sec">
+  <span class="kick">09 — Next Steps</span>
+  <h2 class="t">Let's plug in.</h2>
+  <ol style="margin-left:16pt">
+    <li style="margin-bottom:5pt">Review this proposal and the mockup site with your team.</li>
+    <li style="margin-bottom:5pt">Approve the proposal and confirm the cost schedule.</li>
+    <li style="margin-bottom:5pt">Settle the 50% deposit to commence the final build.</li>
+    <li style="margin-bottom:5pt">Hand over assets &amp; content (Section 05) — we'll provide a shared folder &amp; checklist.</li>
+    <li>We build, you review at MVP, and we launch.</li>
+  </ol>
+
+  <div class="sign">
+    <div><div class="sline">Authorised by — The Grid Technologies</div><small>Name, signature &amp; date</small></div>
+    <div><div class="sline">Lubelo Tech Solutions</div><small>Name, signature &amp; date</small></div>
+  </div>
+
+  <div class="foot">
+    <span><strong>Lubelo Tech Solutions</strong> · lubelotechsolutions.co.za · lubelotechsolutions@gmail.com</span>
+    <span>The Grid Technologies — Website Proposal · 5 June 2026</span>
+  </div>
+</section>
+
+</body>
+</html>
