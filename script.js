@@ -43,15 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // below-the-fold looping videos: load + play only when scrolled near the viewport
   // (Chrome defers offscreen video loading, and this also saves data for visitors who never reach them)
+  // Keeps observing: retries if the first play() is blocked or the data isn't loaded yet
+  // (slow connection, background tab, low-power mode), and pauses again off-screen.
   document.querySelectorAll('video[data-inview]').forEach(v => {
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      v.muted = true;
-      if (v.readyState < 2) v.load();
-      const p = v.play(); if (p && p.catch) p.catch(() => {});
-      io.disconnect();
-    }), { rootMargin: '300px' });
-    io.observe(v);
+    v.muted = true; // required for programmatic autoplay
+    const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) {
+        if (v.readyState < 2) { v.load(); v.addEventListener('canplay', tryPlay, { once: true }); }
+        tryPlay();
+      } else if (!v.paused) {
+        v.pause();
+      }
+    }), { rootMargin: '300px' }).observe(v);
   });
 
   // ensure autoplay videos actually start; if the source can't load

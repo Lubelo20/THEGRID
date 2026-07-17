@@ -1,7 +1,7 @@
 .superpowers/
 .DS_Store
-Pictures/
-Video/
+/Pictures/
+/Video/
 _deploy/
 _deploy-prod/
 thegridtech-website.zip
