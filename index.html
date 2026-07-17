@@ -8,66 +8,36 @@
 <meta name="theme-color" content="#16181d">
 <link rel="canonical" href="https://www.thegridtech.co.za/">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Grid Technologies">
 <meta property="og:title" content="The Grid Technologies — Digital Out-of-Home Advertising">
 <meta property="og:description" content="100% Black-owned digital Out-of-Home advertising. Strategic, data-driven brand journeys across premium points of presence in South Africa.">
 <meta property="og:url" content="https://www.thegridtech.co.za/">
-<meta property="og:image" content="https://www.thegridtech.co.za/assets/video/journey-poster.jpg">
+<meta property="og:image" content="https://www.thegridtech.co.za/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css">
-<link rel="stylesheet" href="styles.css">
+<meta name="twitter:site" content="@thegridonline">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Grid Technologies — premium digital out-of-home network in South Africa">
+<meta name="twitter:title" content="The Grid Technologies — Digital Out-of-Home Advertising">
+<meta name="twitter:description" content="100% Black-owned digital Out-of-Home advertising. Strategic, data-driven brand journeys across premium points of presence in South Africa.">
+<meta name="twitter:image" content="https://www.thegridtech.co.za/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" integrity="sha384-3WxKVNXzEl1V41qEx7KGLfbgBFyBTnec6vrnNKMOK5bzwLRvCd2X4iW2SjZFbEnH" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css?v=20260716e">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://www.thegridtech.co.za/#org","name":"The Grid Technologies","legalName":"The Grid Technologies (Pty) Ltd","url":"https://www.thegridtech.co.za/","logo":"https://www.thegridtech.co.za/assets/logo-plugged.png","image":"https://www.thegridtech.co.za/assets/og-image.jpg","description":"100% Black-owned digital Out-of-Home advertising agency crafting strategic, data-driven brand journeys across premium points of presence in South Africa.","telephone":"+27836521109","email":"sales@thegridtech.co.za","address":{"@type":"PostalAddress","streetAddress":"1st Floor, Dainfern Square, Broadacres Drive, Fourways","addressLocality":"Johannesburg","addressRegion":"Gauteng","postalCode":"2191","addressCountry":"ZA"},"areaServed":"ZA","sameAs":["https://www.facebook.com/thegridaeonline","https://x.com/thegridonline","https://www.linkedin.com/company/the-grid-online/","https://www.instagram.com/thegridonline/"]},{"@type":"WebSite","@id":"https://www.thegridtech.co.za/#website","url":"https://www.thegridtech.co.za/","name":"The Grid Technologies","publisher":{"@id":"https://www.thegridtech.co.za/#org"}}]}</script>
 </head>
 <body>
 <div id="grid-splash" role="dialog" aria-modal="true" aria-label="The Grid intro animation">
   <div id="grid-splash-canvas"></div>
   <button id="grid-splash-skip" type="button">Skip &#9656;</button>
 </div>
-<script src="grid-intro.js"></script>
-<script>
-(function () {
-  var splash = document.getElementById('grid-splash');
-  if (!splash) return;
-  // Returning visitors (this session) and reduced-motion users go straight in.
-  var seen; try { seen = sessionStorage.getItem('gridIntroSeen'); } catch (e) {}
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (seen || reduce) { splash.remove(); return; }
-
-  var html = document.documentElement, body = document.body;
-  html.style.overflow = 'hidden'; body.style.overflow = 'hidden';
-
-  var PERIOD = 4600, HOLD = 1000, FADE = 600; // play once, hold, then fade out
-  var ctrl = GridIntro.mount('#grid-splash-canvas', {
-    text: 'The GRID',
-    subtitle: 'DIGITAL OUT-OF-HOME ADVERTISING',
-    font: "'Jost', sans-serif",   // match the site's heading/brand font
-    weight: 800,                   // match brand wordmark weight
-    maxSize: 128,
-    loop: false,
-    period: PERIOD,
-    subtitleColor: '#CF5C36',      // flame, like the site's eyebrows
-    grid: false,                   // dot texture comes from CSS instead
-    background: 'transparent'
-  });
-
-  var done = false;
-  function dismiss() {
-    if (done) return; done = true;
-    clearTimeout(timer);
-    try { sessionStorage.setItem('gridIntroSeen', '1'); } catch (e) {}
-    splash.classList.add('hide');
-    setTimeout(function () {
-      if (ctrl && ctrl.destroy) ctrl.destroy();
-      splash.remove();
-      html.style.overflow = ''; body.style.overflow = '';
-    }, FADE);
-  }
-  var timer = setTimeout(dismiss, PERIOD + HOLD);
-  var skip = document.getElementById('grid-splash-skip');
-  if (skip) skip.addEventListener('click', dismiss);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') dismiss(); });
-})();
-</script>
+<script src="grid-intro.js?v=20260716e"></script>
+<script src="splash-init.js?v=20260716e"></script>
 <a class="skip" href="#main">Skip to content</a>
 <nav id="nav" aria-label="Primary">
   <a class="brand" href="index.html" aria-label="The Grid — home">
@@ -98,8 +68,8 @@
     <div class="wrap">
       <div class="hero-copy">
         <div class="hero-badge rv"><span class="dot"></span>Innovative Digital OOH · 100% Black-Owned · Johannesburg</div>
-        <h1 class="hero-h1 rv d1">We don't just find your brand <em>a space.</em></h1>
-        <p class="hero-sub rv d2">We craft strategic, data-driven brand journeys that live in the real world — a closed-loop ecosystem of premium points of presence. <strong>Plug into The Grid.</strong></p>
+        <h1 class="hero-h1 rv d1">Where innovation meets <em>visual experience.</em></h1>
+        <p class="hero-sub rv d2">We design strategic, data-driven brand journeys that connect audiences with brands through a seamless, closed-loop ecosystem of premium points of presence. <strong>Plug into The Grid.</strong></p>
         <div class="hero-btns rv d3">
           <a href="contact.html" class="btn-p">Book a Campaign</a>
           <a href="services.html" class="btn-s">Explore Services →</a>
@@ -127,7 +97,7 @@
     </div>
     <div class="wrap">
       <div class="explore rv">
-        <a class="pillar" href="services.html"><i class="ti ti-device-tv" aria-hidden="true"></i><div><h3>Services</h3><p>LED billboards, airport trays, static large-format and brand activations.</p></div></a>
+        <a class="pillar" href="services.html"><i class="ti ti-device-tv" aria-hidden="true"></i><div><h3>Services</h3><p>Retail DOOH, airport trays, health &amp; wellness screens and brand activations.</p></div></a>
         <a class="pillar" href="pops.html"><i class="ti ti-map-pin" aria-hidden="true"></i><div><h3>Points of Presence</h3><p>Premium locations across Johannesburg and South Africa's three busiest airports.</p></div></a>
         <a class="pillar" href="team.html"><i class="ti ti-users" aria-hidden="true"></i><div><h3>The Team</h3><p>The strategists, data and creative minds behind every campaign.</p></div></a>
       </div>
@@ -139,11 +109,11 @@
       <div class="video-head rv">
         <span class="eyebrow">In Motion</span>
         <h2 class="s-title">The closed-loop journey</h2>
-        <p class="s-sub">See how we place your brand at every waypoint of the consumer's day — home, airport, mall and back again — building recall through repeated, sequenced touchpoints.</p>
+        <p class="s-sub">See how we place your brand at every waypoint of the consumer's day — home, airport, mall, gym and back again — building recall through repeated, sequenced touchpoints.</p>
       </div>
       <div class="video-stage rv d2">
         <video class="video-frame" id="journeyVideo" autoplay muted loop playsinline controls preload="auto" poster="assets/video/journey-poster.jpg" aria-label="The Grid closed-loop journey explainer video">
-          <source src="assets/video/journey.mp4" type="video/mp4">
+          <source src="assets/video/journey-web.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-cta rv d3"><a href="pops.html" class="btn-s">Explore the journey →</a></div>
@@ -161,8 +131,8 @@
     <div class="marquee rv" aria-label="Client brands">
       <div class="marquee-track">
         <!-- ASSET: replace text with real client logo SVGs -->
-        <span>Nedbank</span><span>Coca-Cola</span><span>Vodacom</span><span>Nando's</span><span>DStv</span><span>Absa</span><span>FNB</span><span>Showmax</span><span>Multichoice</span><span>Telkom</span><span>AVBOB</span><span>Wimpy</span><span>Mugg &amp; Bean</span><span>eBucks</span><span>Planet Fitness</span><span>Africa Padel</span><span>Moving Walls</span><span>NFM</span><span>Luminex</span><span>Auto &amp; General</span><span>Automark</span><span>Mitchum</span><span>Moja Cafe</span><span>Gary Rom</span><span>High Performance</span>
-        <span aria-hidden="true" style="display:contents"><span>Nedbank</span><span>Coca-Cola</span><span>Vodacom</span><span>Nando's</span><span>DStv</span><span>Absa</span><span>FNB</span><span>Showmax</span><span>Multichoice</span><span>Telkom</span><span>AVBOB</span><span>Wimpy</span><span>Mugg &amp; Bean</span><span>eBucks</span><span>Planet Fitness</span><span>Africa Padel</span><span>Moving Walls</span><span>NFM</span><span>Luminex</span><span>Auto &amp; General</span><span>Automark</span><span>Mitchum</span><span>Moja Cafe</span><span>Gary Rom</span><span>High Performance</span></span>
+        <span>Nedbank</span><span>Coca-Cola</span><span>Vodacom</span><span>DStv</span><span>Absa</span><span>FNB</span><span>Showmax</span><span>Multichoice</span><span>Telkom</span><span>AVBOB</span><span>Wimpy</span><span>Mugg &amp; Bean</span><span>eBucks</span><span>Planet Fitness</span><span>Africa Padel</span><span>Moving Walls</span><span>NFM</span><span>Luminex</span><span>Auto &amp; General</span><span>Automark</span><span>Mitchum</span><span>Moja Cafe</span><span>Gary Rom</span><span>High Performance</span>
+        <span aria-hidden="true" style="display:contents"><span>Nedbank</span><span>Coca-Cola</span><span>Vodacom</span><span>DStv</span><span>Absa</span><span>FNB</span><span>Showmax</span><span>Multichoice</span><span>Telkom</span><span>AVBOB</span><span>Wimpy</span><span>Mugg &amp; Bean</span><span>eBucks</span><span>Planet Fitness</span><span>Africa Padel</span><span>Moving Walls</span><span>NFM</span><span>Luminex</span><span>Auto &amp; General</span><span>Automark</span><span>Mitchum</span><span>Moja Cafe</span><span>Gary Rom</span><span>High Performance</span></span>
       </div>
     </div>
   </section>
@@ -179,7 +149,7 @@
 <footer class="band-dark">
   <div class="wrap foot">
     <div class="foot-brand">
-      <a class="brand" href="index.html"><img class="foot-logo" src="assets/logo-plugged.png" alt=""><span class="brand-word">THE GRID</span></a>
+      <a class="brand" href="index.html"><img class="foot-logo" src="assets/logo-footer.png" alt="" width="92" height="92" loading="lazy"><span class="brand-word">THE GRID</span></a>
       <p>Strategic, closed-loop ecosystem advertising. 100% Black-owned digital Out-of-Home delivering measurable ROI for ambitious brands.</p>
       <div class="foot-soc">
         <a href="https://www.facebook.com/thegridaeonline" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="ti ti-brand-facebook" aria-hidden="true"></i></a>
@@ -194,15 +164,15 @@
     </nav>
     <div class="foot-col">
       <span class="foot-h">Get in Touch</span>
-      <a href="tel:+27793650188"><i class="ti ti-phone" aria-hidden="true"></i> +27 79 365 0188</a>
+      <a href="tel:+27836521109"><i class="ti ti-phone" aria-hidden="true"></i> +27 83 652 1109</a>
       <a href="mailto:sales@thegridtech.co.za"><i class="ti ti-mail" aria-hidden="true"></i> sales@thegridtech.co.za</a>
-      <a href="https://wa.me/27793650188" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</a>
-      <span class="foot-loc"><i class="ti ti-map-pin" aria-hidden="true"></i> Johannesburg, SA</span>
+      <a href="https://wa.me/27691684648" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+      <span class="foot-loc"><i class="ti ti-map-pin" aria-hidden="true"></i> Dainfern Square, Johannesburg</span>
       <a href="contact.html" class="nav-cta foot-cta">Plug In</a>
     </div>
   </div>
-  <div class="wrap foot-btm"><span>© 2026 The Grid Technologies (Pty) Ltd. All rights reserved.</span><span>Designed by <a href="https://lubelotechsolutions.co.za/" target="_blank" rel="noopener noreferrer">Lubelo Tech Solutions</a></span></div>
+  <div class="wrap foot-btm"><span>© 2026 The Grid Technologies (Pty) Ltd. All rights reserved. · <a href="privacy.html">Privacy Policy</a></span><span>Designed by <a href="https://lubelotechsolutions.co.za/" target="_blank" rel="noopener noreferrer">Lubelo Tech Solutions</a></span></div>
 </footer>
-<script src="script.js"></script>
+<script src="script.js?v=20260716e"></script>
 </body>
 </html>

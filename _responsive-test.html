@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>responsive tester</title>
+<style>body{margin:0;background:#222;display:flex;gap:16px;padding:12px;font-family:sans-serif}
+.dev{display:flex;flex-direction:column;gap:4px}
+.dev span{color:#aaa;font-size:11px}
+iframe{border:2px solid #555;background:#fff}</style>
+</head>
+<body>
+<div class="dev"><span id="l1">phone 390</span><iframe id="phone" width="390" height="760" src="index.html"></iframe></div>
+<div class="dev"><span id="l2">tablet 768 (scaled .75)</span><div style="width:576px;height:760px;overflow:hidden"><iframe id="tab" width="768" height="1013" src="index.html" style="transform:scale(.75);transform-origin:top left"></iframe></div></div>
+<script>
+function load(p){document.getElementById('phone').src=p;document.getElementById('tab').src=p;document.getElementById('l1').textContent='phone 390 — '+p;}
+function scrollBoth(y){document.getElementById('phone').contentWindow.scrollTo(0,y);document.getElementById('tab').contentWindow.scrollTo(0,y*1.1);}
+</script>
+</body>
+</html>

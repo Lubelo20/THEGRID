@@ -27,9 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // journey map
   const jTexts = [
-    'Home — top-of-mind recall on the morning commute via the Witkoppen Road digital billboard before your audience even leaves the neighbourhood.',
-    'Airport — security-tray branding at OR Tambo, King Shaka & Cape Town. 21M passengers a year, peak dwell time, zero distractions.',
-    'Mall — DOOH at Dainfern Square & Planet Fitness captures high-LSM shoppers in-venue, during high-intent purchase moments.',
+    'Home — top-of-mind recall on the morning commute via the Witkoppen Road static billboard before your audience even leaves the neighbourhood.',
+    'Airport — security-tray branding reaches 21M passengers a year at peak dwell time, with zero distractions.',
+    'Mall — DOOH at Dainfern Square captures high-LSM shoppers in-venue, during high-intent purchase moments.',
+    'Gym — in-gym screens across the Planet Fitness network reach an active, high-LSM audience during 45–90 minute sessions.',
     'Closed Loop Complete — repeated, sequenced touchpoints have built recall, reinforced messaging and driven measurable conversion.'
   ];
   const steps = [...document.querySelectorAll('.j-step')], lines = [...document.querySelectorAll('.j-line')], jText = document.getElementById('j-text');
@@ -40,9 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   steps.forEach((s, i) => s.addEventListener('click', () => setStep(i)));
 
+  // below-the-fold looping videos: load + play only when scrolled near the viewport
+  // (Chrome defers offscreen video loading, and this also saves data for visitors who never reach them)
+  document.querySelectorAll('video[data-inview]').forEach(v => {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      v.muted = true;
+      if (v.readyState < 2) v.load();
+      const p = v.play(); if (p && p.catch) p.catch(() => {});
+      io.disconnect();
+    }), { rootMargin: '300px' });
+    io.observe(v);
+  });
+
   // ensure autoplay videos actually start; if the source can't load
   // (e.g. opened via file:// in Safari), reveal the poster background instead of a black box.
-  document.querySelectorAll('video[autoplay]').forEach(v => {
+  document.querySelectorAll('video[autoplay]:not([data-inview])').forEach(v => {
     v.muted = true; // muted is required for programmatic autoplay
     const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
     const fallback = () => { v.style.visibility = 'hidden'; };
@@ -63,15 +77,24 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
   });
 
-  // contact form (no backend yet — validate + show success; swap to Formspree later)
+  // contact form — composes the brief into a prefilled WhatsApp chat (no backend needed)
   const form = document.querySelector('.cform');
   if (form) {
     const msg = form.querySelector('.f-msg');
     form.addEventListener('submit', e => {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      const v = n => (form.elements[n] ? form.elements[n].value : '').trim();
+      const lines = [
+        'New campaign brief — thegridtech.co.za',
+        'Name: ' + v('name'),
+        v('company') ? 'Company: ' + v('company') : '',
+        'Email: ' + v('email'),
+        'Campaign type: ' + v('service'),
+        v('goals') ? 'Goals: ' + v('goals') : ''
+      ].filter(Boolean);
+      window.open('https://wa.me/27691684648?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
       msg.hidden = false;
-      form.querySelectorAll('.f-in').forEach(i => i.value = '');
     });
     form.querySelectorAll('.f-in').forEach(i => i.addEventListener('input', () => { msg.hidden = true; }));
   }

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Grid Technologies — Launch Content Checklist</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@page{size:A4;margin:16mm 15mm}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+:root{--flame:#CF5C36;--flame-ink:#a8431f;--gun:#30343F;--ink:#23272f;--mut:#5b616b;--line:#e3e5e8;--silver:#BDC2BF}
+body{font-family:'Nunito Sans',Arial,sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.55}
+h1,h2,h3,h4,.h{font-family:'Jost',Arial,sans-serif;letter-spacing:-.01em}
+p{margin:0 0 8pt}
+strong{color:var(--ink)}
+small{font-size:8.5pt;color:var(--mut)}
+.flame{color:var(--flame)}
+
+/* cover */
+.cover{background:#16181d;color:#fff;height:267mm;margin:-16mm -15mm 0;padding:34mm 18mm;display:flex;flex-direction:column;position:relative;
+ background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:6px 6px;page-break-after:always}
+.cover .mark{font-family:'Jost';font-weight:800;font-size:15pt;letter-spacing:.28em;color:var(--silver)}
+.cover h1{font-weight:800;font-size:40pt;line-height:1.02;margin-top:auto;color:#fff}
+.cover h1 em{font-style:normal;color:var(--flame)}
+.cover .sub{font-family:'Jost';font-weight:500;font-size:13pt;color:rgba(255,255,255,.75);margin-top:10pt}
+.cover .meta{margin-top:26pt;border-top:1px solid rgba(255,255,255,.2);padding-top:14pt;display:flex;justify-content:space-between;font-size:9.5pt;color:rgba(255,255,255,.7)}
+.cover .meta b{color:#fff;font-family:'Jost';font-weight:600;display:block;letter-spacing:.04em}
+
+/* section */
+.sec{margin-top:24pt;padding-top:2pt}
+.sec:first-of-type{margin-top:0}
+.kick,h2.t,h3,h4{page-break-after:avoid}
+tr,.box,.page-blk,.legend{page-break-inside:avoid}
+table{page-break-inside:auto}
+.kick{font-family:'Jost';font-weight:700;font-size:8.5pt;letter-spacing:.22em;text-transform:uppercase;color:var(--flame);display:block;margin-bottom:5pt}
+h2.t{font-weight:800;font-size:21pt;color:var(--gun);margin-bottom:12pt;padding-bottom:9pt;border-bottom:2px solid var(--flame)}
+h3{font-weight:700;font-size:12.5pt;color:var(--gun);margin:14pt 0 6pt}
+h4{font-weight:700;font-size:10.5pt;color:var(--flame-ink);margin:10pt 0 4pt;text-transform:uppercase;letter-spacing:.03em}
+ul{margin:0 0 9pt 16pt}li{margin-bottom:3.5pt}
+.lead{font-size:11.5pt;color:var(--mut);line-height:1.6;margin-bottom:12pt}
+
+table{width:100%;border-collapse:collapse;margin:6pt 0 12pt;font-size:9.3pt}
+th{background:var(--gun);color:#fff;font-family:'Jost';font-weight:600;text-align:left;padding:7pt 9pt;letter-spacing:.02em}
+td{padding:6.5pt 9pt;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f6f7f8}
+.ctr{text-align:center}
+
+.box{background:#f6f7f8;border:1px solid var(--line);border-left:3px solid var(--flame);border-radius:5px;padding:11pt 13pt;margin:10pt 0}
+.box h4{margin-top:0}
+.note{font-size:8.7pt;color:var(--mut);font-style:italic}
+.amt{font-family:'Jost';font-weight:700;color:var(--gun)}
+
+/* priority pills */
+.p{font-family:'Jost';font-weight:700;font-size:7.6pt;letter-spacing:.03em;padding:1.5pt 5pt;border-radius:20px;white-space:nowrap;display:inline-block}
+.p-req{background:#fbe9e3;color:#a8431f;border:1px solid #eecabb}
+.p-rec{background:#fdf5e3;color:#8a6d1b;border:1px solid #ecdcb0}
+.p-opt{background:#eef0f2;color:#5b616b;border:1px solid #dde0e4}
+
+/* legend chips row */
+.legend{display:flex;gap:16pt;font-size:8.7pt;color:var(--mut);margin:2pt 0 10pt;align-items:center;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:4pt}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.d-req{background:#CF5C36}.d-rec{background:#d8a72a}.d-opt{background:#9aa0a8}
+
+/* per-page block */
+.page-blk{border:1px solid var(--line);border-radius:6px;padding:0;margin:0 0 11pt;overflow:hidden;page-break-inside:avoid}
+.page-hd{background:var(--gun);color:#fff;padding:7pt 11pt;display:flex;justify-content:space-between;align-items:center}
+.page-hd h3{color:#fff;margin:0;font-size:12.5pt}
+.page-hd .file{font-family:'Jost';font-size:8pt;color:var(--silver);letter-spacing:.04em}
+.page-bd{padding:9pt 12pt 4pt}
+.page-bd h4{margin-top:6pt}
+.page-bd ul{margin-bottom:7pt}
+.page-bd li{margin-bottom:4pt}
+
+.tick th:last-child,.tick td:last-child{text-align:center;width:9%}
+.tick td:nth-child(4){text-align:center;width:11%}
+.box-tick{display:inline-block;width:11px;height:11px;border:1.4px solid var(--gun);border-radius:2px}
+
+.foot{margin-top:16pt;padding-top:9pt;border-top:1px solid var(--line);font-size:8.5pt;color:var(--mut);display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="mark">THE GRID</div>
+  <h1>Launch Content<br><em>Checklist.</em></h1>
+  <div class="sub">Everything needed — page by page — to take the site live</div>
+  <div class="meta">
+    <div><b>Prepared for</b>The Grid Technologies (Pty) Ltd<br>Digital Out-of-Home Advertising</div>
+    <div><b>Prepared by</b>Lubelo Tech Solutions<br>lubelotechsolutions.co.za</div>
+    <div><b>Date</b>3 July 2026</div>
+  </div>
+</section>
+
+<!-- ============ 00 — HOW TO USE ============ -->
+<section class="sec">
+  <span class="kick">00 — How to read this</span>
+  <h2 class="t">What we need to go live.</h2>
+  <p class="lead">The mockup is approved and fully demonstrable — every gap below is currently filled with a tasteful placeholder or interim asset. This document lists, page by page, only what should be <strong>swapped for final, verified content</strong> before launch: copy to confirm, images, video and the few functional items.</p>
+
+  <div class="legend">
+    <strong style="font-family:'Jost';color:var(--gun)">Priority:</strong>
+    <span><span class="dot d-req"></span> Required to launch</span>
+    <span><span class="dot d-rec"></span> Strongly recommended</span>
+    <span><span class="dot d-opt"></span> Optional / phase 2</span>
+  </div>
+
+  <div class="box">
+    <h4>The photography rule — applies to every photo</h4>
+    <p style="margin-bottom:0">From your CI guide: each image must show <strong>at least 2 of 3</strong> — (1) the asset hero-positioned (billboard / screen / tray), (2) real in-situ context, (3) people in the shot. This is what makes the imagery feel unmistakably like The Grid.</p>
+  </div>
+
+  <h3>Site-wide — appears on every page</h3>
+  <p>These live in the header, footer and page metadata across all eight pages, so supplying them fixes the whole site at once.</p>
+  <table>
+    <tr><th style="width:26%">Item</th><th>What's needed</th><th style="width:14%">Priority</th></tr>
+    <tr><td><strong>Logo</strong></td><td>Final brushed-aluminium "GT" mark — vector SVG + transparent PNG ≥512px. Confirm the interim mark now in place is the final version.</td><td><span class="p p-req">Required</span></td></tr>
+    <tr><td><strong>Favicon</strong></td><td>Icon set — 32×32, 180×180 (Apple touch), 512×512, .ico. An interim SVG favicon is in place.</td><td><span class="p p-rec">Recommended</span></td></tr>
+    <tr><td><strong>Social share image</strong></td><td>1200×630 — logo + tagline on brand background, for WhatsApp / LinkedIn link previews.</td><td><span class="p p-rec">Recommended</span></td></tr>
+    <tr><td><strong>Contact details</strong></td><td>Confirm phone +27 79 365 0188 &amp; email sales@thegridtech.co.za.</td><td><span class="p p-req">Required</span></td></tr>
+    <tr><td><strong>Social links</strong></td><td>Confirm Facebook, LinkedIn &amp; whether the Instagram handle is correct / exists.</td><td><span class="p p-req">Required</span></td></tr>
+    <tr><td><strong>Licensed webfonts</strong></td><td>Century Gothic + Avenir .woff2 + web-embedding licence — else we keep the free stand-ins.</td><td><span class="p p-opt">Optional</span></td></tr>
+    <tr><td><strong>Legal pages</strong></td><td>POPIA + Privacy policy text; decide if footer links are needed at launch.</td><td><span class="p p-rec">Recommended</span></td></tr>
+  </table>
+</section>
+
+<!-- ============ 01 — PAGE BY PAGE ============ -->
+<section class="sec">
+  <span class="kick">01 — Content, page by page</span>
+  <h2 class="t">Each page, what it needs.</h2>
+  <p class="lead">The site is eight pages. For each, here is the copy to confirm, the images and video to supply, and any functional items.</p>
+
+  <!-- HOME -->
+  <div class="page-blk">
+    <div class="page-hd"><h3>1 · Home</h3><span class="file">index.html</span></div>
+    <div class="page-bd">
+      <h4>Copy to confirm</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;Hero stats: <strong>16+ Screens Live · 500K+ Daily Impressions · 21M Airport Passengers/yr · 100% Black-Owned</strong> — an older brief said "35+ screens"; confirm the correct figure.</li>
+        <li><span class="p p-rec">Recommended</span> &nbsp;Approve the hero headline &amp; sub-copy.</li>
+      </ul>
+      <h4>Images &amp; video</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Hero background video</strong> — currently an interim clip. Supply a branded 8–12s loop (screen/billboard in-situ with people), muted, MP4, ≤6MB, + poster still. <em>Or</em> approve a single strong hero photo instead.</li>
+        <li><span class="p p-rec">Recommended</span> &nbsp;<strong>Journey explainer video</strong> — a real clip is wired in; confirm it's the final "Home → Airport → Mall → Home" edit (we'll compress it for speed).</li>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Client logos</strong> for the scrolling marquee (see Clients).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="page-blk">
+    <div class="page-hd"><h3>2 · Services</h3><span class="file">services.html</span></div>
+    <div class="page-bd">
+      <h4>Copy to confirm</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;The 5 formats are correct: <strong>Digital Billboards (DOOH) · Airport Security Trays · Static Large-Format (10m×70m) · Mobile Billboards · Brand Activations</strong>. Confirm "Mobile Billboards" is a live offering.</li>
+      </ul>
+      <h4>Images</h4>
+      <ul>
+        <li><span class="p p-rec">Recommended</span> &nbsp;<strong>Format photos ×5</strong> (one per card) — a real LED screen, airport tray, the 10m×70m static, a mobile billboard, a brand activation. Cards are icon-only today. <em>The airport-tray and static can already use your supplied photos.</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- POPS -->
+  <div class="page-blk">
+    <div class="page-hd"><h3>3 · Points of Presence</h3><span class="file">pops.html</span></div>
+    <div class="page-bd">
+      <h4>Copy to confirm</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Inventory sign-off</strong> per location: Dainfern Square (10 DOOH + 10m×70m static), Planet Fitness (5 screens), Witkoppen Rd, and airport trays at OR Tambo / King Shaka / Cape Town. Confirm counts and any new / removed sites.</li>
+      </ul>
+      <h4>Images</h4>
+      <ul>
+        <li><span class="p p-rec">Recommended</span> &nbsp;<strong>Location photos ×6</strong> (one per point of presence), landscape ~16:10, ≥1200px — upgrades the text-only cards. Dainfern already covered by your FNB billboard photo.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DATA -->
+  <div class="page-blk">
+    <div class="page-hd"><h3>4 · Data &amp; Analytics</h3><span class="file">data.html</span></div>
+    <div class="page-bd">
+      <h4>Copy to confirm</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;The stats band claims <strong>21M passengers measured/yr · 500K+ impressions tracked · 16+ screens monitored live · 100% campaigns with attribution</strong>. Confirm these are truthful — this page's whole promise is "proof, not promises," so the numbers must be defensible.</li>
+      </ul>
+      <h4>Data — full screen inventory</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>A complete list of every screen and its location</strong> — for each screen: site name, area / suburb, address or GPS, format (DOOH / static / airport tray), screen size &amp; resolution, and any per-site audience or footfall figures. This is the source data behind the Data page numbers, the Points-of-Presence map, and every inventory claim across the site.</li>
+      </ul>
+      <h4>Images (optional)</h4>
+      <ul>
+        <li><span class="p p-opt">Optional</span> &nbsp;A real <strong>dashboard / report screenshot</strong> would make "we measure" tangible. Icon-driven today.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CLIENTS -->
+  <div class="page-blk">
+    <div class="page-hd"><h3>5 · Clients</h3><span class="file">clients.html</span></div>
+    <div class="page-bd">
+      <h4>Data — most important item on this page</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;The two case studies (Nando's footfall, FNB trend) use <strong>illustrative sample data, not real figures</strong>. Before launch either: (a) replace with verified campaign numbers, (b) keep but clearly label as illustrative, or (c) remove the charts. We recommend (a) if any real results exist.</li>
+      </ul>
+      <h4>Client logos — the marquee</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Confirm the brand list + display rights</strong> — 25 names currently shown as text (Nedbank, Coca-Cola, Vodacom, Nando's, FNB, Absa, DStv, Showmax, Telkom, eBucks, Planet Fitness…). Trim to brands you may show publicly.</li>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Supply logo files</strong> — SVG or transparent PNG, white / single-colour (they sit on a dark band).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WORK -->
+  <div class="page-blk">
+    <div class="page-hd"><h3>6 · Way of Work</h3><span class="file">work.html</span></div>
+    <div class="page-bd">
+      <h4>Copy to confirm</h4>
+      <ul>
+        <li><span class="p p-rec">Recommended</span> &nbsp;Approve the "Our Story" paragraph and the core positioning quote.</li>
+      </ul>
+      <h4>Images — biggest visible gap on the site</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Three journey-stage photos</strong> — the Home, Airport and Mall panels are grey "Image placeholder" tiles:
+          <br>• <strong>01 · Home</strong> — a commuter / home-life shot with a Grid touchpoint
+          <br>• <strong>02 · Airport</strong> — airport tray in use <em>(your supplied tray photo works)</em>
+          <br>• <strong>03 · Mall</strong> — a mall screen in-situ with people</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div class="page-blk">
+    <div class="page-hd"><h3>7 · Team</h3><span class="file">team.html</span></div>
+    <div class="page-bd">
+      <h4>Photos &amp; copy</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Team headshots ×4</strong> — square 1:1, ≥800px, consistent lighting. Currently coloured initials tiles.</li>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Confirm names, roles &amp; approve bios</strong> (drafted by us): <strong>Thando Mabuza</strong> — Director · <strong>Eddie Mabuza</strong> — Business Development · <strong>Zenele Biyela</strong> — Data Analyst · <strong>Natasha Dixon</strong> — Account Manager.</li>
+        <li><span class="p p-opt">Optional</span> &nbsp;<strong>A real, attributed testimonial</strong> (name / role / company) — one placeholder quote is in place, else we remove it.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page-blk">
+    <div class="page-hd"><h3>8 · Contact</h3><span class="file">contact.html</span></div>
+    <div class="page-bd">
+      <h4>Functional — needed for a working page</h4>
+      <ul>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Form destination</strong> — the "Start a Campaign Brief" form validates but doesn't send yet. Supply a Formspree endpoint (free, no backend), the email to receive briefs, or approval for a mailto link.</li>
+        <li><span class="p p-req">Required</span> &nbsp;<strong>Exact address to pin</strong> — the map shows generic Johannesburg. Give the office address, or confirm you want it city-level.</li>
+        <li><span class="p p-rec">Recommended</span> &nbsp;Confirm the WhatsApp line (wa.me/27793650188).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 — SEO & DISCOVERABILITY ============ -->
+<section class="sec">
+  <span class="kick">02 — SEO &amp; discoverability</span>
+  <h2 class="t">Found on Google.</h2>
+  <p class="lead">The technical SEO foundations are already built into every page. A handful of items still need your input — mostly Google account access — to switch discoverability fully on at launch.</p>
+
+  <h3>Already in place — built &amp; ready</h3>
+  <table>
+    <tr><th style="width:34%">Item</th><th>What's done</th></tr>
+    <tr><td><strong>Unique page titles &amp; meta descriptions</strong></td><td>Every one of the 8 pages has its own hand-written title and description (see table below to approve wording).</td></tr>
+    <tr><td><strong>Canonical URLs</strong></td><td>Each page declares its canonical address to prevent duplicate-content penalties.</td></tr>
+    <tr><td><strong>XML sitemap &amp; robots.txt</strong></td><td>Complete sitemap of all pages + robots file, both pointing to the final domain — ready to submit to Google.</td></tr>
+    <tr><td><strong>Social share (Open Graph) tags</strong></td><td>Title, description &amp; image tags on every page for rich WhatsApp / LinkedIn / X link previews (final share image still to supply — item 3).</td></tr>
+    <tr><td><strong>Semantic, accessible markup</strong></td><td>Proper heading hierarchy, image alt text, and ARIA labels — Google reads structure, screen-readers read content.</td></tr>
+    <tr><td><strong>Fast, mobile-first build</strong></td><td>Hand-coded, dependency-free, fully responsive — page speed and mobile-friendliness are direct ranking factors.</td></tr>
+  </table>
+
+  <h3>SEO titles &amp; headlines — approve the wording</h3>
+  <p>These are the titles and descriptions that appear as your <strong>Google search result</strong> and social previews. Drafted by us — please confirm or tweak.</p>
+  <table>
+    <tr><th style="width:16%">Page</th><th style="width:40%">Search title</th><th>Meta description</th></tr>
+    <tr><td><strong>Home</strong></td><td>The Grid Technologies — Digital Out-of-Home Advertising</td><td>100% Black-owned digital Out-of-Home advertising. Strategic, data-driven brand journeys across premium points of presence in South Africa.</td></tr>
+    <tr><td><strong>Services</strong></td><td>Services — The Grid Technologies</td><td>Digital billboards (DOOH), airport security trays, static large-format, brand activations, data &amp; analytics and closed-loop journey strategy.</td></tr>
+    <tr><td><strong>Points of Presence</strong></td><td>Points of Presence — The Grid Technologies</td><td>Premium digital and static OOH locations across Johannesburg and South Africa's three busiest international airports.</td></tr>
+    <tr><td><strong>Data &amp; Analytics</strong></td><td>Data &amp; Analytics — The Grid Technologies</td><td>Location and demographic data, footfall measurement, dwell time and attribution modelling. Real-world proof of out-of-home performance.</td></tr>
+    <tr><td><strong>Clients</strong></td><td>Clients — The Grid Technologies</td><td>Brands that move with The Grid — South Africa's leading brands trust our premium digital Out-of-Home network.</td></tr>
+    <tr><td><strong>Way of Work</strong></td><td>Way of Work — The Grid Technologies</td><td>A closed-loop, end-to-end, strategically aligned approach to digital Out-of-Home advertising in South Africa.</td></tr>
+    <tr><td><strong>Team</strong></td><td>Team — The Grid Technologies</td><td>Meet the strategists, data analysts and account managers behind every closed-loop OOH campaign.</td></tr>
+    <tr><td><strong>Contact</strong></td><td>Contact — The Grid Technologies</td><td>+27 79 365 0188 · sales@thegridtech.co.za. Book a campaign or start a brief; we respond within 24 hours.</td></tr>
+  </table>
+
+  <h3>Needed from you to complete SEO</h3>
+  <table>
+    <tr><th style="width:26%">Item</th><th>What we need</th><th style="width:14%">Priority</th></tr>
+    <tr><td><strong>Google account access</strong></td><td>A Google account (or delegated access) to set up <strong>Analytics 4</strong> and <strong>Search Console</strong> in The Grid's name. Analytics is not yet live — we add the tracking tag at launch.</td><td><span class="p p-req">Required</span></td></tr>
+    <tr><td><strong>Social share image</strong></td><td>1200×630 branded image for link previews (currently falls back to a video still). Same as site-wide item 3.</td><td><span class="p p-rec">Recommended</span></td></tr>
+    <tr><td><strong>Google Business Profile</strong></td><td>Confirm / grant access to the Google Business (Maps) listing so local searches for "OOH advertising Johannesburg" surface The Grid.</td><td><span class="p p-rec">Recommended</span></td></tr>
+    <tr><td><strong>Confirm final domain form</strong></td><td>Confirm the site should live at <strong>www.thegridtech.co.za</strong> (the whole site is already wired to this address) and that non-www should redirect to it.</td><td><span class="p p-req">Required</span></td></tr>
+    <tr><td><strong>Target keywords (optional)</strong></td><td>Any specific search terms you want to rank for, so we can tune copy and headings.</td><td><span class="p p-opt">Optional</span></td></tr>
+  </table>
+</section>
+
+<!-- ============ 03 — HOSTING, DOMAIN & GO-LIVE ============ -->
+<section class="sec">
+  <span class="kick">03 — Hosting, domain &amp; go-live</span>
+  <h2 class="t">Getting it online.</h2>
+  <p class="lead">The site will be deployed to <strong>The Grid's own company hosting</strong>. To publish it, we need access to that hosting and to the domain's DNS. It's a static, dependency-free site, so it runs on any standard web host — no special server software required.</p>
+
+  <table>
+    <tr><th style="width:24%">Area</th><th>What it covers &amp; what we need from you</th><th style="width:15%">Owner</th></tr>
+    <tr><td><strong>Web hosting access</strong></td><td>The site deploys to your existing company hosting. We need <strong>control-panel access (cPanel or equivalent)</strong> plus <strong>FTP / SFTP credentials</strong> and confirmation of the correct <strong>web root</strong> (public folder) for the domain.</td><td>The Grid supplies</td></tr>
+    <tr><td><strong>Domain &amp; DNS</strong></td><td>Confirm The Grid owns <strong>thegridtech.co.za</strong> and provide access to the <strong>domain registrar / DNS</strong> (or add us as a technical contact) so we can point it at the site.</td><td>The Grid supplies</td></tr>
+    <tr><td><strong>SSL certificate (HTTPS)</strong></td><td>The padlock / <strong>https://</strong> address that browsers and Google require. Most hosting panels include free auto-renewing SSL (Let's Encrypt) — we enable it, or confirm an existing certificate on your host.</td><td>The Grid host · Lubelo sets up</td></tr>
+    <tr><td><strong>Email — do not disrupt</strong></td><td>Your existing <strong>@thegridtech.co.za</strong> email must keep working. During the DNS cutover we change only the website records and <strong>leave your mail (MX) records untouched.</strong> Confirm your email provider so we protect it.</td><td>The Grid confirms</td></tr>
+    <tr><td><strong>Backups &amp; monitoring</strong></td><td>Automated backups, restore cover and uptime monitoring on your hosting — kept current under the monthly management plan. Confirm whether your host also runs its own backups.</td><td>Lubelo (monthly)</td></tr>
+  </table>
+
+  <h3>Go-live sequence</h3>
+  <p>Once Wave 1 content is in and the site is signed off at MVP, launch is a short, controlled cutover:</p>
+  <table>
+    <tr><th style="width:7%">#</th><th>Step</th></tr>
+    <tr><td>1</td><td>Final content, images &amp; integrations loaded; full QA and cross-device / cross-browser test pass.</td></tr>
+    <tr><td>2</td><td>Contact form, Analytics tag and WhatsApp button wired and tested end-to-end.</td></tr>
+    <tr><td>3</td><td>Deploy to The Grid's company hosting (via cPanel / FTP); enable &amp; verify SSL.</td></tr>
+    <tr><td>4</td><td>Point <strong>thegridtech.co.za</strong> DNS at the live site (website records only — email untouched).</td></tr>
+    <tr><td>5</td><td>Switch the site from "hidden" to <strong>publicly indexable</strong> (the mockup is deliberately hidden from Google today).</td></tr>
+    <tr><td>6</td><td>Submit the sitemap to Google Search Console; confirm Analytics is receiving data.</td></tr>
+    <tr><td>7</td><td>Final live smoke-test on desktop &amp; mobile — go-live confirmed.</td></tr>
+  </table>
+  <div class="box">
+    <h4>Note on the current preview</h4>
+    <p style="margin-bottom:0">The mockup you're reviewing is intentionally set to <strong>"no-index"</strong> so search engines don't list it before launch. Flipping it to public is a one-line change we make as the final go-live step (step 5 above).</p>
+  </div>
+</section>
+
+<!-- ============ 04 — MASTER CHECKLIST ============ -->
+<section class="sec">
+  <span class="kick">04 — Master checklist</span>
+  <h2 class="t">The tick-list.</h2>
+  <p class="lead">A single view of every item. Tick each off as it's supplied.</p>
+  <table class="tick">
+    <tr><th style="width:5%">#</th><th>Item</th><th style="width:18%">Page(s)</th><th style="width:13%">Priority</th><th style="width:9%">Done</th></tr>
+    <tr><td>1</td><td>Final logo (SVG + PNG)</td><td>All</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>2</td><td>Favicon set</td><td>All</td><td><span class="p p-rec">Recommended</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>3</td><td>Social share (OG) image</td><td>All</td><td><span class="p p-rec">Recommended</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>4</td><td>Confirm contact details</td><td>All</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>5</td><td>Confirm social links (esp. Instagram)</td><td>All</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>6</td><td>Confirm hero stats (screen count)</td><td>Home / Data</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>7</td><td>Branded hero video or hero photo</td><td>Home</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>8</td><td>Final journey explainer video</td><td>Home</td><td><span class="p p-rec">Recommended</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>9</td><td>Client logo files + confirmed list &amp; rights</td><td>Home / Clients</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>10</td><td>Real case-study data (or relabel / remove)</td><td>Clients</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>11</td><td>3 journey-stage photos (Home / Airport / Mall)</td><td>Way of Work</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>12</td><td>Team headshots ×4</td><td>Team</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>13</td><td>Confirm team names / roles / bios</td><td>Team</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>14</td><td>Full screen-location schedule — every screen, site, format &amp; specs</td><td>Data / POPs</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>15</td><td>Contact form endpoint (Formspree)</td><td>Contact</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>16</td><td>Exact map address</td><td>Contact</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>17</td><td>Hosting access (cPanel / FTP) + domain / DNS access</td><td>Hosting</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>18</td><td>Confirm final domain (www.thegridtech.co.za)</td><td>Hosting / SEO</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>19</td><td>Confirm email provider (protect MX during cutover)</td><td>Hosting</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>20</td><td>Google account (Analytics 4 + Search Console)</td><td>SEO</td><td><span class="p p-req">Required</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>21</td><td>Approve SEO titles &amp; meta descriptions</td><td>All</td><td><span class="p p-rec">Recommended</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>22</td><td>Google Business Profile access</td><td>SEO / Local</td><td><span class="p p-rec">Recommended</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>23</td><td>Format photos ×5</td><td>Services</td><td><span class="p p-rec">Recommended</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>24</td><td>Location photos ×6</td><td>POPs</td><td><span class="p p-rec">Recommended</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>25</td><td>Real testimonial(s)</td><td>Team / Clients</td><td><span class="p p-opt">Optional</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>26</td><td>Legal pages (POPIA / Privacy)</td><td>Footer</td><td><span class="p p-rec">Recommended</span></td><td><span class="box-tick"></span></td></tr>
+    <tr><td>27</td><td>Licensed fonts (Century Gothic / Avenir)</td><td>All</td><td><span class="p p-opt">Optional</span></td><td><span class="box-tick"></span></td></tr>
+  </table>
+
+  <h3>Suggested order of delivery</h3>
+  <table>
+    <tr><th style="width:22%">Wave</th><th>What to supply</th></tr>
+    <tr><td><strong>Wave 1</strong><br><span class="note">Unblocks launch</span></td><td>Final logo · confirm all stats, inventory, contact &amp; social details · team headshots + approved bios · client logos + confirmed list · real case-study data (or relabel) · 3 journey-stage photos · contact form endpoint · exact map address · <strong>domain / DNS access · confirm final domain &amp; email provider · Google account for Analytics + Search Console</strong>.</td></tr>
+    <tr><td><strong>Wave 2</strong><br><span class="note">Polish</span></td><td>Branded hero + final journey video · format &amp; location photos · OG image · favicon set · legal pages · approve SEO titles/meta · Google Business Profile.</td></tr>
+    <tr><td><strong>Phase 2</strong><br><span class="note">Nice-to-have</span></td><td>Licensed fonts · real testimonials · data dashboard screenshot · media kit.</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>If only a few things can come first</h4>
+    <p style="margin-bottom:0">The <strong>hero visual</strong>, <strong>team headshots + bios</strong>, <strong>client logos</strong>, and the <strong>contact form endpoint</strong> remove the most obvious "unfinished" signals and make the site launch-ready. Your two supplied photos (airport tray + FNB Dainfern billboard) are already wired into the Way of Work and Clients pages.</p>
+  </div>
+
+  <div class="foot">
+    <span>The Grid Technologies — Launch Content Checklist</span>
+    <span>Prepared by Lubelo Tech Solutions · lubelotechsolutions.co.za</span>
+  </div>
+</section>
+
+</body>
+</html>

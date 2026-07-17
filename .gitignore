@@ -1,2 +1,6 @@
 .superpowers/
 .DS_Store
+Pictures/
+Video/
+_deploy/
+_deploy-prod/
