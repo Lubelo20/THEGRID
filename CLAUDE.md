@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a website design project for **The Grid Technologies** — a Johannesburg-based OOH (Out-Of-Home) advertising and marketing agency. Their value proposition is a "closed-loop, journey-style" advertising ecosystem: end-to-end points of presence (POPs) along a strategically defined consumer journey (Home → Airport → Mall → Home) to maximise brand impact and ROI.
+This is a website design project for **The Grid Technologies** — a Johannesburg-based OOH (Out-Of-Home) advertising and marketing agency. Their value proposition is a "closed-loop, journey-style" advertising ecosystem: end-to-end points of presence (POPs) along a strategically defined consumer journey (Home → Gym → Mall → Airport → Home) to maximise brand impact and ROI.
 
 The repository contains:
 - `the_grid_website_mockup.html` — Interactive single-file HTML/CSS/JS prototype of the full website
@@ -19,7 +19,7 @@ The mockup is a **single-page scroll-down site** with five sections, navigable v
 |---|---|
 | `#s-hero` | Landing — logo, tagline, hero stats, CTAs |
 | `#s-services` | Services — 4 flip-cards (LED Billboards, Airport Trays, Print Billboards, Data & Analytics) |
-| `#s-pops` | Points of Presence — animated journey map (Home→Airport→Mall→Home) + location pins |
+| `#s-pops` | Points of Presence — animated journey map (Home→Gym→Mall→Airport→Home) + location pins |
 | `#s-team` | Team — hover-reveal capability cards |
 | `#s-contact` | Contact — direct contact details, WhatsApp CTA, social links, campaign brief form |
 

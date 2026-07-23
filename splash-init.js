@@ -13,7 +13,7 @@
 
   var PERIOD = 4600, HOLD = 1000, FADE = 600; // play once, hold, then fade out
   var ctrl = GridIntro.mount('#grid-splash-canvas', {
-    text: 'The GRID',
+    text: 'THE GRID',
     subtitle: 'DIGITAL OUT-OF-HOME ADVERTISING',
     font: "'Jost', sans-serif",   // match the site's heading/brand font
     weight: 800,                   // match brand wordmark weight

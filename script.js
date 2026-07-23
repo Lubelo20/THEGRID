@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // journey map
   const jTexts = [
     'Home — top-of-mind recall on the morning commute via the Witkoppen Road static billboard before your audience even leaves the neighbourhood.',
-    'Airport — security-tray branding reaches 21M passengers a year at peak dwell time, with zero distractions.',
-    'Mall — DOOH at Dainfern Square captures high-LSM shoppers in-venue, during high-intent purchase moments.',
     'Gym — in-gym screens across the Planet Fitness network reach an active, high-LSM audience during 45–90 minute sessions.',
+    'Mall — DOOH at Dainfern Square captures high-LSM shoppers in-venue, during high-intent purchase moments.',
+    'Airport — security-tray branding reaches 21M passengers a year at peak dwell time, with zero distractions.',
     'Closed Loop Complete — repeated, sequenced touchpoints have built recall, reinforced messaging and driven measurable conversion.'
   ];
   const steps = [...document.querySelectorAll('.j-step')], lines = [...document.querySelectorAll('.j-line')], jText = document.getElementById('j-text');
