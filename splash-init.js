@@ -3,6 +3,9 @@
 (function () {
   var splash = document.getElementById('grid-splash');
   if (!splash) return;
+  // If the animation script failed to load (blocked, 403, network), never trap
+  // the visitor on the splash — drop straight into the page.
+  if (typeof GridIntro === 'undefined') { splash.remove(); return; }
   // Returning visitors (this session) and reduced-motion users go straight in.
   var seen; try { seen = sessionStorage.getItem('gridIntroSeen'); } catch (e) {}
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -12,7 +15,9 @@
   html.style.overflow = 'hidden'; body.style.overflow = 'hidden';
 
   var PERIOD = 4600, HOLD = 1000, FADE = 600; // play once, hold, then fade out
-  var ctrl = GridIntro.mount('#grid-splash-canvas', {
+  var ctrl;
+  try {
+    ctrl = GridIntro.mount('#grid-splash-canvas', {
     text: 'THE GRID',
     subtitle: 'DIGITAL OUT-OF-HOME ADVERTISING',
     font: "'Jost', sans-serif",   // match the site's heading/brand font
@@ -23,7 +28,12 @@
     subtitleColor: '#7189FF',      // accent blue, like the site's eyebrows
     grid: false,                   // dot texture comes from CSS instead
     background: 'transparent'
-  });
+    });
+  } catch (e) {
+    splash.remove();
+    html.style.overflow = ''; body.style.overflow = '';
+    return;
+  }
 
   var done = false;
   function dismiss() {
