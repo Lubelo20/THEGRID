@@ -283,6 +283,9 @@ select.f-in option{background:var(--base2);color:#fff}
 .band-dark .split-copy p{color:var(--t-on-dark-2)}
 .band-silver .split-copy p{color:var(--t-on-silver-2)}
 .split.rev .split-media{order:2}
+/* 761-900px: min-height + aspect-ratio would force a 400px min width and
+   overflow the 1fr column — let aspect-ratio alone set the height here */
+@media(max-width:900px){.split-media{min-height:0}}
 .jrow-num{font-family:var(--ff-h);font-weight:900;font-size:12px;letter-spacing:.18em;color:var(--flame);display:block;margin-bottom:9px}
 .band-silver .jrow-num{color:var(--flame-ink)}
 @media(max-width:760px){.split{grid-template-columns:1fr;gap:24px}.split.rev .split-media{order:0}.split-media{aspect-ratio:16/10;min-height:0}}
