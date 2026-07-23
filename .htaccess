@@ -11,13 +11,29 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^thegridtech\.co\.za$ [NC]
 RewriteRule ^ https://www.thegridtech.co.za%{REQUEST_URI} [R=301,L]
+
+# Clean URLs: /work serves work.html; old .html URLs 301 to the clean form
+# (REDIRECT_STATUS guard: empty on the browser's request, set after the
+#  internal /work -> work.html rewrite, so the two rules can't loop)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_URI} !^/404\.html$
+RewriteRule ^([a-z0-9-]+)\.html$ /$1 [R=301,L]
+# strip trailing slash on page URLs (keeps relative asset paths working)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([a-z0-9-]+)/$ /$1 [R=301,L]
+# internally map /work -> work.html when the file exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([a-z0-9-]+)$ $1.html [L]
 </IfModule>
 
 # Legacy WordPress URLs -> new pages (301, single hop)
-RedirectMatch 301 ^/about-us/?$ /team.html
-RedirectMatch 301 ^/contact-us/?$ /contact.html
-RedirectMatch 301 ^/our-services/?$ /services.html
-RedirectMatch 301 ^/services/?$ /services.html
+RedirectMatch 301 ^/about-us/?$ /team
+RedirectMatch 301 ^/contact-us/?$ /contact
+RedirectMatch 301 ^/our-services/?$ /services
 
 # Friendly error pages (no paths or stack traces)
 ErrorDocument 404 /404.html
