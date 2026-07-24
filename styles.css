@@ -357,7 +357,7 @@ select.f-in option{background:var(--base2);color:#fff}
 @media (prefers-reduced-motion: reduce){#grid-splash{display:none}}
 
 /* clients — success stories / case studies */
-.stories-bg{background-image:linear-gradient(180deg,rgba(18,20,25,.80),rgba(18,20,25,.93)),url('assets/fnb-dainfern.webp');background-size:cover;background-position:center}
+.stories-bg{background-image:linear-gradient(180deg,rgba(18,20,25,.80),rgba(18,20,25,.93)),url('assets/autogeneral-dainfern.webp');background-size:cover;background-position:center}
 .cases{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px;text-align:left}
 .case{background:rgba(24,27,34,.62);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:28px}
 .case-top{display:flex;flex-direction:column;gap:4px;margin-bottom:14px}
